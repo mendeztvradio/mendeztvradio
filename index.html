@@ -77,6 +77,8 @@
     .play-big:disabled {opacity:.55;cursor:wait}
     .play-big svg {width:28px;height:28px;fill:currentColor;}
     .round svg {width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+    .caster-player {width:100%;max-width:100%;margin:22px auto 0;min-height:90px;overflow:hidden;}
+    .caster-player .cstrEmbed {width:100%;max-width:100%;}
     .volume {margin:23px auto 0;display:flex;align-items:center;justify-content:center;gap:13px;max-width:270px;}
     .volume svg {width:18px;height:18px;stroke:var(--muted);fill:none;stroke-width:2;}
     .volume input {width:100%;height:5px;accent-color:var(--cyan);cursor:pointer;}
@@ -142,6 +144,7 @@
    <div class="equalizer" id="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
    <div class="player-control"><button class="round" id="reconnect" type="button" title="Reconectar transmisión" aria-label="Reconectar transmisión"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 6.8M20 4v7h-7"/></svg></button><button class="play-big" id="play-button" type="button" aria-label="Reproducir radio" aria-pressed="false"><svg id="play-icon" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8Z"/></svg></button><button class="round" id="mute" type="button" title="Silenciar" aria-label="Silenciar audio"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></svg></button></div>
    <div class="volume"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></svg><input id="volume" type="range" min="0" max="100" value="80" aria-label="Volumen"><span id="volume-number">80%</span></div>
+   <div class="caster-player" id="caster-player" hidden aria-label="Reproductor en vivo de Caster.fm"></div>
    <p class="status" id="status" role="status" aria-live="polite">Presiona PLAY para escuchar la transmisión.</p>
    <div class="mini-links"><a id="facebook" href="#" target="_blank" rel="noopener noreferrer" hidden>Facebook ↗</a><a id="instagram" href="#" target="_blank" rel="noopener noreferrer" hidden>Instagram ↗</a><a id="youtube" href="#" target="_blank" rel="noopener noreferrer" hidden>YouTube ↗</a><a id="whatsapp" href="#" target="_blank" rel="noopener noreferrer" hidden>WhatsApp ↗</a><button id="share" type="button">↗ Compartir radio</button></div>
   </div></div>
@@ -163,6 +166,10 @@
  const heroPlay=$('hero-play');
  const status=$('status');
  const stream=typeof conf.streaming==='string'?conf.streaming.trim():'';
+ // Plan gratis Caster.fm: usar su reproductor con el TOKEN PUBLICO, nunca el privado.
+ const casterPublicToken=typeof conf.casterPublicToken==='string'?conf.casterPublicToken.trim():'';
+ const casterChannelId=typeof conf.casterChannelId==='string'?conf.casterChannelId.trim():'';
+ const useCasterWidget=Boolean(casterPublicToken);
  let intended=false,attempts=0,retryTimer=null,installPrompt=null;
  const setStatus=(msg,isError=false)=>{status.textContent=msg;status.classList.toggle('is-error',isError)};
  const setPlaying=playing=>{
@@ -184,7 +191,35 @@
  }
  function stop(){intended=false;cancelRetry();audio.pause();setPlaying(false);setStatus('Transmisión pausada. Presiona PLAY para continuar.')}
  function toggle(){if(intended && !audio.paused){stop()}else{attempts=0;cancelRetry();start()}}
- playBtn.addEventListener('click',toggle);heroPlay.addEventListener('click',toggle);
+ if(useCasterWidget){
+   // La versión gratuita no proporciona una URL de audio libre para un reproductor HTML5 propio.
+   // Caster.fm gestiona reproducción, autenticación y volumen en su propio widget.
+   document.querySelector('.player-control').hidden=true;
+   document.querySelector('.volume').hidden=true;
+   const holder=$('caster-player');holder.hidden=false;
+   const widget=document.createElement('div');
+   widget.className='cstrEmbed';
+   widget.setAttribute('data-type','streamPlayer');
+   widget.setAttribute('data-publicToken',casterPublicToken);
+   widget.setAttribute('data-theme','dark');
+   widget.setAttribute('data-color','41dbf6');
+   widget.setAttribute('data-rendered','false');
+   if(casterChannelId)widget.setAttribute('data-channelId',casterChannelId);
+   widget.innerHTML='<a href="https://www.caster.fm">Shoutcast Hosting</a> <a href="https://www.caster.fm">Stream Hosting</a> <a href="https://www.caster.fm">Radio Server Hosting</a>';
+   holder.append(widget);
+   const widgetScript=document.createElement('script');
+   widgetScript.src='https://cdn.cloud.caster.fm/widgets/embed.js';
+   widgetScript.async=true;
+   widgetScript.onerror=()=>setStatus('No se pudo cargar el reproductor de Caster.fm. Revisa tu conexión o inténtalo de nuevo.',true);
+   holder.append(widgetScript);
+   heroPlay.querySelector('span').textContent='Ir al reproductor';
+   heroPlay.addEventListener('click',()=>holder.scrollIntoView({behavior:'smooth',block:'center'}));
+   setStatus('Pulsa PLAY en el reproductor de Caster.fm para escuchar Méndez TV Radio.');
+ } else {
+   playBtn.addEventListener('click',toggle);
+   heroPlay.addEventListener('click',toggle);
+   if(!stream)setStatus('Para activar el reproductor gratuito, coloca el token PÚBLICO de Caster.fm en config.js.');
+ }
  $('reconnect').addEventListener('click',()=>{attempts=0;cancelRetry();audio.pause();setPlaying(false);start(true)});
  audio.addEventListener('playing',()=>{attempts=0;cancelRetry();setPlaying(true);setStatus('Estás escuchando Méndez TV Radio en vivo.')});
  audio.addEventListener('waiting',()=>{if(intended)setStatus('Cargando audio en vivo…')});

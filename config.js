@@ -1,14 +1,20 @@
 /*
  * MÉNDEZ TV RADIO — CONFIGURACIÓN
  * Edita SOLO los valores entre comillas y vuelve a subir este archivo a GitHub.
- * El enlace de streaming debe ser una URL de AUDIO directa y HTTPS (.mp3, /stream, etc.).
- * NO uses la URL de inicio de sesión de Caster.fm ni tu contraseña.
+ * Con Caster.fm GRATIS usa casterPublicToken (token PÚBLICO del panel).
+ * La URL directa de audio está reservada para planes de pago.
+ * No copies contraseña de emisión ni token PRIVADO a archivos de GitHub.
  */
 window.MENDEZ_RADIO_CONFIG = {
   nombre: 'Méndez TV Radio',
   lema: 'La señal que nos conecta',
   ubicacion: 'Méndez · Morona Santiago · Ecuador',
-  streaming: '', // EJEMPLO DE FORMATO (NO REAL): 'https://tu-servidor.example.com/stream'
+  // COPIA SOLAMENTE EL TOKEN PUBLICO DE CASTER.FM ENTRE ESTAS COMILLAS:
+  casterPublicToken: '',
+  // Opcional: ID del canal desde Caster.fm (puedes dejarlo vacío si solo tienes uno).
+  casterChannelId: '',
+  // Solo para otro proveedor que entregue URL de audio HTTPS pública:
+  streaming: '',
   whatsapp: '593961180749', // WhatsApp conocido para información sobre auspicios; cámbialo si deseas.
   facebook: '', // URL completa de la página de Facebook de Méndez TV.
   instagram: '',

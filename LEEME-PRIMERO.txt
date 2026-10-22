@@ -1,46 +1,31 @@
-MÉNDEZ TV RADIO — WEB Y APP INSTALABLE (PWA)
+MÉNDEZ TV RADIO — CONEXIÓN CASTER.FM GRATUITA
 ================================================
 
-1) CONFIGURA TU RADIO
-Abre config.js con Bloc de notas en Windows.
-Busca: streaming: '',
-Reemplaza las comillas vacías por la URL HTTPS DIRECTA de audio que te entregue
-Caster.fm / Icecast / Shoutcast. Ejemplo de formato, NO real:
-streaming: 'https://servidor-ejemplo.com/stream',
-No introduzcas el enlace del panel de control ni tu clave de acceso.
-En el mismo archivo configura facebook, youtube, instagram y whatsapp.
+ESTA EDICIÓN ES PARA LA VERSIÓN GRATIS DE CASTER.FM.
+La opción Direct Stream Link está BLOQUEADA en el plan gratuito.
+En cambio, se utiliza el reproductor oficial incrustado de Caster.fm.
 
-2) PRUEBA EN WINDOWS
-Haz doble clic en index.html para ver el diseño.
-En algunas versiones de navegador, las funciones de instalar y PWA solo
-aparecen si publicas la web en HTTPS. El reproductor puede requerir publicar
-la página para comprobar la señal definitiva.
+1. Entra a tu panel de Caster.fm, busca «Widgets» / «Embed Player»
+   o «API Tokens» / «Public Token».
+2. Copia exclusivamente el TOKEN PÚBLICO de Caster.fm.
+   No copies la contraseña de emisión ni tu token privado.
+3. En GitHub, abre el archivo config.js, pulsa el lápiz y busca:
+   casterPublicToken: '',
+   Pega el token público entre las comillas.
+4. Pulsa «Commit changes».
+5. Si todavía no actualizaste esta edición del sitio, sube los archivos
+   index.html, config.js, sw.js y LEEME-PRIMERO.txt a la raíz del
+   repositorio (sobrescriben los anteriores).
+6. Abre la web y haz clic en PLAY en el reproductor oficial.
 
-3) PUBLICA GRATIS EN GITHUB PAGES
-- Crea una cuenta en https://github.com (si no tienes).
-- Pulsa New repository y escribe mendez-tv-radio. Elige Public.
-- Pulsa Add file > Upload files y sube TODO lo que hay dentro de esta carpeta
-  (index.html, config.js, manifest.webmanifest, sw.js y la carpeta assets).
-- Commit changes.
-- En el repositorio entra a Settings > Pages.
-- Source: Deploy from a branch. Branch: main y / (root). Luego Save.
-- Tu dirección será https://TU_USUARIO.github.io/mendez-tv-radio/
-Puede tardar varios minutos en publicarse.
+NOTA: «Streaming Server Online» no significa que hay música sonando.
+También debes estar transmitiendo desde Mixxx/BUTT/RadioBOSS con tu
+usuario y contraseña de emisión, usando un bitrate <= 96 kbps.
 
-4) INSTALA EN EL CELULAR
-- Android: abre el enlace en Chrome y pulsa «Instalar app» o usa el menú.
-- iPhone: abre en Safari, pulsa Compartir y «Agregar a inicio».
-- La web puede instalarse, pero el audio EN VIVO siempre requiere internet.
-- Algunos navegadores restringen audio cuando se bloquea pantalla o se cambia
-  de aplicación; el comportamiento depende del sistema operativo.
+Si usas un proveedor distinto con URL pública HTTPS directa, puedes
+seguir usando el reproductor personalizado mediante «streaming».
+Si tienes casterPublicToken configurado, prevalece el widget de Caster.fm.
 
-5) NOTAS IMPORTANTES
-- GitHub Pages aloja la web, NO transmite audio por sí mismo.
-- Mantén tu proveedor de streaming activo para que haya sonido.
-- El streaming debe servirse por HTTPS para funcionar dentro de la web HTTPS.
-- No uses música sin contar con los derechos/licencias que correspondan.
-- El logo incluido es provisional y puedes reemplazar assets/logo.svg y PNG.
-- WhatsApp precargado: +593 96 118 0749 (contacto de auspicios conocido).
-- Programas del sitio son descripciones, NO horarios verificados.
-
-Archivos creados como base original personalizada para Méndez TV Radio.
+Alojamiento web: GitHub Pages, gratuito.
+Servidor de radio: Caster.fm, gratuito, con limitaciones del plan.
+El reproductor integrado pertenece a Caster.fm y requiere internet.

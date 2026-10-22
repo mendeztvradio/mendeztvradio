@@ -10,7 +10,7 @@ window.MENDEZ_RADIO_CONFIG = {
   lema: 'La señal que nos conecta',
   ubicacion: 'Méndez · Morona Santiago · Ecuador',
   // COPIA SOLAMENTE EL TOKEN PUBLICO DE CASTER.FM ENTRE ESTAS COMILLAS:
-  casterPublicToken: '',
+  casterPublicToken: '29c3e09f-d985-4e95-ae89-b10549ab4a51',
   // Opcional: ID del canal desde Caster.fm (puedes dejarlo vacío si solo tienes uno).
   casterChannelId: '',
   // Solo para otro proveedor que entregue URL de audio HTTPS pública:

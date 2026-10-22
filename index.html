@@ -77,6 +77,7 @@
     .play-big:disabled {opacity:.55;cursor:wait}
     .play-big svg {width:28px;height:28px;fill:currentColor;}
     .round svg {width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+    [hidden] {display:none !important;}
     .caster-player {width:100%;max-width:100%;margin:22px auto 0;min-height:90px;overflow:hidden;}
     .caster-player .cstrEmbed {width:100%;max-width:100%;}
     .volume {margin:23px auto 0;display:flex;align-items:center;justify-content:center;gap:13px;max-width:270px;}
@@ -199,7 +200,7 @@
    const holder=$('caster-player');holder.hidden=false;
    const widget=document.createElement('div');
    widget.className='cstrEmbed';
-   widget.setAttribute('data-type','streamPlayer');
+   widget.setAttribute('data-type','newStreamPlayer');
    widget.setAttribute('data-publicToken',casterPublicToken);
    widget.setAttribute('data-theme','dark');
    widget.setAttribute('data-color','41dbf6');

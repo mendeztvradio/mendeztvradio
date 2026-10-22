@@ -1,31 +1,32 @@
-MÉNDEZ TV RADIO — CONEXIÓN CASTER.FM GRATUITA
-================================================
+MÉNDEZ TV RADIO — AUDIO CONECTADO (CASTER.FM)
+=================================================
 
-ESTA EDICIÓN ES PARA LA VERSIÓN GRATIS DE CASTER.FM.
-La opción Direct Stream Link está BLOQUEADA en el plan gratuito.
-En cambio, se utiliza el reproductor oficial incrustado de Caster.fm.
+Versión actualizada con el TOKEN PÚBLICO que aparece en tu captura.
+No necesitas editar config.js: ya está configurado.
+Usa el reproductor oficial "newStreamPlayer" de Caster.fm,
+compatible con el plan Free.
 
-1. Entra a tu panel de Caster.fm, busca «Widgets» / «Embed Player»
-   o «API Tokens» / «Public Token».
-2. Copia exclusivamente el TOKEN PÚBLICO de Caster.fm.
-   No copies la contraseña de emisión ni tu token privado.
-3. En GitHub, abre el archivo config.js, pulsa el lápiz y busca:
-   casterPublicToken: '',
-   Pega el token público entre las comillas.
-4. Pulsa «Commit changes».
-5. Si todavía no actualizaste esta edición del sitio, sube los archivos
-   index.html, config.js, sw.js y LEEME-PRIMERO.txt a la raíz del
-   repositorio (sobrescriben los anteriores).
-6. Abre la web y haz clic en PLAY en el reproductor oficial.
+PARA PUBLICAR EN TU REPOSITORIO
+1. Abre: https://github.com/mendeztvradio/mendeztvradio
+2. Presiona Add file -> Upload files.
+3. Arrastra todos los archivos y la carpeta assets de este ZIP
+   DESCOMPRIMIDO a tu repositorio. Acepta los reemplazos.
+4. Presiona Commit changes.
+5. Abre https://mendeztvradio.github.io/mendeztvradio/
+   y actualiza con Ctrl + F5 después de la publicación.
+6. Pulsa PLAY en el reproductor incrustado de Caster.fm.
 
-NOTA: «Streaming Server Online» no significa que hay música sonando.
-También debes estar transmitiendo desde Mixxx/BUTT/RadioBOSS con tu
-usuario y contraseña de emisión, usando un bitrate <= 96 kbps.
+IMPORTANTE
+- La web puede mostrar el reproductor sin que haya audio.
+  Aparte del servidor Online, inicia emisión desde Mixxx o RadioBOSS.
+- El bitrate de tu plan mostrado es 96 kbps máximo.
+- NO subas contraseña de emisión ni token privado a GitHub.
+- Cambia la contraseña de transmisión mostrada en tu captura.
+- El widget "Unknown / Unspecified description" se corrige desde
+  la información del canal o estación en Caster.fm.
+- Caster.fm controla el botón PLAY y volumen del widget oficial;
+  por eso el botón principal de la web lleva hasta ese reproductor.
+- El audio desde el plan Free requiere el reproductor oficial.
 
-Si usas un proveedor distinto con URL pública HTTPS directa, puedes
-seguir usando el reproductor personalizado mediante «streaming».
-Si tienes casterPublicToken configurado, prevalece el widget de Caster.fm.
-
-Alojamiento web: GitHub Pages, gratuito.
-Servidor de radio: Caster.fm, gratuito, con limitaciones del plan.
-El reproductor integrado pertenece a Caster.fm y requiere internet.
+Dirección de la radio:
+https://mendeztvradio.github.io/mendeztvradio/

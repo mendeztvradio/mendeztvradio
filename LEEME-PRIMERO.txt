@@ -1,0 +1,46 @@
+MÉNDEZ TV RADIO — WEB Y APP INSTALABLE (PWA)
+================================================
+
+1) CONFIGURA TU RADIO
+Abre config.js con Bloc de notas en Windows.
+Busca: streaming: '',
+Reemplaza las comillas vacías por la URL HTTPS DIRECTA de audio que te entregue
+Caster.fm / Icecast / Shoutcast. Ejemplo de formato, NO real:
+streaming: 'https://servidor-ejemplo.com/stream',
+No introduzcas el enlace del panel de control ni tu clave de acceso.
+En el mismo archivo configura facebook, youtube, instagram y whatsapp.
+
+2) PRUEBA EN WINDOWS
+Haz doble clic en index.html para ver el diseño.
+En algunas versiones de navegador, las funciones de instalar y PWA solo
+aparecen si publicas la web en HTTPS. El reproductor puede requerir publicar
+la página para comprobar la señal definitiva.
+
+3) PUBLICA GRATIS EN GITHUB PAGES
+- Crea una cuenta en https://github.com (si no tienes).
+- Pulsa New repository y escribe mendez-tv-radio. Elige Public.
+- Pulsa Add file > Upload files y sube TODO lo que hay dentro de esta carpeta
+  (index.html, config.js, manifest.webmanifest, sw.js y la carpeta assets).
+- Commit changes.
+- En el repositorio entra a Settings > Pages.
+- Source: Deploy from a branch. Branch: main y / (root). Luego Save.
+- Tu dirección será https://TU_USUARIO.github.io/mendez-tv-radio/
+Puede tardar varios minutos en publicarse.
+
+4) INSTALA EN EL CELULAR
+- Android: abre el enlace en Chrome y pulsa «Instalar app» o usa el menú.
+- iPhone: abre en Safari, pulsa Compartir y «Agregar a inicio».
+- La web puede instalarse, pero el audio EN VIVO siempre requiere internet.
+- Algunos navegadores restringen audio cuando se bloquea pantalla o se cambia
+  de aplicación; el comportamiento depende del sistema operativo.
+
+5) NOTAS IMPORTANTES
+- GitHub Pages aloja la web, NO transmite audio por sí mismo.
+- Mantén tu proveedor de streaming activo para que haya sonido.
+- El streaming debe servirse por HTTPS para funcionar dentro de la web HTTPS.
+- No uses música sin contar con los derechos/licencias que correspondan.
+- El logo incluido es provisional y puedes reemplazar assets/logo.svg y PNG.
+- WhatsApp precargado: +593 96 118 0749 (contacto de auspicios conocido).
+- Programas del sitio son descripciones, NO horarios verificados.
+
+Archivos creados como base original personalizada para Méndez TV Radio.

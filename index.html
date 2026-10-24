@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#090c18">
+  <meta name="theme-color" content="#061425">
   <meta name="description" content="Escucha Méndez TV Radio en vivo desde Morona Santiago, Ecuador. Música, información y programación en línea.">
   <meta property="og:title" content="Méndez TV Radio — En vivo">
   <meta property="og:description" content="Música, información y programas desde el corazón de Morona Santiago.">
@@ -14,7 +14,7 @@
   <link rel="manifest" href="./manifest.webmanifest">
   <title>Méndez TV Radio | Escúchanos en vivo</title>
   <style>
-    :root { color-scheme: dark; --bg:#090c18; --surface:rgba(20,25,45,.78); --edge:rgba(255,255,255,.11); --txt:#f8faff; --muted:#aab5ce; --cyan:#41dbf6; --blue:#5979ff; --pink:#ef5db9; --green:#68f0b1; }
+    :root { color-scheme: dark; --bg:#061425; --surface:rgba(8,28,49,.88); --edge:rgba(68,235,166,.21); --txt:#f8faff; --muted:#adc2d4; --cyan:#28d8eb; --blue:#168dec; --pink:#67f7b0; --green:#51ff20; }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
     body { margin:0; min-height:100vh; background:var(--bg); color:var(--txt); font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; overflow-x:hidden; }
@@ -22,12 +22,12 @@
     button { cursor:pointer; }
     a { color:inherit; }
     button:focus-visible,a:focus-visible,input:focus-visible { outline:3px solid var(--cyan); outline-offset:3px; }
-    .backdrop { pointer-events:none; position:fixed; inset:0; z-index:-1; background: radial-gradient(ellipse 55% 48% at 88% 23%,rgba(88,88,232,.21),transparent 75%), radial-gradient(ellipse 54% 57% at 8% 54%,rgba(12,182,210,.13),transparent 77%),radial-gradient(ellipse 34% 43% at 54% 92%,rgba(235,82,190,.07),transparent 75%); }
-    .backdrop:after { content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:55px 55px;mask-image:linear-gradient(to bottom,transparent,#000 35%,transparent); }
+    .backdrop { pointer-events:none; position:fixed; inset:0; z-index:-1; background: radial-gradient(ellipse 55% 48% at 88% 23%,rgba(20,160,223,.24),transparent 75%), radial-gradient(ellipse 54% 57% at 8% 54%,rgba(60,255,30,.15),transparent 77%),radial-gradient(ellipse 34% 43% at 54% 92%,rgba(17,120,221,.10),transparent 75%); }
+    .backdrop:after { content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(80,255,34,.23) 1.5px,transparent 2px);background-size:23px 23px;mask-image:linear-gradient(to bottom,transparent,#000 35%,transparent); }
     .container { width:min(1180px,calc(100% - 42px)); margin:auto; }
     .nav {display:flex;align-items:center;justify-content:space-between;padding:24px 0;gap:18px;}
     .brand {display:flex;gap:13px;align-items:center;text-decoration:none;white-space:nowrap;}
-    .brand img {width:50px;height:50px;filter:drop-shadow(0 5px 15px rgba(65,219,246,.25));}
+    .brand img {width:50px;height:50px;filter:drop-shadow(0 5px 15px rgba(74,255,25,.25));}
     .brand-name {font-size:20px;letter-spacing:-.6px;font-weight:850;line-height:1.05;}
     .brand-name span {color:var(--cyan)}
     .brand-sub {display:block;color:var(--muted);font-size:10px;letter-spacing:2.9px;font-weight:800;margin-top:4px;}
@@ -37,49 +37,47 @@
     .nav-cta {background:rgba(255,255,255,.08);border:1px solid var(--edge);border-radius:999px;padding:12px 19px;color:#fff;font-weight:800;}
     .nav-cta:hover {background:rgba(255,255,255,.16)}
     .hero {display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:50px;padding:56px 0 75px;min-height:630px;}
-    .eyebrow {display:inline-flex;align-items:center;gap:9px;letter-spacing:2px;font-weight:850;font-size:11px;color:var(--green);border:1px solid rgba(104,240,177,.22);background:rgba(104,240,177,.07);padding:10px 14px;border-radius:999px;}
+    .eyebrow {display:inline-flex;align-items:center;gap:9px;letter-spacing:2px;font-weight:850;font-size:11px;color:var(--green);border:1px solid rgba(80,255,32,.30);background:rgba(80,255,32,.09);padding:10px 14px;border-radius:999px;}
     .dot {display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 14px var(--green);}
     .hero h1 {font-size:clamp(52px,6vw,84px);line-height:1.04;letter-spacing:-4.4px;margin:25px 0 17px;max-width:640px;}
-    .hero h1 em {font-style:normal;background:linear-gradient(96deg,var(--cyan),#8b9afd 64%,var(--pink));background-clip:text;-webkit-background-clip:text;color:transparent;}
+    .hero h1 em {font-style:normal;background:linear-gradient(96deg,var(--green),#20daca 64%,var(--cyan));background-clip:text;-webkit-background-clip:text;color:transparent;}
     .lead {font-size:17px;color:var(--muted);line-height:1.78;max-width:440px;}
     .location {display:flex;align-items:center;gap:8px;color:#a4b2ce;font-size:13px;margin-top:27px;}
     .location svg {width:17px;height:17px;stroke:var(--cyan);}
     .hero-actions {display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;}
-    .primary {display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(120deg,#3bd7f1,#627fff);border:0;padding:15px 23px;border-radius:14px;color:#061224;font-weight:900;box-shadow:0 12px 32px rgba(65,219,246,.17);}
+    .primary {display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(120deg,#51ff20,#20dda4);border:0;padding:15px 23px;border-radius:14px;color:#061224;font-weight:900;box-shadow:0 12px 32px rgba(65,219,246,.17);}
     .primary:hover {filter:brightness(1.1);}
     .secondary {display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--edge);background:rgba(255,255,255,.04);padding:15px 20px;border-radius:14px;color:#fff;text-decoration:none;font-weight:750;}
     .secondary:hover {background:rgba(255,255,255,.11);}
     .btn-icon {width:18px;height:18px;fill:currentColor;}
     .radio-wrap {position:relative;isolation:isolate;}
-    .radio-wrap:before {content:'';position:absolute;z-index:-1;inset:-35px;border:1px solid rgba(74,130,255,.12);border-radius:45px;transform:rotate(7deg);}
-    .radio-card {position:relative;overflow:hidden;border:1px solid rgba(131,159,236,.24);background:linear-gradient(160deg,rgba(32,39,72,.96),rgba(12,16,33,.96) 69%);box-shadow:0 30px 95px rgba(0,0,0,.36),inset 0 1px 0 rgba(255,255,255,.09);border-radius:32px;padding:27px 28px 25px;text-align:center;}
-    .radio-card:before {content:'';position:absolute;width:350px;height:350px;background:radial-gradient(circle,rgba(70,114,254,.26),transparent 67%);top:0;left:50%;transform:translateX(-50%);pointer-events:none;}
+    .radio-wrap:before {content:'';position:absolute;z-index:-1;inset:-35px;border:1px solid rgba(81,255,32,.14);border-radius:45px;transform:rotate(7deg);}
+    .radio-card {position:relative;overflow:hidden;border:1px solid rgba(81,255,32,.26);background:linear-gradient(160deg,rgba(13,48,62,.96),rgba(6,18,36,.97) 69%);box-shadow:0 30px 95px rgba(0,0,0,.36),inset 0 1px 0 rgba(255,255,255,.09);border-radius:32px;padding:27px 28px 25px;text-align:center;}
+    .radio-card:before {content:'';position:absolute;width:350px;height:350px;background:radial-gradient(circle,rgba(61,255,44,.16),transparent 67%);top:0;left:50%;transform:translateX(-50%);pointer-events:none;}
     .card-head {display:flex;align-items:center;justify-content:space-between;position:relative;}
     .card-head small {color:#d6dcef;letter-spacing:1.5px;font-size:10px;font-weight:800;}
-    .live-pill {font-size:10px;font-weight:900;letter-spacing:.8px;padding:8px 12px;background:#f15971;color:#fff;border-radius:100px;display:inline-flex;gap:7px;align-items:center;}
-    .live-pill .dot {background:#fff;width:6px;height:6px;box-shadow:none;}
+    .live-pill {font-size:10px;font-weight:900;letter-spacing:.8px;padding:8px 12px;background:#51ff20;color:#061425;border-radius:100px;display:inline-flex;gap:7px;align-items:center;}
+    .live-pill .dot {background:#061425;width:6px;height:6px;box-shadow:none;}
     .vinyl {width:min(270px,73%);aspect-ratio:1;border-radius:50%;margin:35px auto 23px;display:grid;place-items:center;position:relative;background:repeating-radial-gradient(circle,rgba(225,233,255,.07) 0px,rgba(225,233,255,.07) 1px,transparent 2px,transparent 6px),conic-gradient(from 30deg,#131a39,#293658,#12162b,#262f58,#10152c);box-shadow:0 12px 30px rgba(0,0,0,.5),0 0 0 7px rgba(255,255,255,.03);animation:spin 14s linear infinite;animation-play-state:paused;}
     .vinyl.is-playing {animation-play-state:running;}
-    .vinyl img {width:52%;height:52%;background:#07111f;border:6px solid #1d315d;border-radius:50%;object-fit:contain;padding:8px;box-shadow:0 0 40px rgba(62,197,255,.25);}
+    .vinyl img {width:52%;height:52%;background:#07111f;border:6px solid #1a533e;border-radius:50%;object-fit:contain;padding:8px;box-shadow:0 0 40px rgba(62,197,255,.25);}
     @keyframes spin {to {transform:rotate(360deg)}}
     .track-title {position:relative;font-size:23px;font-weight:900;letter-spacing:-.7px;margin:0 0 5px;}
     .track-sub {position:relative;font-size:12px;color:var(--muted);margin:0;}
     .equalizer {display:flex;align-items:center;justify-content:center;gap:4px;height:32px;margin:12px auto 13px;}
-    .equalizer i {display:block;width:4px;background:linear-gradient(to top,var(--blue),var(--cyan));border-radius:10px;height:8px;opacity:.55;}
+    .equalizer i {display:block;width:4px;background:linear-gradient(to top,var(--blue),var(--green));border-radius:10px;height:8px;opacity:.55;}
     .equalizer.is-playing i {animation:equal 850ms ease-in-out infinite alternate;opacity:1;}
     .equalizer i:nth-child(2n) {animation-delay:-350ms}.equalizer i:nth-child(3n) {animation-delay:-600ms}.equalizer i:nth-child(5n){animation-delay:-140ms}
     @keyframes equal {from {height:4px}to {height:25px}}
     .player-control {position:relative;display:flex;align-items:center;justify-content:center;gap:20px;}
     .round {display:grid;place-items:center;background:rgba(255,255,255,.07);color:#fff;border:1px solid rgba(255,255,255,.10);width:43px;height:43px;border-radius:50%;}
     .round:hover {background:rgba(255,255,255,.16)}
-    .play-big {display:grid;place-items:center;width:70px;height:70px;border:0;border-radius:50%;color:#081225;background:linear-gradient(140deg,var(--cyan),#7c8dff);box-shadow:0 8px 34px rgba(70,194,251,.30);transition:transform .2s;}
+    .play-big {display:grid;place-items:center;width:70px;height:70px;border:0;border-radius:50%;color:#081225;background:linear-gradient(140deg,var(--green),#20dda4);box-shadow:0 8px 34px rgba(81,255,32,.30);transition:transform .2s;}
     .play-big:hover {transform:scale(1.07)}
     .play-big:disabled {opacity:.55;cursor:wait}
     .play-big svg {width:28px;height:28px;fill:currentColor;}
     .round svg {width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
     [hidden] {display:none !important;}
-    .caster-player {width:100%;max-width:100%;margin:22px auto 0;min-height:90px;overflow:hidden;}
-    .caster-player .cstrEmbed {width:100%;max-width:100%;}
     .volume {margin:23px auto 0;display:flex;align-items:center;justify-content:center;gap:13px;max-width:270px;}
     .volume svg {width:18px;height:18px;stroke:var(--muted);fill:none;stroke-width:2;}
     .volume input {width:100%;height:5px;accent-color:var(--cyan);cursor:pointer;}
@@ -102,18 +100,18 @@
     .show-bubble {display:grid;place-items:center;width:32px;height:32px;border:1px solid var(--edge);border-radius:50%;color:#accdff;}
     .show h3 {font-size:19px;letter-spacing:-.4px;margin:0 0 9px;}
     .show p {color:var(--muted);font-size:12px;line-height:1.65;margin:0;}
-    .ad-banner {display:flex;align-items:center;justify-content:space-between;gap:22px;background:linear-gradient(110deg,rgba(31,64,103,.64),rgba(42,40,91,.66));border:1px solid rgba(100,174,233,.22);border-radius:25px;padding:26px 30px;margin:5px 0 65px;}
+    .ad-banner {display:flex;align-items:center;justify-content:space-between;gap:22px;background:linear-gradient(110deg,rgba(20,89,70,.64),rgba(19,70,117,.66));border:1px solid rgba(100,174,233,.22);border-radius:25px;padding:26px 30px;margin:5px 0 65px;}
     .ad-banner strong {font-size:20px;letter-spacing:-.55px;}
     .ad-banner p {color:#b8c5dc;line-height:1.65;font-size:13px;margin:9px 0 0;}
     .ad-banner a {white-space:nowrap;}
     footer {border-top:1px solid var(--edge);padding:25px 0 35px;color:var(--muted);font-size:12px;}
     .footer-row {display:flex;gap:18px;justify-content:space-between;flex-wrap:wrap;align-items:center;}
     .footer-row strong {color:#e9eeff}
-    .install-floating {position:fixed;z-index:20;right:18px;bottom:18px;display:none;align-items:center;gap:8px;padding:13px 17px;background:linear-gradient(125deg,#44d9f7,#7288ff);color:#061020;border:0;border-radius:100px;font-size:12px;font-weight:900;box-shadow:0 10px 40px rgba(0,0,0,.45);}
+    .install-floating {position:fixed;z-index:20;right:18px;bottom:18px;display:none;align-items:center;gap:8px;padding:13px 17px;background:linear-gradient(125deg,#51ff20,#2adba7);color:#061020;border:0;border-radius:100px;font-size:12px;font-weight:900;box-shadow:0 10px 40px rgba(0,0,0,.45);}
     .install-floating.is-visible {display:flex;}
     .dialog-mask {display:none;position:fixed;z-index:50;inset:0;background:rgba(3,6,14,.82);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:18px;}
     .dialog-mask.open {display:flex;}
-    .dialog {background:#181f36;border:1px solid var(--edge);border-radius:22px;padding:27px;max-width:405px;line-height:1.7;box-shadow:0 20px 80px rgba(0,0,0,.35)}
+    .dialog {background:#0b243a;border:1px solid var(--edge);border-radius:22px;padding:27px;max-width:405px;line-height:1.7;box-shadow:0 20px 80px rgba(0,0,0,.35)}
     .dialog h2 {margin:0 0 8px}.dialog p {color:#bbc7de;margin-bottom:23px;font-size:14px}.dialog button {width:100%}
     [hidden] {display:none!important;}
     @media (max-width:900px) {.hero{grid-template-columns:1fr 1fr;gap:30px;min-height:560px;padding-top:35px}.hero h1 {font-size:clamp(45px,6vw,70px)}.radio-card{padding:23px 17px}.nav-links{gap:12px}}
@@ -145,7 +143,6 @@
    <div class="equalizer" id="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
    <div class="player-control"><button class="round" id="reconnect" type="button" title="Reconectar transmisión" aria-label="Reconectar transmisión"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 6.8M20 4v7h-7"/></svg></button><button class="play-big" id="play-button" type="button" aria-label="Reproducir radio" aria-pressed="false"><svg id="play-icon" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8Z"/></svg></button><button class="round" id="mute" type="button" title="Silenciar" aria-label="Silenciar audio"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></svg></button></div>
    <div class="volume"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></svg><input id="volume" type="range" min="0" max="100" value="80" aria-label="Volumen"><span id="volume-number">80%</span></div>
-   <div class="caster-player" id="caster-player" hidden aria-label="Reproductor en vivo de Caster.fm"></div>
    <p class="status" id="status" role="status" aria-live="polite">Presiona PLAY para escuchar la transmisión.</p>
    <div class="mini-links"><a id="facebook" href="#" target="_blank" rel="noopener noreferrer" hidden>Facebook ↗</a><a id="instagram" href="#" target="_blank" rel="noopener noreferrer" hidden>Instagram ↗</a><a id="youtube" href="#" target="_blank" rel="noopener noreferrer" hidden>YouTube ↗</a><a id="whatsapp" href="#" target="_blank" rel="noopener noreferrer" hidden>WhatsApp ↗</a><button id="share" type="button">↗ Compartir radio</button></div>
   </div></div>
@@ -167,10 +164,6 @@
  const heroPlay=$('hero-play');
  const status=$('status');
  const stream=typeof conf.streaming==='string'?conf.streaming.trim():'';
- // Plan gratis Caster.fm: usar su reproductor con el TOKEN PUBLICO, nunca el privado.
- const casterPublicToken=typeof conf.casterPublicToken==='string'?conf.casterPublicToken.trim():'';
- const casterChannelId=typeof conf.casterChannelId==='string'?conf.casterChannelId.trim():'';
- const useCasterWidget=Boolean(casterPublicToken);
  let intended=false,attempts=0,retryTimer=null,installPrompt=null;
  const setStatus=(msg,isError=false)=>{status.textContent=msg;status.classList.toggle('is-error',isError)};
  const setPlaying=playing=>{
@@ -192,35 +185,9 @@
  }
  function stop(){intended=false;cancelRetry();audio.pause();setPlaying(false);setStatus('Transmisión pausada. Presiona PLAY para continuar.')}
  function toggle(){if(intended && !audio.paused){stop()}else{attempts=0;cancelRetry();start()}}
- if(useCasterWidget){
-   // La versión gratuita no proporciona una URL de audio libre para un reproductor HTML5 propio.
-   // Caster.fm gestiona reproducción, autenticación y volumen en su propio widget.
-   document.querySelector('.player-control').hidden=true;
-   document.querySelector('.volume').hidden=true;
-   const holder=$('caster-player');holder.hidden=false;
-   const widget=document.createElement('div');
-   widget.className='cstrEmbed';
-   widget.setAttribute('data-type','newStreamPlayer');
-   widget.setAttribute('data-publicToken',casterPublicToken);
-   widget.setAttribute('data-theme','dark');
-   widget.setAttribute('data-color','41dbf6');
-   widget.setAttribute('data-rendered','false');
-   if(casterChannelId)widget.setAttribute('data-channelId',casterChannelId);
-   widget.innerHTML='<a href="https://www.caster.fm">Shoutcast Hosting</a> <a href="https://www.caster.fm">Stream Hosting</a> <a href="https://www.caster.fm">Radio Server Hosting</a>';
-   holder.append(widget);
-   const widgetScript=document.createElement('script');
-   widgetScript.src='https://cdn.cloud.caster.fm/widgets/embed.js';
-   widgetScript.async=true;
-   widgetScript.onerror=()=>setStatus('No se pudo cargar el reproductor de Caster.fm. Revisa tu conexión o inténtalo de nuevo.',true);
-   holder.append(widgetScript);
-   heroPlay.querySelector('span').textContent='Ir al reproductor';
-   heroPlay.addEventListener('click',()=>holder.scrollIntoView({behavior:'smooth',block:'center'}));
-   setStatus('Pulsa PLAY en el reproductor de Caster.fm para escuchar Méndez TV Radio.');
- } else {
-   playBtn.addEventListener('click',toggle);
-   heroPlay.addEventListener('click',toggle);
-   if(!stream)setStatus('Para activar el reproductor gratuito, coloca el token PÚBLICO de Caster.fm en config.js.');
- }
+ playBtn.addEventListener('click',toggle);
+ heroPlay.addEventListener('click',toggle);
+ if(!stream)setStatus('Configura tu URL pública HTTPS de audio en config.js.',true);
  $('reconnect').addEventListener('click',()=>{attempts=0;cancelRetry();audio.pause();setPlaying(false);start(true)});
  audio.addEventListener('playing',()=>{attempts=0;cancelRetry();setPlaying(true);setStatus('Estás escuchando Méndez TV Radio en vivo.')});
  audio.addEventListener('waiting',()=>{if(intended)setStatus('Cargando audio en vivo…')});

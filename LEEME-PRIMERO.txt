@@ -1,32 +1,31 @@
-MÉNDEZ TV RADIO — AUDIO CONECTADO (CASTER.FM)
-=================================================
+MÉNDEZ TV RADIO — REPRODUCTOR PERSONALIZADO SONICPANEL
+========================================================
 
-Versión actualizada con el TOKEN PÚBLICO que aparece en tu captura.
-No necesitas editar config.js: ya está configurado.
-Usa el reproductor oficial "newStreamPlayer" de Caster.fm,
-compatible con el plan Free.
+Esta versión reemplaza el reproductor de Caster.fm por el reproductor HTML5
+original del sitio con PLAY/PAUSA, control de volumen y reconexión.
 
-PARA PUBLICAR EN TU REPOSITORIO
-1. Abre: https://github.com/mendeztvradio/mendeztvradio
-2. Presiona Add file -> Upload files.
-3. Arrastra todos los archivos y la carpeta assets de este ZIP
-   DESCOMPRIMIDO a tu repositorio. Acepta los reemplazos.
-4. Presiona Commit changes.
-5. Abre https://mendeztvradio.github.io/mendeztvradio/
-   y actualiza con Ctrl + F5 después de la publicación.
-6. Pulsa PLAY en el reproductor incrustado de Caster.fm.
+Señal configurada en config.js:
+https://radiostreaming.pro/8462/stream
 
-IMPORTANTE
-- La web puede mostrar el reproductor sin que haya audio.
-  Aparte del servidor Online, inicia emisión desde Mixxx o RadioBOSS.
-- El bitrate de tu plan mostrado es 96 kbps máximo.
-- NO subas contraseña de emisión ni token privado a GitHub.
-- Cambia la contraseña de transmisión mostrada en tu captura.
-- El widget "Unknown / Unspecified description" se corrige desde
-  la información del canal o estación en Caster.fm.
-- Caster.fm controla el botón PLAY y volumen del widget oficial;
-  por eso el botón principal de la web lleva hasta ese reproductor.
-- El audio desde el plan Free requiere el reproductor oficial.
+PASOS PARA SUBIR EN GITHUB:
+1. Descomprime este archivo ZIP en tu computadora.
+2. Abre https://github.com/mendeztvradio/mendeztvradio
+3. Ve a Add file > Upload files.
+4. Sube los archivos sueltos Y la carpeta assets, con sus archivos dentro.
+   Si GitHub no acepta sobrescribir desde Upload files, edita config.js directamente
+   y sube index.html, sw.js y los demás archivos desde la interfaz de GitHub.
+5. Confirma los cambios con Commit changes.
+6. Abre https://mendeztvradio.github.io/mendeztvradio/
+   y recarga con Ctrl+F5.
 
-Dirección de la radio:
-https://mendeztvradio.github.io/mendeztvradio/
+PARA ESCUCHAR AUDIO DE VERDAD:
+- El servidor puede estar 'Online' aunque no haya música emitiéndose.
+- En SonicPanel inicia AutoDJ o transmite desde RadioBOSS.
+- Pulsa PLAY en el reproductor personalizado de la web.
+- Si no suena, comprueba el enlace con tu navegador y la salida de audio
+  de SonicPanel. El enlace no pudo comprobarse emitiendo en tiempo real.
+
+IMPORTANTE: Esta dirección HTTPS es de ESCUCHA; no es la URL de emisión.
+Nunca publiques contraseñas ni claves del panel en archivos de GitHub.
+
+Nota: colores actualizados a fondo azul oscuro, verde neón y turquesa.

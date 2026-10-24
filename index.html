@@ -87,6 +87,32 @@
     .mini-links {position:relative;display:flex;gap:9px;flex-wrap:wrap;margin-top:18px;justify-content:center;}
     .mini-links a,.mini-links button {border:1px solid var(--edge);background:rgba(255,255,255,.045);color:#dbe3f2;padding:9px 13px;font-size:11px;font-weight:750;border-radius:100px;text-decoration:none;}
     .mini-links a:hover,.mini-links button:hover {background:rgba(255,255,255,.12)}
+
+    /* REDES SOCIALES OFICIALES — iconos SVG integrados, sin dependencias externas */
+    .social-symbols{position:absolute;width:0;height:0;overflow:hidden;pointer-events:none}
+    .radio-social{position:relative;margin:15px auto 0;padding-top:17px;border-top:1px solid rgba(67,255,149,.14)}
+    .radio-social-label{display:block;color:#b6d2d8;font-weight:850;font-size:10px;letter-spacing:2.3px;margin-bottom:11px}
+    .social-icons{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:11px}
+    .social-link{width:45px;height:45px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;color:#ebf7ff;background:rgba(19,60,76,.65);border:1px solid rgba(80,248,196,.26);border-radius:14px;text-decoration:none;transition:transform .18s ease,background .18s ease,border-color .18s ease,box-shadow .18s ease}
+    .social-link:hover{transform:translateY(-3px);border-color:var(--social-brand);background:rgba(255,255,255,.09);box-shadow:0 8px 24px rgba(0,0,0,.2),0 0 20px color-mix(in srgb,var(--social-brand) 25%,transparent)}
+    .social-link svg{width:22px;height:22px;display:block;fill:currentColor}
+    .social-link.instagram{--social-brand:#fa49b0;color:#ff70bd}
+    .social-link.facebook{--social-brand:#36a2ff;color:#71bcff}
+    .social-link.tiktok{--social-brand:#31e7e6;color:#f7fcff}
+    .social-link.youtube{--social-brand:#ff404a;color:#ff676c}
+    .card-utility-links{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:15px}
+    .card-utility-links a,.card-utility-links button{border:1px solid var(--edge);background:rgba(255,255,255,.045);color:#dbe3f2;padding:9px 13px;font-size:11px;font-weight:750;border-radius:100px;text-decoration:none}
+    .card-utility-links a:hover,.card-utility-links button:hover{background:rgba(255,255,255,.12)}
+    .social-section{padding:0 0 70px}
+    .social-section-inner{position:relative;isolation:isolate;overflow:hidden;display:flex;justify-content:space-between;align-items:center;gap:26px;flex-wrap:wrap;padding:32px 38px;border:1px solid rgba(81,255,32,.28);border-radius:25px;background:linear-gradient(108deg,rgba(6,36,49,.94),rgba(6,26,50,.95));box-shadow:0 20px 50px rgba(0,0,0,.15)}
+    .social-section-inner:after{content:'';pointer-events:none;position:absolute;z-index:-1;width:310px;height:310px;right:-35px;top:-120px;border-radius:50%;background:radial-gradient(circle,rgba(42,223,225,.15),transparent 65%)}
+    .social-section .overline{display:block;margin-bottom:8px;color:var(--green)}
+    .social-section h2{font-size:clamp(27px,3.4vw,35px);margin:0 0 8px;letter-spacing:-1.2px}
+    .social-section p{font-size:13px;color:var(--muted);line-height:1.6;margin:0;max-width:520px}
+    .social-section .social-link{width:58px;height:58px;border-radius:18px;background:rgba(15,53,70,.9)}
+    .social-section .social-link svg{width:28px;height:28px}
+    @media(max-width:650px){.social-section{padding-bottom:42px}.social-section-inner{padding:26px 21px;justify-content:center;text-align:center}.social-section .social-icons{gap:12px}.social-section .social-link{width:53px;height:53px}}
+
     .section {padding:25px 0 75px;}
     .section-title {display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:23px;}
     .overline {font-size:11px;font-weight:900;letter-spacing:2.2px;color:var(--cyan);}
@@ -100,6 +126,43 @@
     .show-bubble {display:grid;place-items:center;width:32px;height:32px;border:1px solid var(--edge);border-radius:50%;color:#accdff;}
     .show h3 {font-size:19px;letter-spacing:-.4px;margin:0 0 9px;}
     .show p {color:var(--muted);font-size:12px;line-height:1.65;margin:0;}
+
+    /* TOP 10 ECUATORIANO E INTERNACIONAL */
+    .ranking-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:25px}
+    .ranking-head h2{margin:6px 0 0;font-size:clamp(30px,4.4vw,43px);letter-spacing:-1.4px;line-height:1.04;text-transform:uppercase}
+    .ranking-head h2 .ranking-bright{color:var(--green)}
+    .ranking-desc{margin:10px 0 0;color:#a9c4d6;font-size:13px;line-height:1.55}
+    .ranking-flag{display:inline-flex;gap:9px;align-items:center;color:#051527;background:linear-gradient(90deg,#58fe28,#36eec1);border-radius:99px;padding:10px 15px;font-size:11px;font-weight:950;letter-spacing:.9px}
+    .ranking-panel{position:relative;border:1px solid rgba(70,255,31,.27);background:linear-gradient(145deg,rgba(7,34,48,.92),rgba(4,18,31,.96));border-radius:27px;padding:15px 19px;overflow:hidden;box-shadow:0 24px 65px rgba(0,0,0,.15)}
+    .ranking-panel:before{content:'';position:absolute;top:-145px;right:-120px;height:320px;width:320px;border:1px solid rgba(74,255,25,.1);border-radius:50%;pointer-events:none;box-shadow:0 0 0 24px rgba(52,240,95,.02),0 0 0 55px rgba(47,229,178,.02)}
+    .ranking-item{position:relative;display:grid;grid-template-columns:57px 52px minmax(0,1fr) auto;align-items:center;gap:18px;padding:13px 8px;border-bottom:1px solid rgba(255,255,255,.09)}
+    .ranking-item:last-child{border-bottom:0}
+    .ranking-position{font-size:29px;font-weight:950;letter-spacing:-1.6px;color:#94abc0;text-align:center;font-variant-numeric:tabular-nums}
+    .ranking-item:nth-child(-n+3) .ranking-position{color:var(--green);text-shadow:0 0 18px rgba(70,255,19,.25)}
+    .ranking-art{height:52px;width:52px;display:grid;place-items:center;color:#63ff39;border:1px solid rgba(70,255,31,.24);background:radial-gradient(circle at 30% 10%,rgba(65,255,34,.19),transparent 70%),linear-gradient(135deg,#0a3144,#071629);border-radius:13px}
+    .ranking-art svg{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .ranking-song{font-weight:850;letter-spacing:-.3px;font-size:16px;line-height:1.3;margin:0}
+    .ranking-artist{color:#b2c5d6;font-size:12px;margin:4px 0 0;line-height:1.5}
+    .ranking-genre{font-size:10px;color:#4eff3d;text-transform:uppercase;font-weight:800;letter-spacing:1px;margin:4px 0 0}
+    .ranking-actions{display:flex;align-items:center;gap:10px}
+    .ranking-platform{height:43px;width:43px;display:grid;place-items:center;border-radius:13px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.13);transition:background .2s,transform .2s}
+    .ranking-platform:hover{background:rgba(82,255,46,.14);transform:translateY(-2px)}
+    .ranking-platform svg{width:22px;height:22px;display:block}
+    .ranking-platform.spotify{color:#1ed760}
+    .ranking-platform.youtube{color:#ff404b}
+    .ranking-footnote{font-size:11px;line-height:1.6;color:#9bb7cc;margin:16px 8px 2px}
+    .ranking-international .ranking-head h2 .ranking-bright{color:var(--cyan)}
+    .ranking-international .ranking-flag{background:linear-gradient(95deg,#39e5ee,#7cfc65)}
+    .ranking-international .ranking-panel{border-color:rgba(43,215,237,.33)}
+    .ranking-international .ranking-item:nth-child(-n+3) .ranking-position{color:var(--cyan);text-shadow:0 0 19px rgba(43,215,237,.28)}
+    .ranking-international .ranking-genre{color:#65daf3}
+    .ranking-international .ranking-art{border-color:rgba(43,215,237,.32);color:#6cdff7;background:radial-gradient(circle at 30% 10%,rgba(40,185,255,.15),transparent 70%),linear-gradient(135deg,#0a3144,#071629)}
+    .ranking-meta{font-size:11px;font-weight:750;color:#94c7d7;display:inline-flex;align-items:center;gap:8px;margin-top:10px}
+    .ranking-meta:before{content:'';width:7px;height:7px;background:var(--cyan);border-radius:100%;box-shadow:0 0 10px var(--cyan)}
+    .ranking-jump{display:flex;flex-wrap:wrap;gap:10px;margin:0 auto 15px;justify-content:center}
+    .ranking-jump a{padding:9px 13px;border:1px solid rgba(65,228,238,.30);border-radius:100px;color:#c9faff;font-size:12px;font-weight:750;text-decoration:none;background:rgba(19,86,103,.25)}
+    .ranking-jump a:hover{background:rgba(19,150,171,.27)}
+    @media(max-width:600px){.ranking-panel{padding:8px}.ranking-item{grid-template-columns:33px 37px minmax(0,1fr) auto;gap:8px;padding:13px 5px}.ranking-position{font-size:21px}.ranking-art{width:37px;height:37px;border-radius:10px}.ranking-art svg{width:20px;height:20px}.ranking-song{font-size:13px}.ranking-artist{font-size:11px}.ranking-genre{font-size:9px}.ranking-actions{gap:5px}.ranking-platform{height:34px;width:34px;border-radius:10px}.ranking-platform svg{width:18px;height:18px}}
     .ad-banner {display:flex;align-items:center;justify-content:space-between;gap:22px;background:linear-gradient(110deg,rgba(20,89,70,.64),rgba(19,70,117,.66));border:1px solid rgba(100,174,233,.22);border-radius:25px;padding:26px 30px;margin:5px 0 65px;}
     .ad-banner strong {font-size:20px;letter-spacing:-.55px;}
     .ad-banner p {color:#b8c5dc;line-height:1.65;font-size:13px;margin:9px 0 0;}
@@ -119,12 +182,19 @@
     @media (prefers-reduced-motion:reduce) {*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
   </style>
   <script src="./config.js"></script>
+  <script src="./top10.js"></script>
 </head>
 <body>
+<svg class="social-symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <symbol id="icon-ig" viewBox="0 0 24 24"><rect x="2.7" y="2.7" width="18.6" height="18.6" rx="5.3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.9" cy="6.2" r="1.15"/></symbol>
+  <symbol id="icon-fb" viewBox="0 0 24 24"><path d="M14.8 22v-9h3.15l.48-3.65H14.8V7.02c0-1.06.3-1.78 1.81-1.78h1.94V1.97A26.53 26.53 0 0 0 15.72 1c-2.81 0-4.73 1.72-4.73 4.88v3.47H7.8V13h3.19v9z"/></symbol>
+  <symbol id="icon-tt" viewBox="0 0 24 24"><path d="M16.77 1.3c.12 2.32 1.42 3.73 3.79 3.9v3.15a9.54 9.54 0 0 1-3.78-1.05v7.86a7 7 0 1 1-7.39-6.95v3.34a3.68 3.68 0 1 0 4.13 3.64V1.3z"/></symbol>
+  <symbol id="icon-yt" viewBox="0 0 24 24"><path d="M23.5 6.2a2.9 2.9 0 0 0-2.05-2.05C19.64 3.66 12 3.66 12 3.66s-7.64 0-9.45.49A2.9 2.9 0 0 0 .5 6.2 30.5 30.5 0 0 0 0 12a30.5 30.5 0 0 0 .5 5.8 2.9 2.9 0 0 0 2.05 2.05c1.81.49 9.45.49 9.45.49s7.64 0 9.45-.49a2.9 2.9 0 0 0 2.05-2.05A30.5 30.5 0 0 0 24 12a30.5 30.5 0 0 0-.5-5.8ZM9.6 15.57V8.43L15.84 12 9.6 15.57Z"/></symbol>
+</svg>
 <div class="backdrop" aria-hidden="true"></div>
 <header class="container nav">
   <a class="brand" href="#inicio" aria-label="Méndez TV Radio, inicio"><img src="./assets/logo.svg" alt=""><span class="brand-name">MÉNDEZ <span>TV</span><small class="brand-sub">RADIO ONLINE</small></span></a>
-  <nav class="nav-links" aria-label="Navegación principal"><a href="#programas">Programación</a><a href="#publicidad">Publicidad</a><button id="install-nav" class="nav-cta" type="button">＋ Instalar app</button></nav>
+  <nav class="nav-links" aria-label="Navegación principal"><a href="#programas">Programación</a><a href="#top10">Top Ecuador 🇪🇨</a><a href="#top10-internacional">Top Internacional 🌎</a><a href="#publicidad">Publicidad</a><a href="#redes">Redes</a><button id="install-nav" class="nav-cta" type="button">＋ Instalar app</button></nav>
 </header>
 <main>
 <section class="container hero" id="inicio">
@@ -144,11 +214,58 @@
    <div class="player-control"><button class="round" id="reconnect" type="button" title="Reconectar transmisión" aria-label="Reconectar transmisión"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 6.8M20 4v7h-7"/></svg></button><button class="play-big" id="play-button" type="button" aria-label="Reproducir radio" aria-pressed="false"><svg id="play-icon" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8Z"/></svg></button><button class="round" id="mute" type="button" title="Silenciar" aria-label="Silenciar audio"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></svg></button></div>
    <div class="volume"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></svg><input id="volume" type="range" min="0" max="100" value="80" aria-label="Volumen"><span id="volume-number">80%</span></div>
    <p class="status" id="status" role="status" aria-live="polite">Presiona PLAY para escuchar la transmisión.</p>
-   <div class="mini-links"><a id="facebook" href="#" target="_blank" rel="noopener noreferrer" hidden>Facebook ↗</a><a id="instagram" href="#" target="_blank" rel="noopener noreferrer" hidden>Instagram ↗</a><a id="youtube" href="#" target="_blank" rel="noopener noreferrer" hidden>YouTube ↗</a><a id="whatsapp" href="#" target="_blank" rel="noopener noreferrer" hidden>WhatsApp ↗</a><button id="share" type="button">↗ Compartir radio</button></div>
+   <div class="radio-social" aria-label="Redes sociales de Méndez TV">
+      <span class="radio-social-label">SÍGUENOS EN REDES</span>
+      <div class="social-icons"><a class="social-link instagram" data-social="instagram" href="https://www.instagram.com/mendeztvec/" target="_blank" rel="noopener noreferrer" aria-label="Seguir a Méndez TV en Instagram" title="Instagram de Méndez TV"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-ig"></use></svg></a>
+<a class="social-link facebook" data-social="facebook" href="https://www.facebook.com/mendeztvec" target="_blank" rel="noopener noreferrer" aria-label="Seguir a Méndez TV en Facebook" title="Facebook de Méndez TV"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-fb"></use></svg></a>
+<a class="social-link tiktok" data-social="tiktok" href="https://www.tiktok.com/@mendeztvec" target="_blank" rel="noopener noreferrer" aria-label="Seguir a Méndez TV en TikTok" title="TikTok de Méndez TV"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-tt"></use></svg></a>
+<a class="social-link youtube" data-social="youtube" href="https://www.youtube.com/@mendeztvoficial" target="_blank" rel="noopener noreferrer" aria-label="Seguir a Méndez TV en YouTube" title="YouTube de Méndez TV"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-yt"></use></svg></a></div>
+    </div>
+    <div class="card-utility-links"><a id="whatsapp" href="#" target="_blank" rel="noopener noreferrer" hidden>WhatsApp ↗</a><button id="share" type="button">↗ Compartir radio</button></div>
   </div></div>
 </section>
 <section class="container section" id="programas"><div class="section-title"><div><span class="overline">AL AIRE CONTIGO</span><h2>Espacios para disfrutar</h2></div><span class="section-hint">Programas y contenidos de Méndez TV</span></div><div class="shows" id="shows"></div></section>
+
+<div class="container ranking-jump" aria-label="Navegar por los rankings"><a href="#top10">🇪🇨 Top 10 ecuatoriano</a><a href="#top10-internacional">🌎 Top 10 internacional</a></div>
+<section class="container section" id="top10" aria-labelledby="top10-titulo">
+  <div class="ranking-head">
+    <div>
+      <span class="overline">EL TALENTO DE NUESTRA TIERRA</span>
+      <h2 id="top10-titulo">TOP <span class="ranking-bright">10</span> ECUATORIANO 🇪🇨</h2>
+      <p class="ranking-desc">10 canciones de artistas ecuatorianos · Escúchalas en YouTube o Spotify</p>
+    </div>
+    <span class="ranking-flag">♫ MÉNDEZ TV RADIO</span>
+  </div>
+  <div class="ranking-panel">
+    <div id="top10-list" role="list" aria-label="Top 10 de música ecuatoriana"></div>
+    <p class="ranking-footnote">Selección editorial de Méndez TV Radio · Octubre 2026. El orden no representa un ranking oficial de reproducciones. Los íconos abren YouTube o Spotify en otra pestaña.</p>
+  </div>
+</section>
+<section class="container section ranking-international" id="top10-internacional" aria-labelledby="top10-internacional-titulo">
+  <div class="ranking-head">
+    <div>
+      <span class="overline">LOS ÉXITOS QUE SUENAN EN NUESTRO PAÍS</span>
+      <h2 id="top10-internacional-titulo">TOP <span class="ranking-bright">10</span> INTERNACIONAL 🌎</h2>
+      <p class="ranking-desc">Las canciones internacionales con más reproducciones en Ecuador · Abre YouTube o Spotify desde los íconos.</p>
+      <span class="ranking-meta">Spotify Ecuador · Ranking diario del 22 de octubre de 2026</span>
+    </div>
+    <span class="ranking-flag">♫ LOS MÁS ESCUCHADOS</span>
+  </div>
+  <div class="ranking-panel">
+    <div id="top10-internacional-list" role="list" aria-label="Top 10 internacional más escuchado en Ecuador"></div>
+    <p class="ranking-footnote">Ranking basado en reproducciones del listado diario Spotify Ecuador del 22/10/2026, recopilado por Kworb. No es un ranking de votaciones de Méndez TV Radio y no se actualiza automáticamente. Algunos íconos de YouTube abren una búsqueda específica. <a href="https://kworb.net/spotify/country/ec_daily.html" target="_blank" rel="noopener noreferrer">Consultar fuente ↗</a></p>
+  </div>
+</section>
 <section class="container" id="publicidad"><div class="ad-banner"><div><strong>Tu marca también puede sonar aquí.</strong><p>Promociona tu negocio, evento o emprendimiento en Méndez TV Radio.<br>Consulta por espacios publicitarios y auspicios.</p></div><a class="primary" id="contact-ad" href="#" target="_blank" rel="noopener noreferrer">Consultar publicidad ↗</a></div></section>
+<section class="container social-section" id="redes" aria-labelledby="redes-titulo">
+  <div class="social-section-inner">
+    <div><span class="overline">SÍGUENOS Y CONECTA</span><h2 id="redes-titulo">Somos Méndez TV, <span style="color:var(--green)">síguenos</span></h2><p>Noticias, música, entrevistas y transmisiones desde Morona Santiago. Encuéntranos en nuestras redes oficiales.</p></div>
+    <nav class="social-icons" aria-label="Redes sociales oficiales de Méndez TV"><a class="social-link instagram" data-social="instagram" href="https://www.instagram.com/mendeztvec/" target="_blank" rel="noopener noreferrer" aria-label="Seguir a Méndez TV en Instagram" title="Instagram de Méndez TV"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-ig"></use></svg></a>
+<a class="social-link facebook" data-social="facebook" href="https://www.facebook.com/mendeztvec" target="_blank" rel="noopener noreferrer" aria-label="Seguir a Méndez TV en Facebook" title="Facebook de Méndez TV"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-fb"></use></svg></a>
+<a class="social-link tiktok" data-social="tiktok" href="https://www.tiktok.com/@mendeztvec" target="_blank" rel="noopener noreferrer" aria-label="Seguir a Méndez TV en TikTok" title="TikTok de Méndez TV"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-tt"></use></svg></a>
+<a class="social-link youtube" data-social="youtube" href="https://www.youtube.com/@mendeztvoficial" target="_blank" rel="noopener noreferrer" aria-label="Seguir a Méndez TV en YouTube" title="YouTube de Méndez TV"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-yt"></use></svg></a></nav>
+  </div>
+</section>
 </main>
 <footer><div class="container footer-row"><span><strong>MÉNDEZ TV RADIO</strong> · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo.</span></div></footer>
 <button class="install-floating" id="install-floating" type="button">＋ Instalar Méndez TV Radio</button>
@@ -207,12 +324,41 @@
  document.title=(conf.nombre||'Méndez TV Radio')+' | Escúchanos en vivo';
  $('year').textContent=new Date().getFullYear();
  const safeURL=(v)=>{try{const url=new URL(v);return ['https:','http:'].includes(url.protocol)?url.href:''}catch{return ''}};
- ['facebook','instagram','youtube'].forEach(key=>{const u=safeURL(conf[key]);if(u){$(key).href=u;$(key).hidden=false}});
+ ['facebook','instagram','tiktok','youtube'].forEach(key=>{const u=safeURL(conf[key]);if(u){document.querySelectorAll('[data-social=+key+]') .forEach(a=>a.href=u)}});
  const phone=String(conf.whatsapp||'').replace(/\D/g,'');
  if(phone){const url='https://wa.me/'+phone;const wa=$('whatsapp');wa.href=url;wa.hidden=false;$('contact-ad').href=url+'?text='+encodeURIComponent('Hola, deseo conocer los planes de publicidad en Méndez TV Radio.')}else{$('contact-ad').hidden=true}
  const shows=Array.isArray(conf.programas)?conf.programas:[];
  for(const prog of shows){const card=document.createElement('article');card.className='show';const head=document.createElement('div');head.className='show-top';const tag=document.createElement('span');tag.className='show-type';tag.textContent=prog.tipo||'PROGRAMA';const bubble=document.createElement('span');bubble.className='show-bubble';bubble.setAttribute('aria-hidden','true');bubble.textContent='♫';head.append(tag,bubble);const title=document.createElement('h3');title.textContent=prog.titulo||'Programa';const desc=document.createElement('p');desc.textContent=prog.detalle||'';card.append(head,title,desc);$('shows').append(card)}
  if(!shows.length){$('programas').hidden=true}
+
+ // Top 10: datos editables en top10.js; los enlaces se abren fuera de esta web.
+ const ranking=Array.isArray(window.MENDEZ_TOP10)?window.MENDEZ_TOP10:[];
+ const ytSVG='<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M23.5 6.2a2.9 2.9 0 0 0-2.05-2.05C19.64 3.66 12 3.66 12 3.66s-7.64 0-9.45.49A2.9 2.9 0 0 0 .5 6.2 30.5 30.5 0 0 0 0 12a30.5 30.5 0 0 0 .5 5.8 2.9 2.9 0 0 0 2.05 2.05c1.81.49 9.45.49 9.45.49s7.64 0 9.45-.49a2.9 2.9 0 0 0 2.05-2.05A30.5 30.5 0 0 0 24 12a30.5 30.5 0 0 0-.5-5.8ZM9.6 15.57V8.43L15.84 12 9.6 15.57Z"/></svg>';
+ const spSVG='<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .25a11.75 11.75 0 1 0 0 23.5 11.75 11.75 0 0 0 0-23.5Zm5.38 16.95a.75.75 0 0 1-1.03.25c-2.85-1.73-6.44-2.12-10.68-1.16a.75.75 0 0 1-.33-1.46c4.63-1.06 8.6-.61 11.8 1.35.75.75 0 0 1 .24 1.02Zm1.43-3.23a.93.93 0 0 1-1.28.3c-3.26-2-8.23-2.57-12.1-1.4a.93.93 0 0 1-.53-1.78c4.4-1.34 9.86-.7 13.6 1.59a.93.93 0 0 1 .31 1.29Zm.12-3.36c-3.92-2.33-10.39-2.54-14.13-1.4a1.12 1.12 0 1 1-.66-2.13c4.3-1.3 11.45-1.05 15.93 1.61a1.12 1.12 0 0 1-1.14 1.92Z"/></svg>';
+ const noteSVG='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13M9 7l12-2M9 18a3 3 0 1 1-3-3c1.7 0 3 1.3 3 3Zm12-2a3 3 0 1 1-3-3c1.7 0 3 1.3 3 3Z"/></svg>';
+ // Dos rankings con el mismo diseño y fuentes de datos separadas.
+ function renderRanking(listId, sectionId, ranking){
+   const list=$(listId);if(!list)return;
+   ranking.slice(0,10).forEach((song,i)=>{
+     const line=document.createElement('article');line.className='ranking-item';line.setAttribute('role','listitem');
+     const position=document.createElement('span');position.className='ranking-position';position.textContent=String(i+1).padStart(2,'0');
+     const cover=document.createElement('span');cover.className='ranking-art';cover.innerHTML=noteSVG;
+     const details=document.createElement('div');
+     const title=document.createElement('h3');title.className='ranking-song';title.textContent=song.cancion||'';
+     const artist=document.createElement('p');artist.className='ranking-artist';artist.textContent=song.artista||'';
+     const genre=document.createElement('p');genre.className='ranking-genre';genre.textContent=song.genero||'';
+     details.append(title,artist,genre);
+     const actions=document.createElement('div');actions.className='ranking-actions';
+     for(const [site,svg,cls] of [['YouTube',ytSVG,'youtube'],['Spotify',spSVG,'spotify']]){
+       const href=safeURL(song[cls]);if(!href)continue;
+       const a=document.createElement('a');a.className='ranking-platform '+cls;a.href=href;a.target='_blank';a.rel='noopener noreferrer';a.title='Escuchar «'+(song.cancion||'')+'» en '+site;a.setAttribute('aria-label',a.title);a.innerHTML=svg;actions.append(a);
+     }
+     line.append(position,cover,details,actions);list.append(line);
+   });
+   if(!ranking.length)$(sectionId).hidden=true;
+ }
+ renderRanking('top10-list','top10',Array.isArray(window.MENDEZ_TOP10)?window.MENDEZ_TOP10:[]);
+ renderRanking('top10-internacional-list','top10-internacional',Array.isArray(window.MENDEZ_TOP10_INTERNACIONAL)?window.MENDEZ_TOP10_INTERNACIONAL:[]);
  $('share').addEventListener('click',async()=>{const data={title:conf.nombre||'Méndez TV Radio',text:'Escucha Méndez TV Radio en vivo',url:location.href};try{if(navigator.share){await navigator.share(data)}else if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(location.href);setStatus('¡Enlace copiado! Compártelo con tus amigos.')}else{window.prompt('Copia este enlace:',location.href)}}catch(e){if(e?.name!=='AbortError')setStatus('No se pudo compartir. Copia el enlace de la barra del navegador.',true)}});
  const showDialog=msg=>{$('dialog-text').textContent=msg;$('dialog-mask').classList.add('open');$('dialog-close').focus()};
  $('dialog-close').addEventListener('click',()=>$('dialog-mask').classList.remove('open'));

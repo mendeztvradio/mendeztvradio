@@ -11,9 +11,11 @@ window.MENDEZ_RADIO_CONFIG = {
   // URL PÚBLICA DIRECTA DE REPRODUCCIÓN SONICPANEL (NO DE EMISIÓN):
   streaming: 'https://radiostreaming.pro/8462/stream',
   whatsapp: '593961180749', // WhatsApp conocido para información sobre auspicios; cámbialo si deseas.
-  facebook: '', // URL completa de la página de Facebook de Méndez TV.
-  instagram: '',
-  youtube: '', // URL completa del canal de YouTube.
+  // REDES SOCIALES OFICIALES DE MÉNDEZ TV — cambia estas URLs aquí cuando sea necesario.
+  facebook: 'https://www.facebook.com/mendeztvec',
+  instagram: 'https://www.instagram.com/mendeztvec/',
+  tiktok: 'https://www.tiktok.com/@mendeztvec',
+  youtube: 'https://www.youtube.com/@mendeztvoficial',
   correo: '',
   tituloEnVivo: 'Méndez TV Radio · En vivo',
   descripcion: 'Música, entrevistas, información y los mejores programas desde Morona Santiago.',

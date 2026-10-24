@@ -1,5 +1,5 @@
 /* Cachea solo la interfaz. Nunca cachea la señal de radio. */
-const VERSION='mendez-tv-radio-v7-redes-sociales';
+const VERSION='mendez-tv-radio-v8-top10-movil-20261024';
 const FILES=['./','./index.html','./config.js','./top10.js','./manifest.webmanifest','./assets/logo.svg','./assets/icon-192.png','./assets/icon-512.png','./assets/social-preview.png'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(VERSION).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==VERSION).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});

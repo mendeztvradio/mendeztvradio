@@ -1,5 +1,5 @@
 /*
- * RADIO MÉNDEZ — CONFIGURACIÓN v1.2.0
+ * RADIO MÉNDEZ — CONFIGURACIÓN v1.3.1
  * Edita SOLO los valores entre comillas y vuelve a subir este archivo a GitHub.
  * Versión SonicPanel: señal HTTPS pública con reproductor HTML5 personalizado.
  * Jamás coloques contraseñas de emisión o panel en estos archivos públicos.

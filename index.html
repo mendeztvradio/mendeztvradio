@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#061425">
-  <meta name="description" content="Escucha Méndez TV Radio en vivo desde Morona Santiago, Ecuador. Música, información y programación en línea.">
-  <meta property="og:title" content="Méndez TV Radio — En vivo">
-  <meta property="og:description" content="Música, información y programas desde el corazón de Morona Santiago.">
+  <meta name="theme-color" content="#051333">
+  <meta name="description" content="Radio Méndez — ¡La radio que te mueve! Escucha música, entrevistas y programación en vivo desde Morona Santiago. Una producción de Méndez TV.">
+  <meta property="og:title" content="Radio Méndez — ¡La radio que te mueve!">
+  <meta property="og:description" content="Radio Méndez. Música, noticias y entrevistas desde Morona Santiago. Una producción de Méndez TV.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="./assets/social-preview.png">
-  <link rel="icon" type="image/png" href="./assets/logo-v1.1.0.png">
-  <link rel="apple-touch-icon" href="./assets/icon-192-v1.1.0.png">
+  <meta property="og:image" content="./assets/social-preview-v1.2.0.png">
+  <link rel="icon" type="image/png" href="./assets/logo-radio-mendez-v1.2.0.png">
+  <link rel="apple-touch-icon" href="./assets/icon-192-v1.2.0.png">
   <link rel="manifest" href="./manifest.webmanifest">
-  <meta name="app-version" content="1.1.0">
-  <title>Méndez TV Radio | Escúchanos en vivo</title>
+  <meta name="app-version" content="1.2.0">
+  <title>Radio Méndez | ¡La radio que te mueve!</title>
   <style>
-    :root { color-scheme: dark; --bg:#061425; --surface:rgba(8,28,49,.88); --edge:rgba(68,235,166,.21); --txt:#f8faff; --muted:#adc2d4; --cyan:#28d8eb; --blue:#168dec; --pink:#67f7b0; --green:#51ff20; }
+    :root { color-scheme: dark; --bg:#030C23; --surface:rgba(8,28,73,.92); --edge:rgba(41,159,255,.31); --txt:#f8fbff; --muted:#b8cbe7; --cyan:#37c5ff; --blue:#196eff; --pink:#49a5ff; --green:#39baff; }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
     body { margin:0; min-height:100vh; background:var(--bg); color:var(--txt); font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; overflow-x:hidden; }
@@ -23,12 +23,12 @@
     button { cursor:pointer; }
     a { color:inherit; }
     button:focus-visible,a:focus-visible,input:focus-visible { outline:3px solid var(--cyan); outline-offset:3px; }
-    .backdrop { pointer-events:none; position:fixed; inset:0; z-index:-1; background: radial-gradient(ellipse 55% 48% at 88% 23%,rgba(20,160,223,.24),transparent 75%), radial-gradient(ellipse 54% 57% at 8% 54%,rgba(60,255,30,.15),transparent 77%),radial-gradient(ellipse 34% 43% at 54% 92%,rgba(17,120,221,.10),transparent 75%); }
-    .backdrop:after { content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(80,255,34,.23) 1.5px,transparent 2px);background-size:23px 23px;mask-image:linear-gradient(to bottom,transparent,#000 35%,transparent); }
+    .backdrop { pointer-events:none; position:fixed; inset:0; z-index:-1; background: radial-gradient(ellipse 55% 48% at 88% 23%,rgba(20,160,223,.24),transparent 75%), radial-gradient(ellipse 54% 57% at 8% 54%,rgba(0,123,255,.18),transparent 77%),radial-gradient(ellipse 34% 43% at 54% 92%,rgba(17,120,221,.10),transparent 75%); }
+    .backdrop:after { content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(36,145,255,.21) 1.5px,transparent 2px);background-size:23px 23px;mask-image:linear-gradient(to bottom,transparent,#000 35%,transparent); }
     .container { width:min(1180px,calc(100% - 42px)); margin:auto; }
     .nav {display:flex;align-items:center;justify-content:space-between;padding:24px 0;gap:18px;}
     .brand {display:flex;gap:13px;align-items:center;text-decoration:none;white-space:nowrap;}
-    .brand img {width:50px;height:50px;filter:drop-shadow(0 5px 15px rgba(74,255,25,.25));}
+    .brand img {width:50px;height:50px;filter:drop-shadow(0 5px 15px rgba(52,152,255,.25));}
     .brand-name {font-size:20px;letter-spacing:-.6px;font-weight:850;line-height:1.05;}
     .brand-name span {color:var(--cyan)}
     .brand-sub {display:block;color:var(--muted);font-size:10px;letter-spacing:2.9px;font-weight:800;margin-top:4px;}
@@ -38,7 +38,7 @@
     .nav-cta {background:rgba(255,255,255,.08);border:1px solid var(--edge);border-radius:999px;padding:12px 19px;color:#fff;font-weight:800;}
     .nav-cta:hover {background:rgba(255,255,255,.16)}
     .hero {display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:50px;padding:56px 0 75px;min-height:630px;}
-    .eyebrow {display:inline-flex;align-items:center;gap:9px;letter-spacing:2px;font-weight:850;font-size:11px;color:var(--green);border:1px solid rgba(80,255,32,.30);background:rgba(80,255,32,.09);padding:10px 14px;border-radius:999px;}
+    .eyebrow {display:inline-flex;align-items:center;gap:9px;letter-spacing:2px;font-weight:850;font-size:11px;color:var(--green);border:1px solid rgba(49,168,255,.45);background:rgba(35,127,255,.16);padding:10px 14px;border-radius:999px;}
     .dot {display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 14px var(--green);}
     .hero h1 {font-size:clamp(52px,6vw,84px);line-height:1.04;letter-spacing:-4.4px;margin:25px 0 17px;max-width:640px;}
     .hero h1 em {font-style:normal;background:linear-gradient(96deg,var(--green),#20daca 64%,var(--cyan));background-clip:text;-webkit-background-clip:text;color:transparent;}
@@ -46,22 +46,22 @@
     .location {display:flex;align-items:center;gap:8px;color:#a4b2ce;font-size:13px;margin-top:27px;}
     .location svg {width:17px;height:17px;stroke:var(--cyan);}
     .hero-actions {display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;}
-    .primary {display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(120deg,#51ff20,#20dda4);border:0;padding:15px 23px;border-radius:14px;color:#061224;font-weight:900;box-shadow:0 12px 32px rgba(65,219,246,.17);}
+    .primary {display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(120deg,#26BFFF,#1474FF);border:0;padding:15px 23px;border-radius:14px;color:#061224;font-weight:900;box-shadow:0 12px 32px rgba(37,141,255,.30);}
     .primary:hover {filter:brightness(1.1);}
     .secondary {display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--edge);background:rgba(255,255,255,.04);padding:15px 20px;border-radius:14px;color:#fff;text-decoration:none;font-weight:750;}
     .secondary:hover {background:rgba(255,255,255,.11);}
     .btn-icon {width:18px;height:18px;fill:currentColor;}
     .radio-wrap {position:relative;isolation:isolate;}
-    .radio-wrap:before {content:'';position:absolute;z-index:-1;inset:-35px;border:1px solid rgba(81,255,32,.14);border-radius:45px;transform:rotate(7deg);}
-    .radio-card {position:relative;overflow:hidden;border:1px solid rgba(81,255,32,.26);background:linear-gradient(160deg,rgba(13,48,62,.96),rgba(6,18,36,.97) 69%);box-shadow:0 30px 95px rgba(0,0,0,.36),inset 0 1px 0 rgba(255,255,255,.09);border-radius:32px;padding:27px 28px 25px;text-align:center;}
-    .radio-card:before {content:'';position:absolute;width:350px;height:350px;background:radial-gradient(circle,rgba(61,255,44,.16),transparent 67%);top:0;left:50%;transform:translateX(-50%);pointer-events:none;}
+    .radio-wrap:before {content:'';position:absolute;z-index:-1;inset:-35px;border:1px solid rgba(39,148,255,.20);border-radius:45px;transform:rotate(7deg);}
+    .radio-card {position:relative;overflow:hidden;border:1px solid rgba(39,148,255,.36);background:linear-gradient(160deg,rgba(12,42,118,.95),rgba(4,12,45,.98) 69%);box-shadow:0 30px 95px rgba(0,0,0,.36),inset 0 1px 0 rgba(255,255,255,.09);border-radius:32px;padding:27px 28px 25px;text-align:center;}
+    .radio-card:before {content:'';position:absolute;width:350px;height:350px;background:radial-gradient(circle,rgba(36,134,255,.25),transparent 67%);top:0;left:50%;transform:translateX(-50%);pointer-events:none;}
     .card-head {display:flex;align-items:center;justify-content:space-between;position:relative;}
     .card-head small {color:#d6dcef;letter-spacing:1.5px;font-size:10px;font-weight:800;}
-    .live-pill {font-size:10px;font-weight:900;letter-spacing:.8px;padding:8px 12px;background:#51ff20;color:#061425;border-radius:100px;display:inline-flex;gap:7px;align-items:center;}
+    .live-pill {font-size:10px;font-weight:900;letter-spacing:.8px;padding:8px 12px;background:#26BFFF;color:#061425;border-radius:100px;display:inline-flex;gap:7px;align-items:center;}
     .live-pill .dot {background:#061425;width:6px;height:6px;box-shadow:none;}
     .vinyl {width:min(270px,73%);aspect-ratio:1;border-radius:50%;margin:35px auto 23px;display:grid;place-items:center;position:relative;background:repeating-radial-gradient(circle,rgba(225,233,255,.07) 0px,rgba(225,233,255,.07) 1px,transparent 2px,transparent 6px),conic-gradient(from 30deg,#131a39,#293658,#12162b,#262f58,#10152c);box-shadow:0 12px 30px rgba(0,0,0,.5),0 0 0 7px rgba(255,255,255,.03);animation:spin 14s linear infinite;animation-play-state:paused;}
     .vinyl.is-playing {animation-play-state:running;}
-    .vinyl img {width:52%;height:52%;background:#07111f;border:6px solid #1a533e;border-radius:50%;object-fit:contain;padding:8px;box-shadow:0 0 40px rgba(62,197,255,.25);}
+    .vinyl img {width:52%;height:52%;background:#07111f;border:6px solid #1B73C4;border-radius:50%;object-fit:contain;padding:8px;box-shadow:0 0 40px rgba(62,197,255,.25);}
     @keyframes spin {to {transform:rotate(360deg)}}
     .track-title {position:relative;font-size:23px;font-weight:900;letter-spacing:-.7px;margin:0 0 5px;}
     .track-sub {position:relative;font-size:12px;color:var(--muted);margin:0;}
@@ -73,7 +73,7 @@
     .player-control {position:relative;display:flex;align-items:center;justify-content:center;gap:20px;}
     .round {display:grid;place-items:center;background:rgba(255,255,255,.07);color:#fff;border:1px solid rgba(255,255,255,.10);width:43px;height:43px;border-radius:50%;}
     .round:hover {background:rgba(255,255,255,.16)}
-    .play-big {display:grid;place-items:center;width:70px;height:70px;border:0;border-radius:50%;color:#081225;background:linear-gradient(140deg,var(--green),#20dda4);box-shadow:0 8px 34px rgba(81,255,32,.30);transition:transform .2s;}
+    .play-big {display:grid;place-items:center;width:70px;height:70px;border:0;border-radius:50%;color:#081225;background:linear-gradient(140deg,var(--green),#1474FF);box-shadow:0 8px 34px rgba(24,123,255,.32);transition:transform .2s;}
     .play-big:hover {transform:scale(1.07)}
     .play-big:disabled {opacity:.55;cursor:wait}
     .play-big svg {width:28px;height:28px;fill:currentColor;}
@@ -91,10 +91,10 @@
 
     /* REDES SOCIALES OFICIALES — iconos SVG integrados, sin dependencias externas */
     .social-symbols{position:absolute;width:0;height:0;overflow:hidden;pointer-events:none}
-    .radio-social{position:relative;margin:15px auto 0;padding-top:17px;border-top:1px solid rgba(67,255,149,.14)}
+    .radio-social{position:relative;margin:15px auto 0;padding-top:17px;border-top:1px solid rgba(35,142,255,.20)}
     .radio-social-label{display:block;color:#b6d2d8;font-weight:850;font-size:10px;letter-spacing:2.3px;margin-bottom:11px}
     .social-icons{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:11px}
-    .social-link{width:45px;height:45px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;color:#ebf7ff;background:rgba(19,60,76,.65);border:1px solid rgba(80,248,196,.26);border-radius:14px;text-decoration:none;transition:transform .18s ease,background .18s ease,border-color .18s ease,box-shadow .18s ease}
+    .social-link{width:45px;height:45px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;color:#ebf7ff;background:rgba(16,48,112,.70);border:1px solid rgba(45,155,255,.30);border-radius:14px;text-decoration:none;transition:transform .18s ease,background .18s ease,border-color .18s ease,box-shadow .18s ease}
     .social-link:hover{transform:translateY(-3px);border-color:var(--social-brand);background:rgba(255,255,255,.09);box-shadow:0 8px 24px rgba(0,0,0,.2),0 0 20px color-mix(in srgb,var(--social-brand) 25%,transparent)}
     .social-link svg{width:22px;height:22px;display:block;fill:currentColor}
     .social-link.instagram{--social-brand:#fa49b0;color:#ff70bd}
@@ -105,12 +105,12 @@
     .card-utility-links a,.card-utility-links button{border:1px solid var(--edge);background:rgba(255,255,255,.045);color:#dbe3f2;padding:9px 13px;font-size:11px;font-weight:750;border-radius:100px;text-decoration:none}
     .card-utility-links a:hover,.card-utility-links button:hover{background:rgba(255,255,255,.12)}
     .social-section{padding:0 0 70px}
-    .social-section-inner{position:relative;isolation:isolate;overflow:hidden;display:flex;justify-content:space-between;align-items:center;gap:26px;flex-wrap:wrap;padding:32px 38px;border:1px solid rgba(81,255,32,.28);border-radius:25px;background:linear-gradient(108deg,rgba(6,36,49,.94),rgba(6,26,50,.95));box-shadow:0 20px 50px rgba(0,0,0,.15)}
+    .social-section-inner{position:relative;isolation:isolate;overflow:hidden;display:flex;justify-content:space-between;align-items:center;gap:26px;flex-wrap:wrap;padding:32px 38px;border:1px solid rgba(40,148,255,.35);border-radius:25px;background:linear-gradient(108deg,rgba(6,29,85,.95),rgba(5,20,64,.97));box-shadow:0 20px 50px rgba(0,0,0,.15)}
     .social-section-inner:after{content:'';pointer-events:none;position:absolute;z-index:-1;width:310px;height:310px;right:-35px;top:-120px;border-radius:50%;background:radial-gradient(circle,rgba(42,223,225,.15),transparent 65%)}
     .social-section .overline{display:block;margin-bottom:8px;color:var(--green)}
     .social-section h2{font-size:clamp(27px,3.4vw,35px);margin:0 0 8px;letter-spacing:-1.2px}
     .social-section p{font-size:13px;color:var(--muted);line-height:1.6;margin:0;max-width:520px}
-    .social-section .social-link{width:58px;height:58px;border-radius:18px;background:rgba(15,53,70,.9)}
+    .social-section .social-link{width:58px;height:58px;border-radius:18px;background:rgba(13,47,116,.92)}
     .social-section .social-link svg{width:28px;height:28px}
     @media(max-width:650px){.social-section{padding-bottom:42px}.social-section-inner{padding:26px 21px;justify-content:center;text-align:center}.social-section .social-icons{gap:12px}.social-section .social-link{width:53px;height:53px}}
 
@@ -133,49 +133,49 @@
     .ranking-head h2{margin:6px 0 0;font-size:clamp(30px,4.4vw,43px);letter-spacing:-1.4px;line-height:1.04;text-transform:uppercase}
     .ranking-head h2 .ranking-bright{color:var(--green)}
     .ranking-desc{margin:10px 0 0;color:#a9c4d6;font-size:13px;line-height:1.55}
-    .ranking-flag{display:inline-flex;gap:9px;align-items:center;color:#051527;background:linear-gradient(90deg,#58fe28,#36eec1);border-radius:99px;padding:10px 15px;font-size:11px;font-weight:950;letter-spacing:.9px}
-    .ranking-panel{position:relative;border:1px solid rgba(70,255,31,.27);background:linear-gradient(145deg,rgba(7,34,48,.92),rgba(4,18,31,.96));border-radius:27px;padding:15px 19px;overflow:hidden;box-shadow:0 24px 65px rgba(0,0,0,.15)}
-    .ranking-panel:before{content:'';position:absolute;top:-145px;right:-120px;height:320px;width:320px;border:1px solid rgba(74,255,25,.1);border-radius:50%;pointer-events:none;box-shadow:0 0 0 24px rgba(52,240,95,.02),0 0 0 55px rgba(47,229,178,.02)}
+    .ranking-flag{display:inline-flex;gap:9px;align-items:center;color:#051527;background:linear-gradient(90deg,#37C5FF,#1474FF);border-radius:99px;padding:10px 15px;font-size:11px;font-weight:950;letter-spacing:.9px}
+    .ranking-panel{position:relative;border:1px solid rgba(34,138,255,.36);background:linear-gradient(145deg,rgba(7,28,75,.94),rgba(3,14,45,.98));border-radius:27px;padding:15px 19px;overflow:hidden;box-shadow:0 24px 65px rgba(0,0,0,.15)}
+    .ranking-panel:before{content:'';position:absolute;top:-145px;right:-120px;height:320px;width:320px;border:1px solid rgba(74,155,255,.15);border-radius:50%;pointer-events:none;box-shadow:0 0 0 24px rgba(35,113,255,.04),0 0 0 55px rgba(41,152,255,.04)}
     .ranking-item{position:relative;display:grid;grid-template-columns:57px 52px minmax(0,1fr) auto;align-items:center;gap:18px;padding:13px 8px;border-bottom:1px solid rgba(255,255,255,.09)}
     .ranking-item:last-child{border-bottom:0}
     .ranking-position{font-size:29px;font-weight:950;letter-spacing:-1.6px;color:#94abc0;text-align:center;font-variant-numeric:tabular-nums}
-    .ranking-item:nth-child(-n+3) .ranking-position{color:var(--green);text-shadow:0 0 18px rgba(70,255,19,.25)}
-    .ranking-art{height:52px;width:52px;display:grid;place-items:center;color:#63ff39;border:1px solid rgba(70,255,31,.24);background:radial-gradient(circle at 30% 10%,rgba(65,255,34,.19),transparent 70%),linear-gradient(135deg,#0a3144,#071629);border-radius:13px}
+    .ranking-item:nth-child(-n+3) .ranking-position{color:var(--green);text-shadow:0 0 18px rgba(49,172,255,.27)}
+    .ranking-art{height:52px;width:52px;display:grid;place-items:center;color:#5AC8FF;border:1px solid rgba(48,164,255,.35);background:radial-gradient(circle at 30% 10%,rgba(44,139,255,.25),transparent 70%),linear-gradient(135deg,#0B275E,#061434);border-radius:13px}
     .ranking-art svg{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
     .ranking-song{font-weight:850;letter-spacing:-.3px;font-size:16px;line-height:1.3;margin:0}
     .ranking-artist{color:#b2c5d6;font-size:12px;margin:4px 0 0;line-height:1.5}
-    .ranking-genre{font-size:10px;color:#4eff3d;text-transform:uppercase;font-weight:800;letter-spacing:1px;margin:4px 0 0}
+    .ranking-genre{font-size:10px;color:#66C9FF;text-transform:uppercase;font-weight:800;letter-spacing:1px;margin:4px 0 0}
     .ranking-actions{display:flex;align-items:center;gap:10px}
     .ranking-platform{height:43px;width:43px;display:grid;place-items:center;border-radius:13px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.13);transition:background .2s,transform .2s}
-    .ranking-platform:hover{background:rgba(82,255,46,.14);transform:translateY(-2px)}
+    .ranking-platform:hover{background:rgba(50,142,255,.18);transform:translateY(-2px)}
     .ranking-platform svg{width:22px;height:22px;display:block}
     .ranking-platform.spotify{color:#1ed760}
     .ranking-platform.youtube{color:#ff404b}
     .ranking-footnote{font-size:11px;line-height:1.6;color:#9bb7cc;margin:16px 8px 2px}
     .ranking-international .ranking-head h2 .ranking-bright{color:var(--cyan)}
-    .ranking-international .ranking-flag{background:linear-gradient(95deg,#39e5ee,#7cfc65)}
+    .ranking-international .ranking-flag{background:linear-gradient(95deg,#34B9FF,#2573FF)}
     .ranking-international .ranking-panel{border-color:rgba(43,215,237,.33)}
     .ranking-international .ranking-item:nth-child(-n+3) .ranking-position{color:var(--cyan);text-shadow:0 0 19px rgba(43,215,237,.28)}
     .ranking-international .ranking-genre{color:#65daf3}
-    .ranking-international .ranking-art{border-color:rgba(43,215,237,.32);color:#6cdff7;background:radial-gradient(circle at 30% 10%,rgba(40,185,255,.15),transparent 70%),linear-gradient(135deg,#0a3144,#071629)}
+    .ranking-international .ranking-art{border-color:rgba(43,215,237,.32);color:#6cdff7;background:radial-gradient(circle at 30% 10%,rgba(40,185,255,.15),transparent 70%),linear-gradient(135deg,#0B275E,#061434)}
     .ranking-meta{font-size:11px;font-weight:750;color:#94c7d7;display:inline-flex;align-items:center;gap:8px;margin-top:10px}
     .ranking-meta:before{content:'';width:7px;height:7px;background:var(--cyan);border-radius:100%;box-shadow:0 0 10px var(--cyan)}
     .ranking-jump{display:flex;flex-wrap:wrap;gap:10px;margin:0 auto 15px;justify-content:center}
-    .ranking-jump a{padding:9px 13px;border:1px solid rgba(65,228,238,.30);border-radius:100px;color:#c9faff;font-size:12px;font-weight:750;text-decoration:none;background:rgba(19,86,103,.25)}
-    .ranking-jump a:hover{background:rgba(19,150,171,.27)}
+    .ranking-jump a{padding:9px 13px;border:1px solid rgba(65,228,238,.30);border-radius:100px;color:#c9faff;font-size:12px;font-weight:750;text-decoration:none;background:rgba(16,67,163,.28)}
+    .ranking-jump a:hover{background:rgba(15,105,227,.27)}
     @media(max-width:600px){.ranking-panel{padding:8px}.ranking-item{grid-template-columns:33px 37px minmax(0,1fr) auto;gap:8px;padding:13px 5px}.ranking-position{font-size:21px}.ranking-art{width:37px;height:37px;border-radius:10px}.ranking-art svg{width:20px;height:20px}.ranking-song{font-size:13px}.ranking-artist{font-size:11px}.ranking-genre{font-size:9px}.ranking-actions{gap:5px}.ranking-platform{height:34px;width:34px;border-radius:10px}.ranking-platform svg{width:18px;height:18px}}
-    .ad-banner {display:flex;align-items:center;justify-content:space-between;gap:22px;background:linear-gradient(110deg,rgba(20,89,70,.64),rgba(19,70,117,.66));border:1px solid rgba(100,174,233,.22);border-radius:25px;padding:26px 30px;margin:5px 0 65px;}
+    .ad-banner {display:flex;align-items:center;justify-content:space-between;gap:22px;background:linear-gradient(110deg,rgba(15,57,143,.72),rgba(15,46,125,.80));border:1px solid rgba(100,174,233,.22);border-radius:25px;padding:26px 30px;margin:5px 0 65px;}
     .ad-banner strong {font-size:20px;letter-spacing:-.55px;}
     .ad-banner p {color:#b8c5dc;line-height:1.65;font-size:13px;margin:9px 0 0;}
     .ad-banner a {white-space:nowrap;}
     footer {border-top:1px solid var(--edge);padding:25px 0 35px;color:var(--muted);font-size:12px;}
     .footer-row {display:flex;gap:18px;justify-content:space-between;flex-wrap:wrap;align-items:center;}
     .footer-row strong {color:#e9eeff}
-    .install-floating {position:fixed;z-index:20;right:18px;bottom:18px;display:none;align-items:center;gap:8px;padding:13px 17px;background:linear-gradient(125deg,#51ff20,#2adba7);color:#061020;border:0;border-radius:100px;font-size:12px;font-weight:900;box-shadow:0 10px 40px rgba(0,0,0,.45);}
+    .install-floating {position:fixed;z-index:20;right:18px;bottom:18px;display:none;align-items:center;gap:8px;padding:13px 17px;background:linear-gradient(125deg,#26BFFF,#2adba7);color:#061020;border:0;border-radius:100px;font-size:12px;font-weight:900;box-shadow:0 10px 40px rgba(0,0,0,.45);}
     .install-floating.is-visible {display:flex;}
     .dialog-mask {display:none;position:fixed;z-index:50;inset:0;background:rgba(3,6,14,.82);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:18px;}
     .dialog-mask.open {display:flex;}
-    .dialog {background:#0b243a;border:1px solid var(--edge);border-radius:22px;padding:27px;max-width:405px;line-height:1.7;box-shadow:0 20px 80px rgba(0,0,0,.35)}
+    .dialog {background:#081C48;border:1px solid var(--edge);border-radius:22px;padding:27px;max-width:405px;line-height:1.7;box-shadow:0 20px 80px rgba(0,0,0,.35)}
     .dialog h2 {margin:0 0 8px}.dialog p {color:#bbc7de;margin-bottom:23px;font-size:14px}.dialog button {width:100%}
     [hidden] {display:none!important;}
     @media (max-width:900px) {.hero{grid-template-columns:1fr 1fr;gap:30px;min-height:560px;padding-top:35px}.hero h1 {font-size:clamp(45px,6vw,70px)}.radio-card{padding:23px 17px}.nav-links{gap:12px}}
@@ -185,9 +185,43 @@
     .ranking-song,.ranking-artist{overflow-wrap:anywhere}
     @media(max-width:380px){.ranking-item{grid-template-columns:29px 30px minmax(0,1fr) auto;gap:5px}.ranking-art{width:30px;height:30px}.ranking-actions{gap:4px}.ranking-platform{height:30px;width:30px}.ranking-platform svg{width:16px;height:16px}}
     @media (prefers-reduced-motion:reduce) {*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
-  </style>
+  
+    /* RADIO MÉNDEZ — IDENTIDAD VISUAL OFICIAL 2026 / versión 1.2.0 */
+    body{background:#030C23;background-image:linear-gradient(135deg,#030A20 0%,#061B4C 54%,#03102F 100%)}
+    .backdrop{background:radial-gradient(ellipse 58% 60% at 91% 14%,rgba(8,115,242,.28),transparent 75%),radial-gradient(ellipse 58% 55% at 5% 55%,rgba(0,185,255,.10),transparent 75%),radial-gradient(ellipse 45% 40% at 53% 90%,rgba(16,64,191,.19),transparent 78%)}
+    .backdrop:after{background-image:radial-gradient(rgba(27,144,255,.27) 1.5px,transparent 2px)}
+    .brand{gap:12px}.brand img{border-radius:12px;filter:drop-shadow(0 4px 14px rgba(46,145,255,.38))}
+    .brand-name{font-size:20px;letter-spacing:-.5px;color:white}.brand-name span{color:#55CCFF}
+    .brand-sub{letter-spacing:.45px;font-size:10px;color:#B7D9FF;font-weight:700}
+    .eyebrow{color:#B0E9FF;border-color:rgba(56,168,255,.34);background:rgba(22,95,213,.23)}
+    .dot{background:#37C5FF;box-shadow:0 0 13px #37C5FF}
+    .hero{padding-top:50px}.hero h1{font-size:clamp(47px,6vw,79px)}
+    .hero h1 em{background:linear-gradient(95deg,#FFFFFF 5%,#5BCBFF 40%,#1474FF 100%);background-clip:text;-webkit-background-clip:text;color:transparent}
+    .hero-slogan{font-size:clamp(18px,2vw,26px);margin:0 0 14px;font-weight:850;line-height:1.25;color:#E5F7FF;letter-spacing:-.45px}
+    .producer-credit{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:#9FCFFF;font-weight:750;margin:13px 0 0}
+    .producer-credit:before{content:'';display:block;width:19px;height:3px;background:#37C5FF;border-radius:50px}
+    .primary,.play-big,.install-floating{background:linear-gradient(115deg,#25C6FF,#1474FF);color:#fff;box-shadow:0 12px 35px rgba(16,118,255,.35)}
+    .primary:hover,.play-big:hover{filter:brightness(1.10)}
+    .radio-wrap:before{border-color:rgba(32,129,255,.28)}
+    .radio-card{border-color:rgba(64,165,255,.39);background:linear-gradient(150deg,rgba(12,45,122,.98),rgba(4,15,48,.98) 70%)}
+    .radio-card:before{background:radial-gradient(circle,rgba(14,140,255,.22),transparent 68%)}
+    .live-pill{background:#1A81ED;color:#fff}.live-pill .dot{background:#fff}
+    .vinyl img{border-color:#167ED7}
+    .radio-social{border-top-color:rgba(74,161,255,.26)}
+    .social-section-inner{background:linear-gradient(110deg,rgba(7,42,117,.94),rgba(5,19,60,.96));border-color:rgba(52,147,255,.39)}
+    .ranking-head h2 .ranking-bright,.ranking-genre{color:#39BAFF}
+    .ranking-flag{background:linear-gradient(95deg,#23BAFF,#246CFF);color:#fff}
+    .ranking-panel{background:linear-gradient(155deg,rgba(9,34,95,.96),rgba(3,14,48,.98));border-color:rgba(50,143,255,.35)}
+    .ranking-item:nth-child(-n+3) .ranking-position{color:#5CCBFF;text-shadow:0 0 15px rgba(43,167,255,.25)}
+    .ranking-art{background:radial-gradient(circle at 30% 10%,rgba(39,161,255,.25),transparent 70%),linear-gradient(135deg,#102E7C,#061334);border-color:rgba(53,150,255,.35);color:#57CFFF}
+    .ranking-jump a{color:#CBEAFF;background:rgba(22,69,163,.30);border-color:rgba(63,155,255,.34)}
+    .ad-banner{background:linear-gradient(110deg,#0F338E,#092459);border-color:rgba(53,156,255,.30)}
+    .show{background:rgba(11,33,87,.76)}.show:hover{background:rgba(15,50,117,.89)}
+    .version-label{color:#78C9FF;font-weight:850}
+    @media(max-width:740px){.brand-name{font-size:17px}.brand-sub{font-size:9px;letter-spacing:.1px}.hero h1{font-size:clamp(46px,12vw,70px)}.hero{padding-top:28px}.hero-slogan{font-size:21px}}
+</style>
   <script src="./config.js"></script>
-  <script src="./top10.js?v=1.1.0"></script>
+  <script src="./top10.js?v=1.2.0"></script>
   <!-- Respaldo local para iPad/iPhone cuando top10.js no esté disponible o se sirva desde un caché incompleto. -->
   <script>
   if (!Array.isArray(window.MENDEZ_TOP10) || !window.MENDEZ_TOP10.length) window.MENDEZ_TOP10 = [{"cancion":"Vitamina","artista":"Jombriel, DFZM y Jøtta","youtube":"https://www.youtube.com/watch?v=l0H-YaOaIIY","spotify":"https://open.spotify.com/track/0DMJz677XfXiiruhIELu2e","genero":"Urbano"},{"cancion":"Parte & Choke","artista":"Jombriel, Alex Krack y Jøtta","youtube":"https://www.youtube.com/results?search_query=Jombriel+Alex+Krack+Parte+y+Choke+original","spotify":"https://open.spotify.com/track/0STW8nw4lNN4TEQ8KmNer6","genero":"Urbano"},{"cancion":"Plan","artista":"Alex Ponce","youtube":"https://www.youtube.com/watch?v=NuGFGvX4wAQ","spotify":"https://open.spotify.com/track/1udeZVMClO0LEIgwgnueOx","genero":"Pop"},{"cancion":"El Karma","artista":"Dayanara","youtube":"https://www.youtube.com/watch?v=vjnb6QXP4ww","spotify":"https://open.spotify.com/track/6mKQ6QdpAMc7cFrMVCqexx","genero":"Popular"},{"cancion":"Si Fuera Yo","artista":"Mar Rendón y Master Chris","youtube":"https://www.youtube.com/watch?v=7Oj68953ZVk","spotify":"https://open.spotify.com/track/1DWCbhkSpISvnYpbPEhTS1","genero":"Pop rock"},{"cancion":"Chao Lola","artista":"Juan Fernando Velasco","youtube":"https://www.youtube.com/results?search_query=Juan+Fernando+Velasco+Chao+Lola+oficial","spotify":"https://open.spotify.com/track/5smsfK6A86avtmqG3phfnU","genero":"Pop"},{"cancion":"Morí","artista":"Tranzas","youtube":"https://www.youtube.com/watch?v=RlboJ8Sl90U","spotify":"https://open.spotify.com/track/0FXE0aS5IZnQYR56Vwiv4v","genero":"Balada"},{"cancion":"En la inmensidad","artista":"Verde 70","youtube":"https://www.youtube.com/results?search_query=Verde+70+En+la+Inmensidad+oficial","spotify":"https://open.spotify.com/track/1Bkbx2oFfViKwFE80PCBCW","genero":"Rock"},{"cancion":"Nuestro juramento","artista":"Julio Jaramillo","youtube":"https://www.youtube.com/watch?v=N0X0a8resSU","spotify":"https://open.spotify.com/track/2EyQocj24oihpKjgDj5cg9","genero":"Bolero"},{"cancion":"Vagabundo, borracho y loco","artista":"Segundo Rosero","youtube":"https://www.youtube.com/results?search_query=Segundo+Rosero+Vagabundo+Borracho+y+Loco+oficial","spotify":"https://open.spotify.com/track/0cfqREsJGNzPLrQbs50Dv3","genero":"Rockola"}];
@@ -203,21 +237,23 @@
 </svg>
 <div class="backdrop" aria-hidden="true"></div>
 <header class="container nav">
-  <a class="brand" href="#inicio" aria-label="Méndez TV Radio, inicio"><img src="./assets/logo-v1.1.0.png" alt=""><span class="brand-name">MÉNDEZ <span>TV</span><small class="brand-sub">RADIO ONLINE</small></span></a>
+  <a class="brand" href="#inicio" aria-label="Radio Méndez, inicio"><img src="./assets/logo-radio-mendez-v1.2.0.png" alt=""><span class="brand-name">RADIO <span>MÉNDEZ</span><small class="brand-sub">Una producción de Méndez TV</small></span></a>
   <nav class="nav-links" aria-label="Navegación principal"><a href="#programas">Programación</a><a href="#top10">Top Ecuador 🇪🇨</a><a href="#top10-internacional">Top Internacional 🌎</a><a href="#publicidad">Publicidad</a><a href="#redes">Redes</a><button id="install-nav" class="nav-cta" type="button">＋ Instalar app</button></nav>
 </header>
 <main>
 <section class="container hero" id="inicio">
  <div>
-   <span class="eyebrow"><span class="dot"></span> TU RADIO DIGITAL</span>
-   <h1>La radio que <em>nos conecta.</em></h1>
+   <span class="eyebrow"><span class="dot"></span> RADIO ONLINE · MORONA SANTIAGO</span>
+   <h1>RADIO <em>MÉNDEZ</em></h1>
+   <p class="hero-slogan">¡La radio que te mueve!</p>
    <p class="lead" id="descripcion">Música, entrevistas, información y los mejores programas desde Morona Santiago.</p>
    <div class="location"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1116 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span id="ubicacion">Méndez · Morona Santiago · Ecuador</span></div>
+   <p class="producer-credit">Una producción de Méndez TV</p>
    <div class="hero-actions"><button class="primary" id="hero-play" type="button"><svg class="btn-icon" viewBox="0 0 24 24"><path d="m8 5 12 7-12 7z"/></svg><span>Escuchar en vivo</span></button><a class="secondary" href="#programas">Ver programación ↗</a></div>
  </div>
  <div class="radio-wrap"><div class="radio-card">
-   <div class="card-head"><small>MÉNDEZ TV RADIO</small><span class="live-pill"><i class="dot"></i> EN VIVO</span></div>
-   <div class="vinyl" id="vinyl"><img src="./assets/logo-v1.1.0.png" alt="Logotipo de Méndez TV Radio"></div>
+   <div class="card-head"><small>RADIO MÉNDEZ · EN LÍNEA</small><span class="live-pill"><i class="dot"></i> EN VIVO</span></div>
+   <div class="vinyl" id="vinyl"><img src="./assets/logo-radio-mendez-v1.2.0.png" alt="Logotipo de Méndez TV, productora de Radio Méndez"></div>
    <h2 class="track-title" id="live-title">Radio online · En directo</h2>
    <p class="track-sub">Escúchanos desde cualquier lugar del mundo</p>
    <div class="equalizer" id="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
@@ -244,7 +280,7 @@
       <h2 id="top10-titulo">TOP <span class="ranking-bright">10</span> ECUATORIANO 🇪🇨</h2>
       <p class="ranking-desc">10 canciones de artistas ecuatorianos · Escúchalas en YouTube o Spotify</p>
     </div>
-    <span class="ranking-flag">♫ MÉNDEZ TV RADIO</span>
+    <span class="ranking-flag">♫ RADIO MÉNDEZ</span>
   </div>
   <div class="ranking-panel">
     <div id="top10-list" role="list" aria-label="Top 10 de música ecuatoriana">
@@ -259,7 +295,7 @@
       <article class="ranking-item" role="listitem"><span class="ranking-position">09</span><span class="ranking-art" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13M9 7l12-2M9 18a3 3 0 1 1-3-3c1.7 0 3 1.3 3 3Zm12-2a3 3 0 1 1-3-3c1.7 0 3 1.3 3 3Z"/></svg></span><div class="ranking-details"><h3 class="ranking-song">Nuestro juramento</h3><p class="ranking-artist">Julio Jaramillo</p><p class="ranking-genre">Bolero</p></div><div class="ranking-actions"><a class="ranking-platform youtube" href="https://www.youtube.com/watch?v=N0X0a8resSU" target="_blank" rel="noopener noreferrer" title="Escuchar Nuestro juramento en Youtube" aria-label="Escuchar Nuestro juramento en Youtube"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M23.5 6.2a2.9 2.9 0 0 0-2.05-2.05C19.64 3.66 12 3.66 12 3.66s-7.64 0-9.45.49A2.9 2.9 0 0 0 .5 6.2 30.5 30.5 0 0 0 0 12a30.5 30.5 0 0 0 .5 5.8 2.9 2.9 0 0 0 2.05 2.05c1.81.49 9.45.49 9.45.49s7.64 0 9.45-.49a2.9 2.9 0 0 0 2.05-2.05A30.5 30.5 0 0 0 24 12a30.5 30.5 0 0 0-.5-5.8ZM9.6 15.57V8.43L15.84 12 9.6 15.57Z"/></svg></a><a class="ranking-platform spotify" href="https://open.spotify.com/track/2EyQocj24oihpKjgDj5cg9" target="_blank" rel="noopener noreferrer" title="Escuchar Nuestro juramento en Spotify" aria-label="Escuchar Nuestro juramento en Spotify"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .25a11.75 11.75 0 1 0 0 23.5 11.75 11.75 0 0 0 0-23.5Zm5.38 16.95a.75.75 0 0 1-1.03.25c-2.85-1.73-6.44-2.12-10.68-1.16a.75.75 0 0 1-.33-1.46c4.63-1.06 8.6-.61 11.8 1.35.75.75 0 0 1 .24 1.02Zm1.43-3.23a.93.93 0 0 1-1.28.3c-3.26-2-8.23-2.57-12.1-1.4a.93.93 0 0 1-.53-1.78c4.4-1.34 9.86-.7 13.6 1.59a.93.93 0 0 1 .31 1.29Zm.12-3.36c-3.92-2.33-10.39-2.54-14.13-1.4a1.12 1.12 0 1 1-.66-2.13c4.3-1.3 11.45-1.05 15.93 1.61a1.12 1.12 0 0 1-1.14 1.92Z"/></svg></a></div></article>
       <article class="ranking-item" role="listitem"><span class="ranking-position">10</span><span class="ranking-art" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13M9 7l12-2M9 18a3 3 0 1 1-3-3c1.7 0 3 1.3 3 3Zm12-2a3 3 0 1 1-3-3c1.7 0 3 1.3 3 3Z"/></svg></span><div class="ranking-details"><h3 class="ranking-song">Vagabundo, borracho y loco</h3><p class="ranking-artist">Segundo Rosero</p><p class="ranking-genre">Rockola</p></div><div class="ranking-actions"><a class="ranking-platform youtube" href="https://www.youtube.com/results?search_query=Segundo+Rosero+Vagabundo+Borracho+y+Loco+oficial" target="_blank" rel="noopener noreferrer" title="Escuchar Vagabundo, borracho y loco en Youtube" aria-label="Escuchar Vagabundo, borracho y loco en Youtube"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M23.5 6.2a2.9 2.9 0 0 0-2.05-2.05C19.64 3.66 12 3.66 12 3.66s-7.64 0-9.45.49A2.9 2.9 0 0 0 .5 6.2 30.5 30.5 0 0 0 0 12a30.5 30.5 0 0 0 .5 5.8 2.9 2.9 0 0 0 2.05 2.05c1.81.49 9.45.49 9.45.49s7.64 0 9.45-.49a2.9 2.9 0 0 0 2.05-2.05A30.5 30.5 0 0 0 24 12a30.5 30.5 0 0 0-.5-5.8ZM9.6 15.57V8.43L15.84 12 9.6 15.57Z"/></svg></a><a class="ranking-platform spotify" href="https://open.spotify.com/track/0cfqREsJGNzPLrQbs50Dv3" target="_blank" rel="noopener noreferrer" title="Escuchar Vagabundo, borracho y loco en Spotify" aria-label="Escuchar Vagabundo, borracho y loco en Spotify"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .25a11.75 11.75 0 1 0 0 23.5 11.75 11.75 0 0 0 0-23.5Zm5.38 16.95a.75.75 0 0 1-1.03.25c-2.85-1.73-6.44-2.12-10.68-1.16a.75.75 0 0 1-.33-1.46c4.63-1.06 8.6-.61 11.8 1.35.75.75 0 0 1 .24 1.02Zm1.43-3.23a.93.93 0 0 1-1.28.3c-3.26-2-8.23-2.57-12.1-1.4a.93.93 0 0 1-.53-1.78c4.4-1.34 9.86-.7 13.6 1.59a.93.93 0 0 1 .31 1.29Zm.12-3.36c-3.92-2.33-10.39-2.54-14.13-1.4a1.12 1.12 0 1 1-.66-2.13c4.3-1.3 11.45-1.05 15.93 1.61a1.12 1.12 0 0 1-1.14 1.92Z"/></svg></a></div></article>
     </div>
-    <p class="ranking-footnote">Selección editorial de Méndez TV Radio · Octubre 2026. El orden no representa un ranking oficial de reproducciones. Los íconos abren YouTube o Spotify en otra pestaña.</p>
+    <p class="ranking-footnote">Selección editorial de Radio Méndez · Octubre 2026. El orden no representa un ranking oficial de reproducciones. Los íconos abren YouTube o Spotify en otra pestaña.</p>
   </div>
 </section>
 <section class="container section ranking-international" id="top10-internacional" aria-labelledby="top10-internacional-titulo">
@@ -285,10 +321,10 @@
       <article class="ranking-item" role="listitem"><span class="ranking-position">09</span><span class="ranking-art" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13M9 7l12-2M9 18a3 3 0 1 1-3-3c1.7 0 3 1.3 3 3Zm12-2a3 3 0 1 1-3-3c1.7 0 3 1.3 3 3Z"/></svg></span><div class="ranking-details"><h3 class="ranking-song">Hagalo</h3><p class="ranking-artist">Køddy G, COLVISION COMPANY, Pty Audio y Frvnz_la_F</p><p class="ranking-genre">Urbano</p></div><div class="ranking-actions"><a class="ranking-platform youtube" href="https://www.youtube.com/results?search_query=Hagalo+K%C3%B8ddy+G+oficial" target="_blank" rel="noopener noreferrer" title="Escuchar Hagalo en Youtube" aria-label="Escuchar Hagalo en Youtube"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M23.5 6.2a2.9 2.9 0 0 0-2.05-2.05C19.64 3.66 12 3.66 12 3.66s-7.64 0-9.45.49A2.9 2.9 0 0 0 .5 6.2 30.5 30.5 0 0 0 0 12a30.5 30.5 0 0 0 .5 5.8 2.9 2.9 0 0 0 2.05 2.05c1.81.49 9.45.49 9.45.49s7.64 0 9.45-.49a2.9 2.9 0 0 0 2.05-2.05A30.5 30.5 0 0 0 24 12a30.5 30.5 0 0 0-.5-5.8ZM9.6 15.57V8.43L15.84 12 9.6 15.57Z"/></svg></a><a class="ranking-platform spotify" href="https://open.spotify.com/track/1IfiayrBBdKt8cixUD4nOp" target="_blank" rel="noopener noreferrer" title="Escuchar Hagalo en Spotify" aria-label="Escuchar Hagalo en Spotify"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .25a11.75 11.75 0 1 0 0 23.5 11.75 11.75 0 0 0 0-23.5Zm5.38 16.95a.75.75 0 0 1-1.03.25c-2.85-1.73-6.44-2.12-10.68-1.16a.75.75 0 0 1-.33-1.46c4.63-1.06 8.6-.61 11.8 1.35.75.75 0 0 1 .24 1.02Zm1.43-3.23a.93.93 0 0 1-1.28.3c-3.26-2-8.23-2.57-12.1-1.4a.93.93 0 0 1-.53-1.78c4.4-1.34 9.86-.7 13.6 1.59a.93.93 0 0 1 .31 1.29Zm.12-3.36c-3.92-2.33-10.39-2.54-14.13-1.4a1.12 1.12 0 1 1-.66-2.13c4.3-1.3 11.45-1.05 15.93 1.61a1.12 1.12 0 0 1-1.14 1.92Z"/></svg></a></div></article>
       <article class="ranking-item" role="listitem"><span class="ranking-position">10</span><span class="ranking-art" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13M9 7l12-2M9 18a3 3 0 1 1-3-3c1.7 0 3 1.3 3 3Zm12-2a3 3 0 1 1-3-3c1.7 0 3 1.3 3 3Z"/></svg></span><div class="ranking-details"><h3 class="ranking-song">SUPERESTRELLA</h3><p class="ranking-artist">Aitana</p><p class="ranking-genre">Pop</p></div><div class="ranking-actions"><a class="ranking-platform youtube" href="https://www.youtube.com/results?search_query=SUPERESTRELLA+Aitana+oficial" target="_blank" rel="noopener noreferrer" title="Escuchar SUPERESTRELLA en Youtube" aria-label="Escuchar SUPERESTRELLA en Youtube"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M23.5 6.2a2.9 2.9 0 0 0-2.05-2.05C19.64 3.66 12 3.66 12 3.66s-7.64 0-9.45.49A2.9 2.9 0 0 0 .5 6.2 30.5 30.5 0 0 0 0 12a30.5 30.5 0 0 0 .5 5.8 2.9 2.9 0 0 0 2.05 2.05c1.81.49 9.45.49 9.45.49s7.64 0 9.45-.49a2.9 2.9 0 0 0 2.05-2.05A30.5 30.5 0 0 0 24 12a30.5 30.5 0 0 0-.5-5.8ZM9.6 15.57V8.43L15.84 12 9.6 15.57Z"/></svg></a><a class="ranking-platform spotify" href="https://open.spotify.com/track/6hpuesKPNa3WhV48O7Fa47" target="_blank" rel="noopener noreferrer" title="Escuchar SUPERESTRELLA en Spotify" aria-label="Escuchar SUPERESTRELLA en Spotify"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .25a11.75 11.75 0 1 0 0 23.5 11.75 11.75 0 0 0 0-23.5Zm5.38 16.95a.75.75 0 0 1-1.03.25c-2.85-1.73-6.44-2.12-10.68-1.16a.75.75 0 0 1-.33-1.46c4.63-1.06 8.6-.61 11.8 1.35.75.75 0 0 1 .24 1.02Zm1.43-3.23a.93.93 0 0 1-1.28.3c-3.26-2-8.23-2.57-12.1-1.4a.93.93 0 0 1-.53-1.78c4.4-1.34 9.86-.7 13.6 1.59a.93.93 0 0 1 .31 1.29Zm.12-3.36c-3.92-2.33-10.39-2.54-14.13-1.4a1.12 1.12 0 1 1-.66-2.13c4.3-1.3 11.45-1.05 15.93 1.61a1.12 1.12 0 0 1-1.14 1.92Z"/></svg></a></div></article>
     </div>
-    <p class="ranking-footnote">Ranking basado en reproducciones del listado diario Spotify Ecuador del 22/10/2026, recopilado por Kworb. No es un ranking de votaciones de Méndez TV Radio y no se actualiza automáticamente. Algunos íconos de YouTube abren una búsqueda específica. <a href="https://kworb.net/spotify/country/ec_daily.html" target="_blank" rel="noopener noreferrer">Consultar fuente ↗</a></p>
+    <p class="ranking-footnote">Ranking basado en reproducciones del listado diario Spotify Ecuador del 22/10/2026, recopilado por Kworb. No es un ranking de votaciones de Radio Méndez y no se actualiza automáticamente. Algunos íconos de YouTube abren una búsqueda específica. <a href="https://kworb.net/spotify/country/ec_daily.html" target="_blank" rel="noopener noreferrer">Consultar fuente ↗</a></p>
   </div>
 </section>
-<section class="container" id="publicidad"><div class="ad-banner"><div><strong>Tu marca también puede sonar aquí.</strong><p>Promociona tu negocio, evento o emprendimiento en Méndez TV Radio.<br>Consulta por espacios publicitarios y auspicios.</p></div><a class="primary" id="contact-ad" href="#" target="_blank" rel="noopener noreferrer">Consultar publicidad ↗</a></div></section>
+<section class="container" id="publicidad"><div class="ad-banner"><div><strong>Tu marca también puede sonar aquí.</strong><p>Promociona tu negocio, evento o emprendimiento en Radio Méndez.<br>Consulta por espacios publicitarios y auspicios.</p></div><a class="primary" id="contact-ad" href="#" target="_blank" rel="noopener noreferrer">Consultar publicidad ↗</a></div></section>
 <section class="container social-section" id="redes" aria-labelledby="redes-titulo">
   <div class="social-section-inner">
     <div><span class="overline">SÍGUENOS Y CONECTA</span><h2 id="redes-titulo">Somos Méndez TV, <span style="color:var(--green)">síguenos</span></h2><p>Noticias, música, entrevistas y transmisiones desde Morona Santiago. Encuéntranos en nuestras redes oficiales.</p></div>
@@ -299,9 +335,9 @@
   </div>
 </section>
 </main>
-<footer><div class="container footer-row"><span><strong>MÉNDEZ TV RADIO</strong> · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Top 10 · Versión web 1.1.0.</span></div></footer>
-<button class="install-floating" id="install-floating" type="button">＋ Instalar Méndez TV Radio</button>
-<div class="dialog-mask" id="dialog-mask" role="presentation"><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title"><h2 id="dialog-title">Instala Méndez TV Radio</h2><p id="dialog-text">Abre el menú de tu navegador y selecciona «Agregar a pantalla de inicio».</p><button class="primary" id="dialog-close" type="button">Entendido</button></div></div>
+<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Top 10 · <span class="version-label">v1.2.0 · 2026</span>.</span></div></footer>
+<button class="install-floating" id="install-floating" type="button">＋ Instalar Radio Méndez</button>
+<div class="dialog-mask" id="dialog-mask" role="presentation"><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title"><h2 id="dialog-title">Instala Radio Méndez</h2><p id="dialog-text">Abre el menú de tu navegador y selecciona «Agregar a pantalla de inicio».</p><button class="primary" id="dialog-close" type="button">Entendido</button></div></div>
 <audio id="radio-audio" preload="none" playsinline></audio>
 <script>
 (()=>{
@@ -338,7 +374,7 @@
  heroPlay.addEventListener('click',toggle);
  if(!stream)setStatus('Configura tu URL pública HTTPS de audio en config.js.',true);
  $('reconnect').addEventListener('click',()=>{attempts=0;cancelRetry();audio.pause();setPlaying(false);start(true)});
- audio.addEventListener('playing',()=>{attempts=0;cancelRetry();setPlaying(true);setStatus('Estás escuchando Méndez TV Radio en vivo.')});
+ audio.addEventListener('playing',()=>{attempts=0;cancelRetry();setPlaying(true);setStatus('Estás escuchando Radio Méndez en vivo.')});
  audio.addEventListener('waiting',()=>{if(intended)setStatus('Cargando audio en vivo…')});
  audio.addEventListener('stalled',()=>{if(intended)setStatus('La conexión está lenta. Intentando continuar…')});
  audio.addEventListener('pause',()=>{if(!intended)setPlaying(false)});
@@ -353,12 +389,12 @@
  $('descripcion').textContent=conf.descripcion||$('descripcion').textContent;
  $('ubicacion').textContent=conf.ubicacion||$('ubicacion').textContent;
  $('live-title').textContent=conf.tituloEnVivo||$('live-title').textContent;
- document.title=(conf.nombre||'Méndez TV Radio')+' | Escúchanos en vivo';
+ document.title=(conf.nombre||'Radio Méndez')+' | ¡La radio que te mueve!';
  $('year').textContent=new Date().getFullYear();
  const safeURL=(v)=>{try{const url=new URL(v);return ['https:','http:'].includes(url.protocol)?url.href:''}catch{return ''}};
  document.querySelectorAll('[data-social]').forEach(a=>{const u=safeURL(conf[a.dataset.social]);if(u)a.href=u;});
  const phone=String(conf.whatsapp||'').replace(/\D/g,'');
- if(phone){const url='https://wa.me/'+phone;const wa=$('whatsapp');wa.href=url;wa.hidden=false;$('contact-ad').href=url+'?text='+encodeURIComponent('Hola, deseo conocer los planes de publicidad en Méndez TV Radio.')}else{$('contact-ad').hidden=true}
+ if(phone){const url='https://wa.me/'+phone;const wa=$('whatsapp');wa.href=url;wa.hidden=false;$('contact-ad').href=url+'?text='+encodeURIComponent('Hola, deseo conocer los planes de publicidad en Radio Méndez.')}else{$('contact-ad').hidden=true}
  const shows=Array.isArray(conf.programas)?conf.programas:[];
  for(const prog of shows){const card=document.createElement('article');card.className='show';const head=document.createElement('div');head.className='show-top';const tag=document.createElement('span');tag.className='show-type';tag.textContent=prog.tipo||'PROGRAMA';const bubble=document.createElement('span');bubble.className='show-bubble';bubble.setAttribute('aria-hidden','true');bubble.textContent='♫';head.append(tag,bubble);const title=document.createElement('h3');title.textContent=prog.titulo||'Programa';const desc=document.createElement('p');desc.textContent=prog.detalle||'';card.append(head,title,desc);$('shows').append(card)}
  if(!shows.length){$('programas').hidden=true}
@@ -393,7 +429,7 @@
  }
  renderRanking('top10-list','top10',Array.isArray(window.MENDEZ_TOP10)?window.MENDEZ_TOP10:[]);
  renderRanking('top10-internacional-list','top10-internacional',Array.isArray(window.MENDEZ_TOP10_INTERNACIONAL)?window.MENDEZ_TOP10_INTERNACIONAL:[]);
- $('share').addEventListener('click',async()=>{const data={title:conf.nombre||'Méndez TV Radio',text:'Escucha Méndez TV Radio en vivo',url:location.href};try{if(navigator.share){await navigator.share(data)}else if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(location.href);setStatus('¡Enlace copiado! Compártelo con tus amigos.')}else{window.prompt('Copia este enlace:',location.href)}}catch(e){if(e?.name!=='AbortError')setStatus('No se pudo compartir. Copia el enlace de la barra del navegador.',true)}});
+ $('share').addEventListener('click',async()=>{const data={title:conf.nombre||'Radio Méndez',text:'Escucha Radio Méndez — ¡La radio que te mueve!',url:location.href};try{if(navigator.share){await navigator.share(data)}else if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(location.href);setStatus('¡Enlace copiado! Compártelo con tus amigos.')}else{window.prompt('Copia este enlace:',location.href)}}catch(e){if(e?.name!=='AbortError')setStatus('No se pudo compartir. Copia el enlace de la barra del navegador.',true)}});
  const showDialog=msg=>{$('dialog-text').textContent=msg;$('dialog-mask').classList.add('open');$('dialog-close').focus()};
  $('dialog-close').addEventListener('click',()=>$('dialog-mask').classList.remove('open'));
  $('dialog-mask').addEventListener('click',e=>{if(e.target===$('dialog-mask'))$('dialog-mask').classList.remove('open')});
@@ -407,7 +443,7 @@
    showDialog('En Chrome o Edge, abre el menú (⋮) y selecciona «Instalar aplicación» o «Agregar a pantalla de inicio», si está disponible.');
  }
  $('install-nav').addEventListener('click',install);$('install-floating').addEventListener('click',install);
- if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.1.0').catch(()=>{}))}
+ if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.2.0').catch(()=>{}))}
 })();
 </script>
 </body>

@@ -1,12 +1,12 @@
 /*
- * MÉNDEZ TV RADIO — CONFIGURACIÓN
+ * RADIO MÉNDEZ — CONFIGURACIÓN v1.2.0
  * Edita SOLO los valores entre comillas y vuelve a subir este archivo a GitHub.
  * Versión SonicPanel: señal HTTPS pública con reproductor HTML5 personalizado.
  * Jamás coloques contraseñas de emisión o panel en estos archivos públicos.
  */
 window.MENDEZ_RADIO_CONFIG = {
-  nombre: 'Méndez TV Radio',
-  lema: 'La señal que nos conecta',
+  nombre: 'Radio Méndez',
+  lema: '¡La radio que te mueve!',
   ubicacion: 'Méndez · Morona Santiago · Ecuador',
   // URL PÚBLICA DIRECTA DE REPRODUCCIÓN SONICPANEL (NO DE EMISIÓN):
   streaming: 'https://radiostreaming.pro/8462/stream',
@@ -17,8 +17,8 @@ window.MENDEZ_RADIO_CONFIG = {
   tiktok: 'https://www.tiktok.com/@mendeztvec',
   youtube: 'https://www.youtube.com/@mendeztvoficial',
   correo: '',
-  tituloEnVivo: 'Méndez TV Radio · En vivo',
-  descripcion: 'Música, entrevistas, información y los mejores programas desde Morona Santiago.',
+  tituloEnVivo: 'Radio Méndez · ¡La radio que te mueve!',
+  descripcion: '¡La radio que te mueve! Música, noticias y entrevistas desde Morona Santiago. Una producción de Méndez TV.',
   programas: [
     { tipo: 'ENTREVISTAS', titulo: 'Guarapo y Chicha', detalle: 'Conversaciones con nuestros protagonistas.' },
     { tipo: 'ACTUALIDAD', titulo: 'Méndez TV Informa', detalle: 'Noticias y novedades de nuestra región.' },

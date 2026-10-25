@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" href="./assets/logo-radio-mendez-v1.2.0.png">
   <link rel="apple-touch-icon" href="./assets/icon-192-v1.2.0.png">
   <link rel="manifest" href="./manifest.webmanifest">
-  <meta name="app-version" content="1.3.1">
+  <meta name="app-version" content="1.3.2">
   <title>Radio Méndez | ¡La radio que te mueve!</title>
   <style>
     :root { color-scheme: dark; --bg:#030C23; --surface:rgba(8,28,73,.92); --edge:rgba(41,159,255,.31); --txt:#f8fbff; --muted:#b8cbe7; --cyan:#37c5ff; --blue:#196eff; --pink:#49a5ff; --green:#39baff; }
@@ -265,10 +265,104 @@
     @media(max-width:820px){.video-layout{grid-template-columns:1fr}.video-sidebar{gap:14px}.video-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:570px){.videos-section{padding:18px 0 56px}.videos-heading{display:block}.videos-heading h2{font-size:31px}.videos-heading .videos-channel{margin-top:15px}.video-list{grid-template-columns:1fr}.video-feature-info{padding:12px;align-items:start}.video-feature-info p{font-size:11px}.video-reset{font-size:11px}.video-feature-preview img{width:62px;height:62px}.video-feature-preview .big-video-play{width:55px;height:55px;font-size:25px}.video-feature-preview{gap:7px}.video-feature-preview strong{font-size:17px}.video-feature-preview small{font-size:10px}}
 
+
+    /* Radio Méndez v1.3.2 — reproductor proporcionado y dos Top 10 lado a lado */
+    .hero {grid-template-columns:minmax(0,1.12fr) minmax(345px,.88fr);gap:28px;min-height:0;padding:24px 0 46px;}
+    .hero h1 {font-size:clamp(48px,5.4vw,74px);letter-spacing:-3.4px;margin:16px 0 12px;}
+    .hero .lead {line-height:1.6;margin-top:0;}
+    .hero-actions {margin-top:22px;}
+    .radio-wrap {width:100%;max-width:430px;margin-left:auto;}
+    .radio-wrap:before {inset:-10px;border-radius:28px;transform:rotate(3deg);}
+    .radio-card {border-radius:24px;padding:20px 23px 17px;}
+    .vinyl {width:162px;margin:14px auto 13px;}
+    .vinyl img {border-width:4px;padding:5px;}
+    .track-title {font-size:19px;letter-spacing:-.45px;}
+    .track-sub {font-size:11px;}
+    .equalizer {height:19px;margin:6px auto 7px;}
+    .player-control {gap:15px;}
+    .play-big {width:57px;height:57px;}
+    .play-big svg {width:24px;height:24px;}
+    .round {width:38px;height:38px;}
+    .volume {margin-top:15px;}
+    .status {margin-top:12px;min-height:20px;font-size:11px;}
+    .radio-social {margin-top:10px;padding-top:11px;}
+    .radio-social-label {font-size:9px;letter-spacing:1.4px;margin-bottom:8px;}
+    .radio-social .social-icons {gap:8px;}
+    .radio-social .social-link {width:36px;height:36px;border-radius:11px;}
+    .radio-social .social-link svg {width:19px;height:19px;}
+    .card-utility-links {margin-top:9px;gap:8px;}
+    .card-utility-links a,.card-utility-links button {font-size:10px;padding:7px 10px;}
+    .rankings-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start;}
+    .rankings-grid > .section {min-width:0;padding:17px 0 50px;scroll-margin-top:18px;}
+    .rankings-grid .ranking-head {gap:9px;min-height:156px;align-content:start;margin-bottom:14px;}
+    .rankings-grid .ranking-head h2 {font-size:clamp(25px,2.55vw,33px);letter-spacing:-1px;}
+    .rankings-grid .ranking-desc {font-size:12px;}
+    .rankings-grid .ranking-flag {padding:7px 12px;font-size:10px;}
+    .rankings-grid .ranking-panel {padding:10px 11px;border-radius:21px;}
+    .rankings-grid .ranking-item {grid-template-columns:37px 36px minmax(0,1fr) auto;gap:9px;padding:10px 4px;min-height:75px;}
+    .rankings-grid .ranking-position {font-size:23px;letter-spacing:-.8px;}
+    .rankings-grid .ranking-art {width:36px;height:36px;border-radius:10px;}
+    .rankings-grid .ranking-art svg {width:20px;height:20px;}
+    .rankings-grid .ranking-song {font-size:13px;line-height:1.24;}
+    .rankings-grid .ranking-artist {font-size:10px;line-height:1.35;margin-top:3px;}
+    .rankings-grid .ranking-genre {font-size:8px;letter-spacing:.35px;margin-top:2px;}
+    .rankings-grid .ranking-actions {gap:5px;}
+    .rankings-grid .ranking-platform {width:32px;height:32px;border-radius:10px;}
+    .rankings-grid .ranking-platform svg {width:18px;height:18px;}
+    .rankings-grid .ranking-footnote {font-size:10px;line-height:1.5;margin:14px 4px 2px;}
+    @media (max-width:1010px) {
+      .rankings-grid {grid-template-columns:1fr;gap:0;}
+      .rankings-grid > .section {padding:15px 0 38px;}
+      .rankings-grid .ranking-head {min-height:0;}
+      .rankings-grid .ranking-item {grid-template-columns:45px 43px minmax(0,1fr) auto;gap:12px;}
+      .rankings-grid .ranking-art {width:43px;height:43px;}
+      .rankings-grid .ranking-song {font-size:15px;}
+      .rankings-grid .ranking-artist {font-size:12px;}
+      .rankings-grid .ranking-genre {font-size:10px;}
+      .rankings-grid .ranking-platform {width:39px;height:39px;}
+      .rankings-grid .ranking-platform svg {width:21px;height:21px;}
+      .rankings-grid .ranking-head h2 {font-size:clamp(27px,4vw,37px);}
+    }
+    @media (max-width:1010px) {
+      .nav-links a {display:none;}
+      .nav-links {flex:0 0 auto;}
+      .radio-wrap:before {inset:0;transform:none;}
+    }
+    @media (max-width:900px) and (min-width:741px) {
+      .hero {grid-template-columns:minmax(0,1fr) minmax(325px,.9fr);gap:21px;min-height:0;padding:20px 0 43px;}
+      .hero h1 {font-size:clamp(41px,5vw,55px);letter-spacing:-2.2px;}
+    }
+    @media (max-width:740px) {
+      .hero {grid-template-columns:1fr;gap:25px;padding:20px 0 35px;min-height:0;}
+      .hero h1 {font-size:clamp(42px,11vw,65px);letter-spacing:-2px;}
+      .radio-wrap {margin:0 auto;max-width:440px;}
+      .radio-card {padding:19px 20px 16px;}
+      .radio-wrap:before {inset:0;transform:none;}
+      .vinyl {width:145px;margin:12px auto 11px;}
+      .rankings-grid .ranking-item {grid-template-columns:32px 32px minmax(0,1fr) auto;gap:7px;padding:11px 3px;min-height:67px;}
+      .rankings-grid .ranking-art {width:32px;height:32px;}
+      .rankings-grid .ranking-art svg {width:18px;height:18px;}
+      .rankings-grid .ranking-position {font-size:20px;}
+      .rankings-grid .ranking-song {font-size:13px;}
+      .rankings-grid .ranking-artist {font-size:11px;}
+      .rankings-grid .ranking-genre {font-size:9px;}
+      .rankings-grid .ranking-platform {width:33px;height:33px;}
+      .rankings-grid .ranking-platform svg {width:18px;height:18px;}
+      .rankings-grid .ranking-head h2 {font-size:clamp(27px,7vw,36px);}
+    }
+    @media (max-width:365px) {
+      .rankings-grid .ranking-item {grid-template-columns:27px 26px minmax(0,1fr) auto;gap:5px;}
+      .rankings-grid .ranking-art {width:26px;height:26px;}
+      .rankings-grid .ranking-art svg {width:15px;height:15px;}
+      .rankings-grid .ranking-actions {gap:4px;}
+      .rankings-grid .ranking-platform {width:29px;height:29px;}
+      .rankings-grid .ranking-platform svg {width:16px;height:16px;}
+    }
+
 </style>
-  <script src="./config.js?v=1.3.0"></script>
-  <script src="./top10.js?v=1.3.0"></script>
-  <script src="./videos.js?v=1.3.0"></script>
+  <script src="./config.js?v=1.3.2"></script>
+  <script src="./top10.js?v=1.3.2"></script>
+  <script src="./videos.js?v=1.3.2"></script>
   <!-- Respaldo local para iPad/iPhone cuando top10.js no esté disponible o se sirva desde un caché incompleto. -->
   <script>
   if (!Array.isArray(window.MENDEZ_TOP10) || !window.MENDEZ_TOP10.length) window.MENDEZ_TOP10 = [{"cancion":"Vitamina","artista":"Jombriel, DFZM y Jøtta","youtube":"https://www.youtube.com/watch?v=l0H-YaOaIIY","spotify":"https://open.spotify.com/track/0DMJz677XfXiiruhIELu2e","genero":"Urbano"},{"cancion":"Parte & Choke","artista":"Jombriel, Alex Krack y Jøtta","youtube":"https://www.youtube.com/results?search_query=Jombriel+Alex+Krack+Parte+y+Choke+original","spotify":"https://open.spotify.com/track/0STW8nw4lNN4TEQ8KmNer6","genero":"Urbano"},{"cancion":"Plan","artista":"Alex Ponce","youtube":"https://www.youtube.com/watch?v=NuGFGvX4wAQ","spotify":"https://open.spotify.com/track/1udeZVMClO0LEIgwgnueOx","genero":"Pop"},{"cancion":"El Karma","artista":"Dayanara","youtube":"https://www.youtube.com/watch?v=vjnb6QXP4ww","spotify":"https://open.spotify.com/track/6mKQ6QdpAMc7cFrMVCqexx","genero":"Popular"},{"cancion":"Si Fuera Yo","artista":"Mar Rendón y Master Chris","youtube":"https://www.youtube.com/watch?v=7Oj68953ZVk","spotify":"https://open.spotify.com/track/1DWCbhkSpISvnYpbPEhTS1","genero":"Pop rock"},{"cancion":"Chao Lola","artista":"Juan Fernando Velasco","youtube":"https://www.youtube.com/results?search_query=Juan+Fernando+Velasco+Chao+Lola+oficial","spotify":"https://open.spotify.com/track/5smsfK6A86avtmqG3phfnU","genero":"Pop"},{"cancion":"Morí","artista":"Tranzas","youtube":"https://www.youtube.com/watch?v=RlboJ8Sl90U","spotify":"https://open.spotify.com/track/0FXE0aS5IZnQYR56Vwiv4v","genero":"Balada"},{"cancion":"En la inmensidad","artista":"Verde 70","youtube":"https://www.youtube.com/results?search_query=Verde+70+En+la+Inmensidad+oficial","spotify":"https://open.spotify.com/track/1Bkbx2oFfViKwFE80PCBCW","genero":"Rock"},{"cancion":"Nuestro juramento","artista":"Julio Jaramillo","youtube":"https://www.youtube.com/watch?v=N0X0a8resSU","spotify":"https://open.spotify.com/track/2EyQocj24oihpKjgDj5cg9","genero":"Bolero"},{"cancion":"Vagabundo, borracho y loco","artista":"Segundo Rosero","youtube":"https://www.youtube.com/results?search_query=Segundo+Rosero+Vagabundo+Borracho+y+Loco+oficial","spotify":"https://open.spotify.com/track/0cfqREsJGNzPLrQbs50Dv3","genero":"Rockola"}];
@@ -357,7 +451,8 @@
     </aside>
   </div>
 </section>
-<section class="container section" id="top10" aria-labelledby="top10-titulo">
+<div class="container rankings-grid" aria-label="Rankings musicales de Radio Méndez">
+<section class="section" id="top10" aria-labelledby="top10-titulo">
   <div class="ranking-head">
     <div>
       <span class="overline">EL TALENTO DE NUESTRA TIERRA</span>
@@ -382,7 +477,7 @@
     <p class="ranking-footnote">Selección editorial de Radio Méndez · Octubre 2026. El orden no representa un ranking oficial de reproducciones. Los íconos abren YouTube o Spotify en otra pestaña.</p>
   </div>
 </section>
-<section class="container section ranking-international" id="top10-internacional" aria-labelledby="top10-internacional-titulo">
+<section class="section ranking-international" id="top10-internacional" aria-labelledby="top10-internacional-titulo">
   <div class="ranking-head">
     <div>
       <span class="overline">LOS ÉXITOS QUE SUENAN EN NUESTRO PAÍS</span>
@@ -408,6 +503,7 @@
     <p class="ranking-footnote">Ranking basado en reproducciones del listado diario Spotify Ecuador del 22/10/2026, recopilado por Kworb. No es un ranking de votaciones de Radio Méndez y no se actualiza automáticamente. Algunos íconos de YouTube abren una búsqueda específica. <a href="https://kworb.net/spotify/country/ec_daily.html" target="_blank" rel="noopener noreferrer">Consultar fuente ↗</a></p>
   </div>
 </section>
+</div>
 <section class="container" id="publicidad"><div class="ad-banner"><div><strong>Tu marca también puede sonar aquí.</strong><p>Promociona tu negocio, evento o emprendimiento en Radio Méndez.<br>Consulta por espacios publicitarios y auspicios.</p></div><a class="primary" id="contact-ad" href="#" target="_blank" rel="noopener noreferrer">Consultar publicidad ↗</a></div></section>
 <section class="container social-section" id="redes" aria-labelledby="redes-titulo">
   <div class="social-section-inner">
@@ -419,7 +515,7 @@
   </div>
 </section>
 </main>
-<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Top 10 · <span class="version-label">v1.3.0 · 2026</span>.</span></div></footer>
+<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Top 10 · <span class="version-label">v1.3.2 · 2026</span>.</span></div></footer>
 <button class="install-floating" id="install-floating" type="button">＋ Instalar Radio Méndez</button>
 <div class="dialog-mask" id="dialog-mask" role="presentation"><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title"><h2 id="dialog-title">Instala Radio Méndez</h2><p id="dialog-text">Abre el menú de tu navegador y selecciona «Agregar a pantalla de inicio».</p><button class="primary" id="dialog-close" type="button">Entendido</button></div></div>
 <audio id="radio-audio" preload="none" playsinline></audio>
@@ -598,7 +694,7 @@
    });
  }
 
- if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.3.1').catch(()=>{}))}
+ if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.3.2').catch(()=>{}))}
 })();
 </script>
 </body>

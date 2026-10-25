@@ -1,5 +1,5 @@
-/* Radio Méndez • v1.3.1 • Top 10 visible incluso sin JavaScript. */
-const CACHE='radio-mendez-v1.3.1-20261024-migracion';
+/* Radio Méndez • v1.3.2 • Top 10 visible incluso sin JavaScript. */
+const CACHE='radio-mendez-v1.3.2-20261024-diseno-compacto';
 const CORE=['./','./index.html','./config.js','./top10.js','./videos.js','./manifest.webmanifest','./assets/logo-radio-mendez-v1.2.0.png','./assets/icon-192-v1.2.0.png','./assets/icon-512-v1.2.0.png','./assets/social-preview-v1.2.0.png'];
 self.addEventListener('install',event=>{
  event.waitUntil(caches.open(CACHE).then(cache=>Promise.allSettled(CORE.map(path=>cache.add(path)))).then(()=>self.skipWaiting()));

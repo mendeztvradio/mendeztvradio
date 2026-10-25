@@ -9,7 +9,7 @@ window.MENDEZ_RADIO_CONFIG = {
   lema: '¡La radio que te mueve!',
   ubicacion: 'Méndez · Morona Santiago · Ecuador',
   // URL PÚBLICA DIRECTA DE REPRODUCCIÓN SONICPANEL (NO DE EMISIÓN):
-  streaming: 'https://radiostreaming.pro/8462/stream',
+  streaming: 'https://radiostreaming.pro/8474/stream',
   whatsapp: '593961180749', // WhatsApp conocido para información sobre auspicios; cámbialo si deseas.
   // REDES SOCIALES OFICIALES DE MÉNDEZ TV — cambia estas URLs aquí cuando sea necesario.
   facebook: 'https://www.facebook.com/mendeztvec',

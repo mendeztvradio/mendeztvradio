@@ -10,10 +10,10 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://radiomendez.github.io/">
   <link rel="canonical" href="https://radiomendez.github.io/">
-  <meta property="og:image" content="https://radiomendez.github.io/assets/social-preview-v1.2.0.png">
-  <link rel="icon" type="image/png" href="./assets/logo-radio-mendez-v1.2.0.png">
-  <link rel="apple-touch-icon" href="./assets/icon-192-v1.2.0.png">
-  <meta name="app-version" content="1.5.4">
+  <meta property="og:image" content="https://radiomendez.github.io/assets/vista-previa-mendez-tv-radio-online-v1.5.5.jpg">
+  <link rel="icon" type="image/png" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
+  <link rel="apple-touch-icon" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
+  <meta name="app-version" content="1.5.5">
   <title>Radio Méndez | ¡La radio que te mueve!</title>
   <style>
     :root { color-scheme: dark; --bg:#030C23; --surface:rgba(8,28,73,.92); --edge:rgba(41,159,255,.31); --txt:#f8fbff; --muted:#b8cbe7; --cyan:#37c5ff; --blue:#196eff; --pink:#49a5ff; --green:#39baff; }
@@ -466,6 +466,18 @@
     .contact-outline:hover{background:rgba(44,137,230,.16)}
     @media(max-width:720px){.contact-panel{grid-template-columns:1fr;padding:22px 18px;gap:20px}.contact-actions{max-width:100%}.contact-wa svg{width:18px!important;height:18px!important;flex-basis:18px}}
 
+
+    /* Logotipo corporativo 2026 · v1.5.5. Mantener el texto del logo fijo durante la emisión. */
+    .brand img{width:57px;height:57px;object-fit:contain;border-radius:0}
+    .brand-name{font-weight:950;letter-spacing:-.6px}
+    .brand-sub{letter-spacing:1px;font-size:10px;color:#b9ddff}
+    .vinyl,.vinyl.is-playing{width:min(185px,70%);margin:7px auto 9px;animation:none!important;
+      background:transparent;box-shadow:none;border-radius:0;}
+    .vinyl img{width:100%;height:100%;border:0;padding:0;border-radius:0;object-fit:contain;
+      background:transparent;box-shadow:none;filter:drop-shadow(0 3px 12px rgba(17,125,255,.28));}
+    .video-feature-preview img{object-fit:contain;border-radius:10px}
+    @media(max-width:740px){.brand img{width:47px;height:47px}.brand-name{font-size:18px}.brand-sub{font-size:9px}}
+
 </style>
   <script src="./config.js?v=1.3.2"></script>
   <script src="./top10.js?v=1.3.2"></script>
@@ -485,7 +497,7 @@
 </svg>
 <div class="backdrop" aria-hidden="true"></div>
 <header class="container nav">
-  <a class="brand" href="#inicio" aria-label="Radio Méndez, inicio"><img src="./assets/logo-radio-mendez-v1.2.0.png" alt=""><span class="brand-name">RADIO <span>MÉNDEZ</span><small class="brand-sub">Una producción de Méndez TV</small></span></a>
+  <a class="brand" href="#inicio" aria-label="Méndez TV y Radio Online, inicio"><img src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span class="brand-name">MÉNDEZ<small class="brand-sub">TV &amp; RADIO ONLINE</small></span></a>
   
   <nav class="nav-links" id="site-navigation" aria-label="Navegación principal"><a href="#inicio">Inicio</a><a href="#programas">Programas</a><a href="#servicios">Servicios</a><a href="#auspiciantes">Auspiciantes</a><a href="#contacto">Contacto</a></nav>
 </header>
@@ -509,7 +521,7 @@
  </div>
  <div class="radio-wrap"><div class="radio-card">
    <div class="card-head"><small>RADIO MÉNDEZ · EN LÍNEA</small><span class="live-pill"><i class="dot"></i> EN VIVO</span></div>
-   <div class="vinyl" id="vinyl"><img src="./assets/logo-radio-mendez-v1.2.0.png" alt="Logotipo de Méndez TV, productora de Radio Méndez"></div>
+   <div class="vinyl" id="vinyl"><img src="./assets/logo-mendez-tv-radio-online-v1.5.5.png" alt="Méndez Tv&Radio Online, logotipo oficial"></div>
    <h2 class="track-title" id="live-title">Radio online · En directo</h2>
    <p class="track-sub">Escúchanos desde cualquier lugar del mundo</p>
    <div class="equalizer" id="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
@@ -556,7 +568,7 @@
     <div class="video-feature">
       <div class="video-stage" id="video-stage">
         <button class="video-feature-preview" id="video-feature-preview" type="button" aria-label="Reproducir últimos videos de Méndez TV">
-          <img src="./assets/logo-radio-mendez-v1.2.0.png" alt="Logo Méndez TV" loading="lazy">
+          <img src="./assets/logo-mendez-tv-radio-online-v1.5.5.png" alt="Logo Méndez Tv&Radio Online" loading="lazy">
           <span class="big-video-play" aria-hidden="true">▶</span>
           <strong>Últimos videos del canal</strong>
           <small>Pulsa para ver la lista de YouTube</small>
@@ -747,7 +759,7 @@
   </div>
 </section>
 </main>
-<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.5.4 · 2026</span>.</span></div></footer>
+<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.5.5 · 2026</span>.</span></div></footer>
 <audio id="radio-audio" preload="none" playsinline></audio>
 <script src="./auspiciantes.js"></script>
 <script>
@@ -949,7 +961,7 @@
    });
  }
 
- if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.5.2').catch(()=>{}))}
+ if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.5.5').catch(()=>{}))}
 })();
 </script>
 </body>

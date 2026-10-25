@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://radiomendez.github.io/assets/social-preview-v1.2.0.png">
   <link rel="icon" type="image/png" href="./assets/logo-radio-mendez-v1.2.0.png">
   <link rel="apple-touch-icon" href="./assets/icon-192-v1.2.0.png">
-  <meta name="app-version" content="1.4.1">
+  <meta name="app-version" content="1.5.1">
   <title>Radio Méndez | ¡La radio que te mueve!</title>
   <style>
     :root { color-scheme: dark; --bg:#030C23; --surface:rgba(8,28,73,.92); --edge:rgba(41,159,255,.31); --txt:#f8fbff; --muted:#b8cbe7; --cyan:#37c5ff; --blue:#196eff; --pink:#49a5ff; --green:#39baff; }
@@ -126,6 +126,32 @@
     .show-bubble {display:grid;place-items:center;width:32px;height:32px;border:1px solid var(--edge);border-radius:50%;color:#accdff;}
     .show h3 {font-size:19px;letter-spacing:-.4px;margin:0 0 9px;}
     .show p {color:var(--muted);font-size:12px;line-height:1.65;margin:0;}
+
+    /* PROGRAMAS OFICIALES — v1.5.1 */
+    .programs-header{align-items:flex-end;flex-wrap:wrap}
+    .programs-intro{margin:10px 0 0;max-width:720px;color:#b9cee5;font-size:14px;line-height:1.7}
+    .programs-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .program-card{position:relative;display:flex;gap:18px;align-items:flex-start;padding:20px;border-radius:24px;border:1px solid rgba(61,156,255,.28);background:linear-gradient(155deg,rgba(9,36,100,.92),rgba(4,17,53,.98));box-shadow:0 15px 40px rgba(0,0,0,.18);overflow:hidden}
+    .program-card:before{content:'';position:absolute;right:-48px;top:-45px;width:125px;height:125px;border-radius:50%;background:radial-gradient(circle,rgba(55,197,255,.18),transparent 70%);pointer-events:none}
+    .program-card:hover{transform:translateY(-4px);border-color:rgba(90,190,255,.42);box-shadow:0 20px 48px rgba(0,0,0,.24)}
+    .program-logo-box{width:150px;min-width:150px;display:flex;align-items:center;justify-content:center;border-radius:18px;background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(86,167,255,.18);padding:14px}
+    .program-logo-box img{width:100%;height:auto;display:block;max-height:110px;object-fit:contain}
+    .program-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:10px}
+    .program-type{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(80,170,255,.26);font-size:10px;letter-spacing:1.1px;font-weight:900;color:#D7EDFF;text-transform:uppercase}
+    .program-type:before{content:'';width:8px;height:8px;border-radius:50%;background:#39C5FF;box-shadow:0 0 12px rgba(57,197,255,.7)}
+    .program-info h3{margin:0;font-size:24px;letter-spacing:-.7px;line-height:1.1}
+    .program-info p{margin:0;color:#B8CAE6;font-size:14px;line-height:1.65}
+    .program-platforms{display:flex;flex-wrap:wrap;gap:8px}
+    .program-platforms span{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);font-size:11px;font-weight:800;color:#d9ebff}
+    .program-platforms svg{width:14px;height:14px;display:block;fill:currentColor}
+    .program-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}
+    .program-link{display:inline-flex;align-items:center;gap:9px;padding:11px 15px;border-radius:14px;text-decoration:none;font-weight:850;font-size:13px;border:1px solid rgba(70,164,255,.30);background:rgba(255,255,255,.05);color:#ECF7FF}
+    .program-link:hover{transform:translateY(-2px);background:rgba(255,255,255,.10)}
+    .program-link svg{width:18px;height:18px;display:block;fill:currentColor}
+    .program-link.facebook{color:#7dc5ff}
+    .program-link.youtube{color:#ff8189}
+    @media(max-width:980px){.programs-grid{grid-template-columns:1fr}.program-logo-box{width:132px;min-width:132px}}
+    @media(max-width:640px){.program-card{flex-direction:column;align-items:stretch}.program-logo-box{width:100%;min-width:0}.program-logo-box img{max-height:120px}.program-info h3{font-size:22px}.program-links{flex-direction:column}.program-link{justify-content:center}}
 
     /* TOP 10 ECUATORIANO E INTERNACIONAL */
     .ranking-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:25px}
@@ -456,12 +482,24 @@
   </div></div>
 </section>
 <section class="container section new-programs" id="programas" aria-labelledby="programs-heading">
-  <div class="section-title programs-header"><div><span class="overline">MÉNDEZ TV · RADIO MÉNDEZ</span><h2 id="programs-heading">Nuestros <span>programas</span></h2><p class="programs-intro">Entrevistas, deportes, actualidad y entretenimiento. Descubre el contenido de nuestras producciones.</p></div><a class="secondary" href="#videos">Ver videos de Méndez TV ↗</a></div>
+  <div class="section-title programs-header"><div><span class="overline">MÉNDEZ TV · RADIO MÉNDEZ</span><h2 id="programs-heading">Nuestros <span>programas</span></h2><p class="programs-intro">Estos son los programas oficiales de nuestra programación. Todos se transmiten por <strong>Facebook</strong> y <strong>YouTube</strong>, para que puedas seguir cada contenido desde tu plataforma favorita.</p></div><a class="secondary" href="#videos">Ver videos de Méndez TV ↗</a></div>
   <div class="programs-grid" id="programs-grid">
-    <article class="program-card program-chicha"><div class="program-art" aria-hidden="true"><span class="program-art-stamp">ENTREVISTAS</span><span class="program-art-name">GUARAPO <i>Y</i><br>CHICHA</span></div><div class="program-info"><span class="program-type">VOCES Y CONVERSACIONES</span><h3>Guarapo y Chicha</h3><p>Entrevistas y conversaciones con invitados que tienen historias para compartir.</p><a href="https://www.youtube.com/results?search_query=Guarapo+y+Chicha+Mendez+TV" target="_blank" rel="noopener noreferrer">Buscar episodios <span aria-hidden="true">↗</span></a></div></article>
-    <article class="program-card program-zona"><div class="program-art" aria-hidden="true"><span class="program-art-stamp">DEPORTE</span><span class="program-art-name">ZONA<br><b>DEPORTIVA</b></span></div><div class="program-info"><span class="program-type">DEPORTES Y TRANSMISIONES</span><h3>Zona Deportiva</h3><p>Pasión por el deporte local: partidos, coberturas, resultados y protagonistas.</p><a href="https://www.youtube.com/results?search_query=Zona+Deportiva+Mendez+TV" target="_blank" rel="noopener noreferrer">Buscar programas <span aria-hidden="true">↗</span></a></div></article>
-    <article class="program-card program-mendez"><div class="program-art" aria-hidden="true"><span class="program-art-stamp">ACTUALIDAD</span><span class="program-art-name">MÉNDEZ <strong>TV</strong></span></div><div class="program-info"><span class="program-type">NOTICIAS Y COBERTURAS</span><h3>Méndez TV</h3><p>Noticias, entrevistas, reportajes y transmisiones de nuestra región.</p><a href="https://www.youtube.com/@mendeztvoficial/videos" target="_blank" rel="noopener noreferrer">Ver canal oficial <span aria-hidden="true">↗</span></a></div></article>
-    <article class="program-card program-mijin"><div class="program-art" aria-hidden="true"><span class="program-art-stamp">ENTRETENIMIENTO</span><span class="program-art-name">QUÉ<span>+</span><br>MIJÍN?</span></div><div class="program-info"><span class="program-type">HUMOR Y ENTRETENIMIENTO</span><h3>QUÉ+ MIJÍN?</h3><p>Un espacio divertido con conversaciones espontáneas y entretenimiento.</p><a href="https://www.youtube.com/results?search_query=Que+Mijin+Mendez+TV" target="_blank" rel="noopener noreferrer">Buscar contenido <span aria-hidden="true">↗</span></a></div></article>
+    <article class="program-card program-chicha">
+      <div class="program-logo-box"><img src="./assets/programa-guarapo-chicha-v1.5.1.png" alt="Logo del programa Guarapo y Chicha"></div>
+      <div class="program-info"><span class="program-type">ENTREVISTAS Y CONVERSACIONES</span><h3>Guarapo y Chicha</h3><p>Programa de entrevistas y charlas con invitados, historias, emprendimientos y personajes de nuestra comunidad.</p><div class="program-platforms"><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-fb"></use></svg>Facebook</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-yt"></use></svg>YouTube</span></div><div class="program-links"><a class="program-link facebook" href="https://www.facebook.com/mendeztvec/videos" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-fb"></use></svg><span>Ver en Facebook</span></a><a class="program-link youtube" href="https://www.youtube.com/results?search_query=Guarapo+y+Chicha+Mendez+TV" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-yt"></use></svg><span>Ver en YouTube</span></a></div></div>
+    </article>
+    <article class="program-card program-zona">
+      <div class="program-logo-box"><img src="./assets/programa-zona-deportiva-v1.5.1.png" alt="Logo del programa Zona Deportiva"></div>
+      <div class="program-info"><span class="program-type">DEPORTES Y TRANSMISIONES</span><h3>Zona Deportiva</h3><p>Espacio dedicado al deporte local, campeonatos, coberturas, entrevistas y transmisiones deportivas en vivo.</p><div class="program-platforms"><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-fb"></use></svg>Facebook</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-yt"></use></svg>YouTube</span></div><div class="program-links"><a class="program-link facebook" href="https://www.facebook.com/mendeztvec/videos" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-fb"></use></svg><span>Ver en Facebook</span></a><a class="program-link youtube" href="https://www.youtube.com/results?search_query=Zona+Deportiva+Mendez+TV" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-yt"></use></svg><span>Ver en YouTube</span></a></div></div>
+    </article>
+    <article class="program-card program-mendez">
+      <div class="program-logo-box"><img src="./assets/programa-mendez-tv-v1.5.1.png" alt="Logo de Méndez TV"></div>
+      <div class="program-info"><span class="program-type">ACTUALIDAD Y COBERTURAS</span><h3>Méndez TV</h3><p>Noticias, reportajes, entrevistas, coberturas comunitarias y transmisiones que informan a nuestra audiencia.</p><div class="program-platforms"><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-fb"></use></svg>Facebook</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-yt"></use></svg>YouTube</span></div><div class="program-links"><a class="program-link facebook" href="https://www.facebook.com/mendeztvec/videos" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-fb"></use></svg><span>Ver en Facebook</span></a><a class="program-link youtube" href="https://www.youtube.com/@mendeztvoficial/videos" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-yt"></use></svg><span>Ver en YouTube</span></a></div></div>
+    </article>
+    <article class="program-card program-mijin">
+      <div class="program-logo-box"><img src="./assets/programa-que-mijin-v1.5.1.png" alt="Logo del programa QUÉ+ MIJÍN?"></div>
+      <div class="program-info"><span class="program-type">ENTRETENIMIENTO</span><h3>QUÉ+ MIJÍN?</h3><p>Programa de entretenimiento, humor, conversación y momentos espontáneos con el estilo propio de Méndez TV.</p><div class="program-platforms"><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-fb"></use></svg>Facebook</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-yt"></use></svg>YouTube</span></div><div class="program-links"><a class="program-link facebook" href="https://www.facebook.com/mendeztvec/videos" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-fb"></use></svg><span>Ver en Facebook</span></a><a class="program-link youtube" href="https://www.youtube.com/results?search_query=Que+Mijin+Mendez+TV" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-yt"></use></svg><span>Ver en YouTube</span></a></div></div>
+    </article>
   </div>
 </section>
 
@@ -671,7 +709,7 @@
   </div>
 </section>
 </main>
-<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.5.0 · 2026</span>.</span></div></footer>
+<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.5.1 · 2026</span>.</span></div></footer>
 <audio id="radio-audio" preload="none" playsinline></audio>
 <script src="./auspiciantes.js"></script>
 <script>

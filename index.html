@@ -13,7 +13,6 @@
   <meta property="og:image" content="https://radiomendez.github.io/assets/social-preview-v1.2.0.png">
   <link rel="icon" type="image/png" href="./assets/logo-radio-mendez-v1.2.0.png">
   <link rel="apple-touch-icon" href="./assets/icon-192-v1.2.0.png">
-  <link rel="manifest" href="./manifest.webmanifest">
   <meta name="app-version" content="1.4.1">
   <title>Radio Méndez | ¡La radio que te mueve!</title>
   <style>
@@ -37,8 +36,6 @@
     .nav-links {display:flex;align-items:center;gap:25px;font-size:13px;font-weight:700;color:#d6ddef;}
     .nav-links a {text-decoration:none;}
     .nav-links a:hover {color:var(--cyan)}
-    .nav-cta {background:rgba(255,255,255,.08);border:1px solid var(--edge);border-radius:999px;padding:12px 19px;color:#fff;font-weight:800;}
-    .nav-cta:hover {background:rgba(255,255,255,.16)}
     .hero {display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:50px;padding:56px 0 75px;min-height:630px;}
     .eyebrow {display:inline-flex;align-items:center;gap:9px;letter-spacing:2px;font-weight:850;font-size:11px;color:var(--green);border:1px solid rgba(49,168,255,.45);background:rgba(35,127,255,.16);padding:10px 14px;border-radius:999px;}
     .dot {display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 14px var(--green);}
@@ -173,15 +170,10 @@
     footer {border-top:1px solid var(--edge);padding:25px 0 35px;color:var(--muted);font-size:12px;}
     .footer-row {display:flex;gap:18px;justify-content:space-between;flex-wrap:wrap;align-items:center;}
     .footer-row strong {color:#e9eeff}
-    .install-floating {position:fixed;z-index:20;right:18px;bottom:18px;display:none;align-items:center;gap:8px;padding:13px 17px;background:linear-gradient(125deg,#26BFFF,#2adba7);color:#061020;border:0;border-radius:100px;font-size:12px;font-weight:900;box-shadow:0 10px 40px rgba(0,0,0,.45);}
-    .install-floating.is-visible {display:flex;}
-    .dialog-mask {display:none;position:fixed;z-index:50;inset:0;background:rgba(3,6,14,.82);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:18px;}
-    .dialog-mask.open {display:flex;}
-    .dialog {background:#081C48;border:1px solid var(--edge);border-radius:22px;padding:27px;max-width:405px;line-height:1.7;box-shadow:0 20px 80px rgba(0,0,0,.35)}
-    .dialog h2 {margin:0 0 8px}.dialog p {color:#bbc7de;margin-bottom:23px;font-size:14px}.dialog button {width:100%}
+
     [hidden] {display:none!important;}
     @media (max-width:900px) {.hero{grid-template-columns:1fr 1fr;gap:30px;min-height:560px;padding-top:35px}.hero h1 {font-size:clamp(45px,6vw,70px)}.radio-card{padding:23px 17px}.nav-links{gap:12px}}
-    @media (max-width:740px) {.container{width:min(540px,calc(100% - 30px))}.nav{padding:16px 0}.nav-links a{display:none}.nav-cta{padding:10px 15px}.brand img{width:43px;height:43px}.brand-name{font-size:17px}.hero{grid-template-columns:1fr;gap:36px;padding:50px 0 55px}.hero h1{font-size:clamp(48px,13vw,70px);letter-spacing:-2.8px}.lead{font-size:15px}.radio-wrap:before{inset:-9px;transform:rotate(2deg)}.radio-card{max-width:495px;margin:auto;width:100%;padding:24px}.shows{grid-template-columns:1fr}.show{min-height:auto}.section{padding-bottom:35px}.ad-banner{align-items:start;flex-direction:column;padding:24px;margin-bottom:40px}.footer-row{justify-content:center;text-align:center}.install-floating{right:11px;bottom:11px}}
+    @media (max-width:740px) {.container{width:min(540px,calc(100% - 30px))}.nav{padding:16px 0}.nav-links a{display:none}.brand img{width:43px;height:43px}.brand-name{font-size:17px}.hero{grid-template-columns:1fr;gap:36px;padding:50px 0 55px}.hero h1{font-size:clamp(48px,13vw,70px);letter-spacing:-2.8px}.lead{font-size:15px}.radio-wrap:before{inset:-9px;transform:rotate(2deg)}.radio-card{max-width:495px;margin:auto;width:100%;padding:24px}.shows{grid-template-columns:1fr}.show{min-height:auto}.section{padding-bottom:35px}.ad-banner{align-items:start;flex-direction:column;padding:24px;margin-bottom:40px}.footer-row{justify-content:center;text-align:center}}
     /* TOP 10 en iPad y móviles: títulos visibles y botones accesibles. */
     .ranking-details{min-width:0;overflow-wrap:break-word;overflow-wrap:anywhere}
     .ranking-song,.ranking-artist{overflow-wrap:anywhere}
@@ -224,7 +216,7 @@
     .hero-slogan{font-size:clamp(18px,2vw,26px);margin:0 0 14px;font-weight:850;line-height:1.25;color:#E5F7FF;letter-spacing:-.45px}
     .producer-credit{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:#9FCFFF;font-weight:750;margin:13px 0 0}
     .producer-credit:before{content:'';display:block;width:19px;height:3px;background:#37C5FF;border-radius:50px}
-    .primary,.play-big,.install-floating{background:linear-gradient(115deg,#25C6FF,#1474FF);color:#fff;box-shadow:0 12px 35px rgba(16,118,255,.35)}
+    .primary,.play-big{background:linear-gradient(115deg,#25C6FF,#1474FF);color:#fff;box-shadow:0 12px 35px rgba(16,118,255,.35)}
     .primary:hover,.play-big:hover{filter:brightness(1.10)}
     .radio-wrap:before{border-color:rgba(32,129,255,.28)}
     .radio-card{border-color:rgba(64,165,255,.39);background:linear-gradient(150deg,rgba(12,45,122,.98),rgba(4,15,48,.98) 70%)}
@@ -430,7 +422,8 @@
 <div class="backdrop" aria-hidden="true"></div>
 <header class="container nav">
   <a class="brand" href="#inicio" aria-label="Radio Méndez, inicio"><img src="./assets/logo-radio-mendez-v1.2.0.png" alt=""><span class="brand-name">RADIO <span>MÉNDEZ</span><small class="brand-sub">Una producción de Méndez TV</small></span></a>
-  <nav class="nav-links" aria-label="Navegación principal"><a href="#programas">Programación</a><a href="#videos">Videos</a><a href="#servicios">Servicios</a><a href="#auspiciantes">Auspiciantes</a><a href="#top10">Top Ecuador 🇪🇨</a><a href="#top10-internacional">Top Internacional 🌎</a><a href="#publicidad">Publicidad</a><a href="#redes">Redes</a><button id="install-nav" class="nav-cta" type="button">＋ Instalar app</button></nav>
+  <button type="button" id="menu-toggle" class="mobile-menu-toggle" aria-label="Abrir menú de navegación" aria-controls="site-navigation" aria-expanded="false"><span aria-hidden="true">☰</span> Menú</button>
+  <nav class="nav-links" id="site-navigation" aria-label="Navegación principal"><a href="#inicio">Inicio</a><a href="#programas">Programas</a><a href="#servicios">Servicios</a><a href="#auspiciantes">Auspiciantes</a><a href="#contacto">Contacto</a></nav>
 </header>
 <main>
 <section class="container hero" id="inicio">
@@ -462,7 +455,15 @@
     <div class="card-utility-links"><a id="whatsapp" href="#" target="_blank" rel="noopener noreferrer" hidden>WhatsApp ↗</a><button id="share" type="button">↗ Compartir radio</button></div>
   </div></div>
 </section>
-<section class="container section" id="programas"><div class="section-title"><div><span class="overline">AL AIRE CONTIGO</span><h2>Espacios para disfrutar</h2></div><span class="section-hint">Programas y contenidos de Méndez TV</span></div><div class="shows" id="shows"></div></section>
+<section class="container section new-programs" id="programas" aria-labelledby="programs-heading">
+  <div class="section-title programs-header"><div><span class="overline">MÉNDEZ TV · RADIO MÉNDEZ</span><h2 id="programs-heading">Nuestros <span>programas</span></h2><p class="programs-intro">Entrevistas, deportes, actualidad y entretenimiento. Descubre el contenido de nuestras producciones.</p></div><a class="secondary" href="#videos">Ver videos de Méndez TV ↗</a></div>
+  <div class="programs-grid" id="programs-grid">
+    <article class="program-card program-chicha"><div class="program-art" aria-hidden="true"><span class="program-art-stamp">ENTREVISTAS</span><span class="program-art-name">GUARAPO <i>Y</i><br>CHICHA</span></div><div class="program-info"><span class="program-type">VOCES Y CONVERSACIONES</span><h3>Guarapo y Chicha</h3><p>Entrevistas y conversaciones con invitados que tienen historias para compartir.</p><a href="https://www.youtube.com/results?search_query=Guarapo+y+Chicha+Mendez+TV" target="_blank" rel="noopener noreferrer">Buscar episodios <span aria-hidden="true">↗</span></a></div></article>
+    <article class="program-card program-zona"><div class="program-art" aria-hidden="true"><span class="program-art-stamp">DEPORTE</span><span class="program-art-name">ZONA<br><b>DEPORTIVA</b></span></div><div class="program-info"><span class="program-type">DEPORTES Y TRANSMISIONES</span><h3>Zona Deportiva</h3><p>Pasión por el deporte local: partidos, coberturas, resultados y protagonistas.</p><a href="https://www.youtube.com/results?search_query=Zona+Deportiva+Mendez+TV" target="_blank" rel="noopener noreferrer">Buscar programas <span aria-hidden="true">↗</span></a></div></article>
+    <article class="program-card program-mendez"><div class="program-art" aria-hidden="true"><span class="program-art-stamp">ACTUALIDAD</span><span class="program-art-name">MÉNDEZ <strong>TV</strong></span></div><div class="program-info"><span class="program-type">NOTICIAS Y COBERTURAS</span><h3>Méndez TV</h3><p>Noticias, entrevistas, reportajes y transmisiones de nuestra región.</p><a href="https://www.youtube.com/@mendeztvoficial/videos" target="_blank" rel="noopener noreferrer">Ver canal oficial <span aria-hidden="true">↗</span></a></div></article>
+    <article class="program-card program-mijin"><div class="program-art" aria-hidden="true"><span class="program-art-stamp">ENTRETENIMIENTO</span><span class="program-art-name">QUÉ<span>+</span><br>MIJÍN?</span></div><div class="program-info"><span class="program-type">HUMOR Y ENTRETENIMIENTO</span><h3>QUÉ+ MIJÍN?</h3><p>Un espacio divertido con conversaciones espontáneas y entretenimiento.</p><a href="https://www.youtube.com/results?search_query=Que+Mijin+Mendez+TV" target="_blank" rel="noopener noreferrer">Buscar contenido <span aria-hidden="true">↗</span></a></div></article>
+  </div>
+</section>
 
 <div class="container ranking-jump" aria-label="Navegar por los rankings"><a href="#top10">🇪🇨 Top 10 ecuatoriano</a><a href="#top10-internacional">🌎 Top 10 internacional</a></div>
 
@@ -663,10 +664,14 @@
 <a class="social-link youtube" data-social="youtube" href="https://www.youtube.com/@mendeztvoficial" target="_blank" rel="noopener noreferrer" aria-label="Seguir a Méndez TV en YouTube" title="YouTube de Méndez TV"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-yt"></use></svg></a></nav>
   </div>
 </section>
+<section class="container contact-section" id="contacto" aria-labelledby="contact-title">
+  <div class="contact-panel"><div class="contact-intro"><span class="overline">HABLEMOS</span><h2 id="contact-title">Contacto <span>Radio Méndez</span></h2><p>¿Quieres anunciar tu negocio, auspiciar un programa o solicitar un servicio de Méndez TV? Escríbenos directamente.</p><div class="contact-phone">WhatsApp: <strong>096 118 0749</strong></div></div>
+    <div class="contact-actions"><a class="contact-wa" id="contact-whatsapp" href="https://wa.me/593961180749?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20Radio%20M%C3%A9ndez." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.65 15.02L2 22l5.1-1.34A10 10 0 1 0 12 2Zm0 18.16a8.1 8.1 0 0 1-4.13-1.13l-.3-.17-3.02.8.81-2.95-.19-.3A8.15 8.15 0 1 1 12 20.16Zm4.5-6.1c-.24-.12-1.42-.7-1.64-.77-.22-.08-.38-.12-.54.12-.16.23-.62.77-.76.93-.14.15-.28.17-.51.06-.24-.12-1-.37-1.92-1.2a7.2 7.2 0 0 1-1.33-1.63c-.14-.24-.01-.36.11-.47.11-.11.24-.28.36-.42.12-.14.16-.24.24-.39.08-.16.04-.3-.02-.42-.06-.11-.54-1.3-.74-1.8-.2-.47-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3s-.84.83-.84 2.02.86 2.33.98 2.49c.12.16 1.7 2.59 4.12 3.63.58.25 1.03.39 1.38.5.58.18 1.09.16 1.5.09.46-.07 1.42-.58 1.63-1.14s.21-1.04.15-1.14c-.06-.1-.22-.16-.46-.28Z"/></svg> Escribir por WhatsApp <span aria-hidden="true">↗</span></a>
+    <a class="contact-outline" href="https://www.facebook.com/mendeztvec" target="_blank" rel="noopener noreferrer">Facebook de Méndez TV <span aria-hidden="true">↗</span></a><a class="contact-outline" href="https://www.instagram.com/mendeztvec/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a></div>
+  </div>
+</section>
 </main>
-<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.4.2 · 2026</span>.</span></div></footer>
-<button class="install-floating" id="install-floating" type="button">＋ Instalar Radio Méndez</button>
-<div class="dialog-mask" id="dialog-mask" role="presentation"><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title"><h2 id="dialog-title">Instala Radio Méndez</h2><p id="dialog-text">Abre el menú de tu navegador y selecciona «Agregar a pantalla de inicio».</p><button class="primary" id="dialog-close" type="button">Entendido</button></div></div>
+<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.5.0 · 2026</span>.</span></div></footer>
 <audio id="radio-audio" preload="none" playsinline></audio>
 <script src="./auspiciantes.js"></script>
 <script>
@@ -679,7 +684,7 @@
  const heroPlay=$('hero-play');
  const status=$('status');
  const stream=typeof conf.streaming==='string'?conf.streaming.trim():'';
- let intended=false,attempts=0,retryTimer=null,installPrompt=null;
+ let intended=false,attempts=0,retryTimer=null;
  const setStatus=(msg,isError=false)=>{status.textContent=msg;status.classList.toggle('is-error',isError)};
  const setPlaying=playing=>{
    $('vinyl').classList.toggle('is-playing',playing);
@@ -766,10 +771,7 @@
    }
  }
  if(phone){$('sponsor-contact').href='https://wa.me/'+phone+'?text='+encodeURIComponent('Hola, quiero conocer los paquetes de auspicio en Radio Méndez y Méndez TV.')}else{$('sponsor-contact').hidden=true}
- const shows=Array.isArray(conf.programas)?conf.programas:[];
- for(const prog of shows){const card=document.createElement('article');card.className='show';const head=document.createElement('div');head.className='show-top';const tag=document.createElement('span');tag.className='show-type';tag.textContent=prog.tipo||'PROGRAMA';const bubble=document.createElement('span');bubble.className='show-bubble';bubble.setAttribute('aria-hidden','true');bubble.textContent='♫';head.append(tag,bubble);const title=document.createElement('h3');title.textContent=prog.titulo||'Programa';const desc=document.createElement('p');desc.textContent=prog.detalle||'';card.append(head,title,desc);$('shows').append(card)}
- if(!shows.length){$('programas').hidden=true}
-
+ if(phone){$('contact-whatsapp').href='https://wa.me/'+phone+'?text='+encodeURIComponent('Hola, deseo información sobre Radio Méndez y los servicios de Méndez TV.');}
  // Top 10: datos editables en top10.js; los enlaces se abren fuera de esta web.
  const ranking=Array.isArray(window.MENDEZ_TOP10)?window.MENDEZ_TOP10:[];
  const ytSVG='<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M23.5 6.2a2.9 2.9 0 0 0-2.05-2.05C19.64 3.66 12 3.66 12 3.66s-7.64 0-9.45.49A2.9 2.9 0 0 0 .5 6.2 30.5 30.5 0 0 0 0 12a30.5 30.5 0 0 0 .5 5.8 2.9 2.9 0 0 0 2.05 2.05c1.81.49 9.45.49 9.45.49s7.64 0 9.45-.49a2.9 2.9 0 0 0 2.05-2.05A30.5 30.5 0 0 0 24 12a30.5 30.5 0 0 0-.5-5.8ZM9.6 15.57V8.43L15.84 12 9.6 15.57Z"/></svg>';
@@ -800,21 +802,26 @@
  }
  renderRanking('top10-list','top10',Array.isArray(window.MENDEZ_TOP10)?window.MENDEZ_TOP10:[]);
  renderRanking('top10-internacional-list','top10-internacional',Array.isArray(window.MENDEZ_TOP10_INTERNACIONAL)?window.MENDEZ_TOP10_INTERNACIONAL:[]);
- $('share').addEventListener('click',async()=>{const data={title:conf.nombre||'Radio Méndez',text:'Escucha Radio Méndez — ¡La radio que te mueve!',url:location.href};try{if(navigator.share){await navigator.share(data)}else if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(location.href);setStatus('¡Enlace copiado! Compártelo con tus amigos.')}else{window.prompt('Copia este enlace:',location.href)}}catch(e){if(e?.name!=='AbortError')setStatus('No se pudo compartir. Copia el enlace de la barra del navegador.',true)}});
- const showDialog=msg=>{$('dialog-text').textContent=msg;$('dialog-mask').classList.add('open');$('dialog-close').focus()};
- $('dialog-close').addEventListener('click',()=>$('dialog-mask').classList.remove('open'));
- $('dialog-mask').addEventListener('click',e=>{if(e.target===$('dialog-mask'))$('dialog-mask').classList.remove('open')});
- window.addEventListener('keydown',e=>{if(e.key==='Escape')$('dialog-mask').classList.remove('open')});
- window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;$('install-floating').classList.add('is-visible')});
- window.addEventListener('appinstalled',()=>{$('install-floating').classList.remove('is-visible');installPrompt=null});
- async function install(){
-   if(window.matchMedia('(display-mode: standalone)').matches){showDialog('La aplicación ya está abierta en modo instalado.');return}
-   if(installPrompt){installPrompt.prompt();try{await installPrompt.userChoice}catch{}installPrompt=null;$('install-floating').classList.remove('is-visible');return}
-   if(/iPhone|iPad|iPod/i.test(navigator.userAgent)){showDialog('En Safari: pulsa Compartir (cuadro con flecha) y luego «Agregar a inicio».');return}
-   showDialog('En Chrome o Edge, abre el menú (⋮) y selecciona «Instalar aplicación» o «Agregar a pantalla de inicio», si está disponible.');
+ // Menú responsive: Inicio, Programas, Servicios, Auspiciantes y Contacto.
+ const navToggle=$('menu-toggle');
+ const navMenu=$('site-navigation');
+ if(navToggle && navMenu){
+   navToggle.addEventListener('click',()=>{
+     const expanded=navToggle.getAttribute('aria-expanded')==='true';
+     navToggle.setAttribute('aria-expanded',String(!expanded));
+     navToggle.setAttribute('aria-label',expanded?'Abrir menú de navegación':'Cerrar menú de navegación');
+     navMenu.classList.toggle('is-open',!expanded);
+   });
+   navMenu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+     navMenu.classList.remove('is-open');
+     navToggle.setAttribute('aria-expanded','false');
+     navToggle.setAttribute('aria-label','Abrir menú de navegación');
+   }));
+   window.addEventListener('keydown',e=>{if(e.key==='Escape'){
+     navMenu.classList.remove('is-open');navToggle.setAttribute('aria-expanded','false');
+   }});
  }
- $('install-nav').addEventListener('click',install);$('install-floating').addEventListener('click',install);
-
+ $('share').addEventListener('click',async()=>{const data={title:conf.nombre||'Radio Méndez',text:'Escucha Radio Méndez — ¡La radio que te mueve!',url:location.href};try{if(navigator.share){await navigator.share(data)}else if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(location.href);setStatus('¡Enlace copiado! Compártelo con tus amigos.')}else{window.prompt('Copia este enlace:',location.href)}}catch(e){if(e?.name!=='AbortError')setStatus('No se pudo compartir. Copia el enlace de la barra del navegador.',true)}});
  // VÍDEOS DE MÉNDEZ TV: carga el reproductor solo al pulsar una vista previa.
  // Evita reproducir radio y video a la vez; la radio puede reanudarse manualmente.
  const videoConf=window.MENDEZ_YOUTUBE_CONFIG||{};
@@ -885,7 +892,7 @@
    });
  }
 
- if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.4.1').catch(()=>{}))}
+ if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.5.0').catch(()=>{}))}
 })();
 </script>
 </body>

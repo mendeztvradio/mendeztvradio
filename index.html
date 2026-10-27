@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://radiomendez.github.io/assets/vista-previa-mendez-tv-radio-online-v1.5.5.jpg">
   <link rel="icon" type="image/png" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
   <link rel="apple-touch-icon" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
-  <meta name="app-version" content="1.5.7">
+  <meta name="app-version" content="1.5.8">
   <title>Radio Méndez | ¡La radio que te mueve!</title>
   <style>
     :root { color-scheme: dark; --bg:#030C23; --surface:rgba(8,28,73,.92); --edge:rgba(41,159,255,.31); --txt:#f8fbff; --muted:#b8cbe7; --cyan:#37c5ff; --blue:#196eff; --pink:#49a5ff; --green:#39baff; }
@@ -842,8 +842,8 @@
         <div class="support-mark" aria-hidden="true">P</div>
         <h3>Apoyar con PayPal</h3>
         <p>Aporta de manera voluntaria desde PayPal con el enlace oficial de Radio Méndez.</p>
-        <a class="support-action" id="donate-paypal" href="#" target="_blank" rel="noopener noreferrer" hidden>Ir a PayPal ↗</a>
-        <a class="support-action" id="donate-paypal-fallback" href="https://wa.me/593961180749?text=Hola%2C%20quiero%20apoyar%20a%20Radio%20M%C3%A9ndez%20por%20PayPal" target="_blank" rel="noopener noreferrer">Solicitar enlace PayPal ↗</a>
+        <a class="support-action" id="donate-paypal" href="https://www.paypal.com/ncp/payment/GTQ5LKXY2LBH8" target="_blank" rel="noopener noreferrer">Apoyar con PayPal ↗</a>
+        <a class="support-action" id="donate-paypal-fallback" href="https://wa.me/593961180749?text=Hola%2C%20quiero%20apoyar%20a%20Radio%20M%C3%A9ndez%20por%20PayPal" target="_blank" rel="noopener noreferrer" hidden>Solicitar enlace PayPal ↗</a>
       </article>
       <article class="support-card">
         <div class="support-mark" aria-hidden="true">$</div>
@@ -884,10 +884,10 @@
   </div>
 </section>
 </main>
-<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.5.7 · 2026</span>.</span></div></footer>
+<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.5.8 · 2026</span>.</span></div></footer>
 <audio id="radio-audio" preload="none" playsinline></audio>
 <script src="./auspiciantes.js"></script>
-<script src="./donaciones.js?v=1.5.6"></script>
+<script src="./donaciones.js?v=1.5.8"></script>
 <script>
 (()=>{
  'use strict';
@@ -1219,7 +1219,7 @@
   $('donate-bank-fallback').href=donationWhatsapp+'?text='+encodeURIComponent('Hola, quisiera los datos para apoyar a Radio Méndez por transferencia.');
  }
 
- if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.5.7').catch(()=>{}))}
+ if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.5.8').catch(()=>{}))}
 })();
 </script>
 </body>

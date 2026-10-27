@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://radiomendez.github.io/assets/vista-previa-mendez-tv-radio-online-v1.5.5.jpg">
   <link rel="icon" type="image/png" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
   <link rel="apple-touch-icon" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
-  <meta name="app-version" content="1.5.8">
+  <meta name="app-version" content="1.5.9">
   <title>Radio Méndez | ¡La radio que te mueve!</title>
   <style>
     :root { color-scheme: dark; --bg:#030C23; --surface:rgba(8,28,73,.92); --edge:rgba(41,159,255,.31); --txt:#f8fbff; --muted:#b8cbe7; --cyan:#37c5ff; --blue:#196eff; --pink:#49a5ff; --green:#39baff; }
@@ -150,7 +150,17 @@
     .program-link svg{width:18px;height:18px;display:block;fill:currentColor}
     .program-link.facebook{color:#7dc5ff}
     .program-link.youtube{color:#ff8189}
-    @media(max-width:980px){.programs-grid{grid-template-columns:1fr}.program-logo-box{width:132px;min-width:132px}}
+    .program-link.live{color:#7ef0ff}
+    .program-featured{grid-column:1/-1;background:linear-gradient(145deg,rgba(10,44,114,.95),rgba(4,18,56,.98));border-color:rgba(92,198,255,.34)}
+    .program-featured .program-logo-box{width:240px;min-width:240px;padding:10px;background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.03))}
+    .program-featured .program-logo-box img{max-height:none;border-radius:16px;box-shadow:0 18px 36px rgba(0,0,0,.28)}
+    .program-featured .program-info h3{font-size:30px}
+    .program-highlight{display:flex;flex-wrap:wrap;gap:8px}
+    .program-highlight span{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;border-radius:999px;background:rgba(0,0,0,.18);border:1px solid rgba(115,208,255,.28);font-size:11px;font-weight:800;color:#E7F7FF}
+    .program-highlight span:before{content:'•';color:#FFD85C;font-size:14px;line-height:1}
+    .program-featured .program-info p strong{color:#fff}
+    .program-date-note{font-size:12px;color:#97d8ff;font-weight:700;letter-spacing:.3px}
+    @media(max-width:980px){.programs-grid{grid-template-columns:1fr}.program-logo-box{width:132px;min-width:132px}.program-featured .program-logo-box{width:100%;min-width:0;max-width:420px;margin:0 auto}}
     @media(max-width:640px){.program-card{flex-direction:column;align-items:stretch}.program-logo-box{width:100%;min-width:0}.program-logo-box img{max-height:120px}.program-info h3{font-size:22px}.program-links{flex-direction:column}.program-link{justify-content:center}}
 
     /* TOP 10 ECUATORIANO E INTERNACIONAL */
@@ -620,8 +630,12 @@
   </div></div>
 </section>
 <section class="container section new-programs" id="programas" aria-labelledby="programs-heading">
-  <div class="section-title programs-header"><div><span class="overline">MÉNDEZ TV · RADIO MÉNDEZ</span><h2 id="programs-heading">Nuestros <span>programas</span></h2><p class="programs-intro">Estos son los programas oficiales de nuestra programación. Todos se transmiten por <strong>Facebook</strong> y <strong>YouTube</strong>, para que puedas seguir cada contenido desde tu plataforma favorita.</p></div><a class="secondary" href="#videos">Ver videos de Méndez TV ↗</a></div>
+  <div class="section-title programs-header"><div><span class="overline">MÉNDEZ TV · RADIO MÉNDEZ</span><h2 id="programs-heading">Nuestros <span>programas</span></h2><p class="programs-intro">Estos son los programas oficiales de nuestra programación. Iniciamos con el estreno de <strong>El Vacile de Villa</strong>, nuestro primer espacio fijo en la radio, y todos los contenidos se transmiten por <strong>Facebook</strong> y <strong>YouTube</strong>, para que puedas seguirlos desde tu plataforma favorita.</p></div><a class="secondary" href="#videos">Ver videos de Méndez TV ↗</a></div>
   <div class="programs-grid" id="programs-grid">
+    <article class="program-card program-featured program-vacile">
+      <div class="program-logo-box"><img src="./assets/programa-el-vacile-de-villa-v1.5.9.png" alt="Afiche del programa El Vacile de Villa con Ángel Villa DJ"></div>
+      <div class="program-info"><span class="program-type">PROGRAMACIÓN RADIAL · ESTRENO OFICIAL</span><h3>El Vacile de Villa</h3><p>El primer programa oficial de <strong>Radio Méndez</strong> llega con la energía de <strong>Ángel Villa DJ</strong> y el sello de <strong>Villa Show</strong>: música, mezclas, entretenimiento y la mejor vibra para acompañar tus noches.</p><div class="program-highlight"><span>Lunes a viernes</span><span>20h00 a 22h00</span><span>Estreno: 27/10/2026</span></div><div class="program-platforms"><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-fb"></use></svg>Facebook</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-yt"></use></svg>YouTube</span><span>Se transmite por Radio Méndez</span></div><div class="program-links"><a class="program-link live" href="#inicio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 4 12 8-12 8Z" fill="currentColor"></path></svg><span>Escuchar en vivo</span></a><a class="program-link facebook" href="https://www.facebook.com/mendeztvec/videos" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-fb"></use></svg><span>Ver en Facebook</span></a><a class="program-link youtube" href="https://www.youtube.com/results?search_query=El+Vacile+de+Villa+Angel+Villa+DJ" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-yt"></use></svg><span>Ver en YouTube</span></a></div><small class="program-date-note">Horario fijo de la radio: de lunes a viernes, de 20h00 a 22h00.</small></div>
+    </article>
     <article class="program-card program-chicha">
       <div class="program-logo-box"><img src="./assets/programa-guarapo-chicha-v1.5.1.png" alt="Logo del programa Guarapo y Chicha"></div>
       <div class="program-info"><span class="program-type">ENTREVISTAS Y CONVERSACIONES</span><h3>Guarapo y Chicha</h3><p>Programa de entrevistas y charlas con invitados, historias, emprendimientos y personajes de nuestra comunidad.</p><div class="program-platforms"><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-fb"></use></svg>Facebook</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-yt"></use></svg>YouTube</span></div><div class="program-links"><a class="program-link facebook" href="https://www.facebook.com/mendeztvec/videos" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-fb"></use></svg><span>Ver en Facebook</span></a><a class="program-link youtube" href="https://www.youtube.com/results?search_query=Guarapo+y+Chicha+Mendez+TV" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-yt"></use></svg><span>Ver en YouTube</span></a></div></div>
@@ -884,10 +898,10 @@
   </div>
 </section>
 </main>
-<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.5.8 · 2026</span>.</span></div></footer>
+<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.5.9 · 2026</span>.</span></div></footer>
 <audio id="radio-audio" preload="none" playsinline></audio>
 <script src="./auspiciantes.js"></script>
-<script src="./donaciones.js?v=1.5.8"></script>
+<script src="./donaciones.js?v=1.5.9"></script>
 <script>
 (()=>{
  'use strict';
@@ -1219,7 +1233,7 @@
   $('donate-bank-fallback').href=donationWhatsapp+'?text='+encodeURIComponent('Hola, quisiera los datos para apoyar a Radio Méndez por transferencia.');
  }
 
- if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.5.8').catch(()=>{}))}
+ if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.5.9').catch(()=>{}))}
 })();
 </script>
 </body>

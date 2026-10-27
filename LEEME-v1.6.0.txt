@@ -1,0 +1,22 @@
+# RADIO MÉNDEZ — ACTUALIZACIÓN v1.6.0 — MÉNDEZ TV
+
+## Qué cambia
+- La web sigue llamándose RADIO MÉNDEZ.
+- Se agrega sección MÉNDEZ TV para Noticias, Comunidad, Deportes y Programas.
+- Se puede abrir cada noticia sin salir de la página; el audio sigue conectado.
+- Reproductor compacto al desplazarse por la página, usa el mismo stream y el mismo audio.
+- Se conserva el diseño y las funciones de streaming, PayPal, auspiciantes, Top 10 y programas.
+
+## Cómo publicar una noticia en GitHub Pages
+1. En tu computadora, abre `noticias.js` en un editor de texto.
+2. Copia el bloque de noticia existente, pégalo debajo y sepáralo con una coma.
+3. Cambia `id`, `titulo`, `fecha`, `categoria`, `resumen`, `imagen`, `contenido`.
+4. Sube una foto a la carpeta `assets/noticias/` (formatos PNG, JPG, WebP) y úsala con una ruta como `./assets/noticias/mi-foto.jpg`.
+5. En GitHub, sube el nuevo `noticias.js` y la foto, y pulsa "Commit changes".
+6. Abre https://radiomendez.github.io/#mendez-tv para comprobar.
+
+## Consideraciones
+- Por ahora no hay un panel de publicación con usuario y contraseña. Las noticias se editan en noticias.js a través de GitHub.
+- No subas claves o información confidencial: los archivos de GitHub Pages son públicos.
+- Un cambio de sección no recarga la página ni reinicia el audio. Al seguir enlaces externos, el navegador podría detener la reproducción.
+- Antes de usar la versión COMPLETA, conserva tu `config.js` actual del streaming contratado, porque este paquete proviene de una copia local anterior. Para actualizar, usa preferentemente el ZIP de ACTUALIZACIÓN, que NO incluye config.js.

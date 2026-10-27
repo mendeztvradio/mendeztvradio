@@ -1,0 +1,22 @@
+RADIO MÉNDEZ v1.6.1 · NAVEGACIÓN POR PÁGINAS
+
+NUEVO
+- La portada Inicio ya no incluye todas las secciones de la web.
+- Menú dividido en Inicio, Radio en vivo, Méndez TV, Programas, Deportes, Servicios, Auspiciantes, Apoyar.
+- Noticias y videos en Méndez TV.
+- Radio grande y ambos Top 10 en Radio en vivo.
+- Se mantienen El Vacile de Villa, programas y sponsors.
+- Deportes muestra noticias de la categoría Deportes del archivo noticias.js.
+- Reproductor compacto en todas las pantallas; una sola conexión HTML5.
+- Las vistas se abren con enlaces compartibles #inicio, #radio, #mendez-tv, etc.
+
+PARA SUBIR A GITHUB
+Descomprime la actualización y sube los archivos y carpetas conservando su estructura:
+- index.html (obligatorio)
+- sw.js (obligatorio, renueva caché)
+- VERSION.txt (recomendado)
+- LEEME-v1.6.1.txt (opcional)
+
+No se incluyen config.js, top10.js, noticias.js ni donaciones.js en esta actualización para conservar la configuración de streaming y pagos ya contratados.
+
+NOTA: La navegación es de una sola página técnica con vistas internas separadas, para evitar cortar el audio al cambiar de pantalla.

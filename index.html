@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://radiomendez.github.io/assets/vista-previa-mendez-tv-radio-online-v1.5.5.jpg">
   <link rel="icon" type="image/png" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
   <link rel="apple-touch-icon" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
-  <meta name="app-version" content="1.6.0">
+  <meta name="app-version" content="1.6.1">
   <title>Radio Méndez | ¡La radio que te mueve!</title>
   <style>
     :root { color-scheme: dark; --bg:#030C23; --surface:rgba(8,28,73,.92); --edge:rgba(41,159,255,.31); --txt:#f8fbff; --muted:#b8cbe7; --cyan:#37c5ff; --blue:#196eff; --pink:#49a5ff; --green:#39baff; }
@@ -627,6 +627,45 @@
     @media(max-width:900px){.tv-news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:580px){.tv-news-grid{grid-template-columns:1fr}.tv-news-identity img{width:58px;height:58px}.radio-mini-volume{display:none}.radio-mini{padding:9px 12px}.tv-news-shell{border-radius:21px}}
 
+
+    /* v1.6.1: páginas internas reales para el visitante, sin recargar el audio */
+    [data-site-view]:not([data-site-active]){display:none!important}
+    .nav-links{gap:7px;flex-wrap:wrap;justify-content:flex-end}
+    .nav-links a{padding:9px 11px;border-radius:12px;white-space:nowrap}
+    .nav-links a[aria-current="page"]{background:rgba(49,156,255,.23);color:#7bddff;box-shadow:inset 0 0 0 1px rgba(63,176,255,.36)}
+    .portal-home{padding:36px 0 75px}
+    .portal-hero{display:grid;grid-template-columns:1.25fr .75fr;gap:38px;align-items:center;border-radius:30px;background:linear-gradient(122deg,rgba(16,64,135,.59),rgba(3,16,48,.93));border:1px solid rgba(51,169,255,.25);padding:42px 48px;min-height:365px;overflow:hidden}
+    .portal-hero h1{font-size:clamp(45px,5.5vw,74px);line-height:1;letter-spacing:-2px;margin:24px 0 8px}
+    .portal-hero h1 em{font-style:normal;color:#54caff}
+    .portal-slogan{color:#c8edff;font-size:19px;font-weight:900;margin:3px 0 15px}
+    .portal-subtitle{max-width:540px;color:#bad1e9;font-size:15px;line-height:1.65}
+    .portal-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:23px}
+    .portal-onair{display:flex;gap:9px;align-items:center;margin-top:26px;font-size:12px;color:#b3d8ff;flex-wrap:wrap}
+    .portal-onair strong{color:#fff}
+    .portal-brand-mark{display:flex;align-items:center;flex-direction:column;gap:5px;text-align:center}
+    .portal-brand-mark img{width:min(100%,315px);height:auto;object-fit:contain;filter:drop-shadow(0 25px 30px rgba(3,13,45,.5))}
+    .portal-brand-mark span{font-size:10px;letter-spacing:2px;font-weight:850;color:#9fd6ff}
+    .portal-shortcuts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:22px 0 38px}
+    .portal-tile{display:flex;flex-direction:column;gap:9px;text-decoration:none;background:rgba(13,43,106,.72);border:1px solid rgba(75,169,255,.25);padding:23px;border-radius:22px;min-height:190px;transition:transform .2s,border-color .2s}
+    .portal-tile:hover{transform:translateY(-4px);border-color:#57bffe}
+    .portal-tile-icon{font-size:26px;color:#63ccff}
+    .portal-tile strong{font-size:17px;color:#fff}
+    .portal-tile small{font-size:12px;line-height:1.5;color:#afcce6}
+    .portal-tile-arrow{font-size:12px;color:#74d2ff;font-weight:850;margin-top:auto}
+    .portal-latest{display:flex;align-items:center;justify-content:space-between;gap:22px;border-top:1px solid rgba(95,159,230,.22);padding:25px 0}
+    .portal-latest h2{font-size:clamp(23px,3vw,32px);margin:9px 0}
+    .portal-latest h2 span{color:#51c6ff}
+    .portal-latest p{margin:0;color:#bbd0ea;font-size:13px}
+    .sports-screen{padding-top:35px;min-height:48vh}
+    .sports-hero{border-radius:25px;border:1px solid rgba(81,161,249,.26);background:linear-gradient(125deg,rgba(13,55,123,.9),rgba(4,17,47,.95));padding:35px;margin-bottom:24px}
+    .sports-hero h2{font-size:clamp(28px,5vw,50px);margin:15px 0 10px}
+    .sports-hero h2 em{font-style:normal;color:#60cfff}
+    .sports-hero p{max-width:650px;color:#bad0e7;font-size:14px;line-height:1.7}
+    .sports-foot{margin-top:25px}
+    @media(max-width:1030px){.nav-links{justify-content:flex-start}.portal-shortcuts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:740px){.portal-home{padding-top:13px}.portal-hero{grid-template-columns:1fr;gap:10px;padding:30px 23px}.portal-hero h1{letter-spacing:-1px}.portal-brand-mark img{max-width:205px}.portal-shortcuts{grid-template-columns:repeat(2,minmax(0,1fr))}.portal-tile{padding:17px;min-height:175px}.portal-latest{align-items:flex-start;flex-direction:column}}
+    @media(max-width:390px){.portal-shortcuts{grid-template-columns:1fr}.portal-tile{min-height:125px}}
+
   </style>
   <script src="./config.js?v=1.3.2"></script>
   <script src="./top10.js?v=1.3.2"></script>
@@ -646,12 +685,33 @@
 </svg>
 <div class="backdrop" aria-hidden="true"></div>
 <header class="container nav">
-  <a class="brand" href="#inicio" aria-label="Méndez TV y Radio Online, inicio"><img src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span class="brand-name">MÉNDEZ<small class="brand-sub">TV &amp; RADIO ONLINE</small></span></a>
+  <a class="brand" href="#inicio" aria-label="Radio Méndez, inicio"><img src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span class="brand-name">MÉNDEZ<small class="brand-sub">TV &amp; RADIO ONLINE</small></span></a>
   
-  <nav class="nav-links" id="site-navigation" aria-label="Navegación principal"><a href="#inicio">Inicio</a><a href="#programas">Programas</a><a href="#mendez-tv">Méndez TV</a><a href="#servicios">Servicios</a><a href="#auspiciantes">Auspiciantes</a><a href="#apoyar">❤️ Apoyar</a><a href="#contacto">Contacto</a></nav>
+  <nav class="nav-links" id="site-navigation" aria-label="Navegación principal"><a href="#inicio">Inicio</a><a href="#radio">Radio en vivo</a><a href="#mendez-tv">Méndez TV</a><a href="#programas">Programas</a><a href="#deportes">Deportes</a><a href="#servicios">Servicios</a><a href="#auspiciantes">Auspiciantes</a><a href="#apoyar">❤️ Apoyar</a></nav>
 </header>
-<main>
-<section class="container hero" id="inicio">
+<main id="site-main">
+<section class="container portal-home" id="inicio" data-site-view="inicio" data-site-active="true" aria-labelledby="portal-heading">
+  <div class="portal-hero">
+    <div class="portal-copy">
+      <span class="eyebrow"><span class="dot"></span> DESDE MORONA SANTIAGO PARA EL MUNDO</span>
+      <h1 id="portal-heading">RADIO <em>MÉNDEZ</em></h1>
+      <p class="portal-slogan">¡La radio que te mueve!</p>
+      <p class="portal-subtitle">Tu punto de encuentro para escuchar radio en vivo, informarte con Méndez TV y descubrir nuestros programas.</p>
+      <div class="portal-actions"><a class="primary" href="#radio">▶ Escuchar la radio</a><a class="secondary" href="#mendez-tv">📰 Leer noticias</a></div>
+      <div class="portal-onair"><span class="dot"></span><strong>En nuestra programación:</strong> El Vacile de Villa · Lunes a viernes · 20h00–22h00</div>
+    </div>
+    <div class="portal-brand-mark"><img src="./assets/logo-mendez-tv-radio-online-v1.5.5.png" alt="Radio Méndez TV y Radio Online" loading="eager"><span>UNA PRODUCCIÓN DE MÉNDEZ TV</span></div>
+  </div>
+  <div class="portal-shortcuts" aria-label="Secciones de Radio Méndez">
+    <a class="portal-tile" href="#radio"><span class="portal-tile-icon">♫</span><strong>Radio en vivo</strong><small>Reproductor, Top 10 y música</small><span class="portal-tile-arrow">Explorar ↗</span></a>
+    <a class="portal-tile" href="#mendez-tv"><span class="portal-tile-icon">▤</span><strong>Méndez TV</strong><small>Noticias, reportajes y videos</small><span class="portal-tile-arrow">Ver noticias ↗</span></a>
+    <a class="portal-tile" href="#programas"><span class="portal-tile-icon">◉</span><strong>Programas</strong><small>El Vacile de Villa y producciones</small><span class="portal-tile-arrow">Ver programación ↗</span></a>
+    <a class="portal-tile" href="#deportes"><span class="portal-tile-icon">⚽</span><strong>Deportes</strong><small>Actualidad deportiva de la región</small><span class="portal-tile-arrow">Ir a deportes ↗</span></a>
+  </div>
+  <div class="portal-latest"><div><span class="overline">NOVEDADES DEL MEDIO</span><h2>Lo último de <span>Méndez TV</span></h2><p id="portal-latest-summary">Noticias, información y contenido actualizado.</p></div><a class="secondary" href="#mendez-tv">Todas las noticias ↗</a></div>
+</section>
+
+<section class="container hero" id="radio" data-site-view="radio">
  <div>
    <span class="eyebrow"><span class="dot"></span> RADIO ONLINE · MORONA SANTIAGO</span>
    <h1>RADIO <em>MÉNDEZ</em></h1>
@@ -680,12 +740,12 @@
     <div class="card-utility-links"><a id="whatsapp" href="#" target="_blank" rel="noopener noreferrer" hidden>WhatsApp ↗</a><button id="share" type="button">↗ Compartir radio</button></div>
   </div></div>
 </section>
-<section class="container section new-programs" id="programas" aria-labelledby="programs-heading">
-  <div class="section-title programs-header"><div><span class="overline">MÉNDEZ TV · RADIO MÉNDEZ</span><h2 id="programs-heading">Nuestros <span>programas</span></h2><p class="programs-intro">Estos son los programas oficiales de nuestra programación. Iniciamos con el estreno de <strong>El Vacile de Villa</strong>, nuestro primer espacio fijo en la radio, y todos los contenidos se transmiten por <strong>Facebook</strong> y <strong>YouTube</strong>, para que puedas seguirlos desde tu plataforma favorita.</p></div><a class="secondary" href="#videos">Ver videos de Méndez TV ↗</a></div>
+<section class="container section new-programs" id="programas" data-site-view="programas" aria-labelledby="programs-heading">
+  <div class="section-title programs-header"><div><span class="overline">MÉNDEZ TV · RADIO MÉNDEZ</span><h2 id="programs-heading">Nuestros <span>programas</span></h2><p class="programs-intro">Escucha <strong>El Vacile de Villa</strong>, nuestro primer programa con horario fijo en Radio Méndez, y descubre también las producciones de <strong>Méndez TV</strong> disponibles en Facebook y YouTube.</p></div><a class="secondary" href="#videos">Ver videos de Méndez TV ↗</a></div>
   <div class="programs-grid" id="programs-grid">
     <article class="program-card program-featured program-vacile">
       <div class="program-logo-box"><img src="./assets/programa-el-vacile-de-villa-v1.5.9.png" alt="Afiche del programa El Vacile de Villa con Ángel Villa DJ"></div>
-      <div class="program-info"><span class="program-type">PROGRAMACIÓN RADIAL · ESTRENO OFICIAL</span><h3>El Vacile de Villa</h3><p>El primer programa oficial de <strong>Radio Méndez</strong> llega con la energía de <strong>Ángel Villa DJ</strong> y el sello de <strong>Villa Show</strong>: música, mezclas, entretenimiento y la mejor vibra para acompañar tus noches.</p><div class="program-highlight"><span>Lunes a viernes</span><span>20h00 a 22h00</span><span>Estreno: 27/10/2026</span></div><div class="program-platforms"><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-fb"></use></svg>Facebook</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-yt"></use></svg>YouTube</span><span>Se transmite por Radio Méndez</span></div><div class="program-links"><a class="program-link live" href="#inicio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 4 12 8-12 8Z" fill="currentColor"></path></svg><span>Escuchar en vivo</span></a><a class="program-link facebook" href="https://www.facebook.com/mendeztvec/videos" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-fb"></use></svg><span>Ver en Facebook</span></a><a class="program-link youtube" href="https://www.youtube.com/results?search_query=El+Vacile+de+Villa+Angel+Villa+DJ" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-yt"></use></svg><span>Ver en YouTube</span></a></div><small class="program-date-note">Horario fijo de la radio: de lunes a viernes, de 20h00 a 22h00.</small></div>
+      <div class="program-info"><span class="program-type">PROGRAMACIÓN RADIAL · ESTRENO OFICIAL</span><h3>El Vacile de Villa</h3><p>El primer programa oficial de <strong>Radio Méndez</strong> llega con la energía de <strong>Ángel Villa DJ</strong> y el sello de <strong>Villa Show</strong>: música, mezclas, entretenimiento y la mejor vibra para acompañar tus noches.</p><div class="program-highlight"><span>Lunes a viernes</span><span>20h00 a 22h00</span><span>Estreno: 27/10/2026</span></div><div class="program-platforms"><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-fb"></use></svg>Facebook</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-yt"></use></svg>YouTube</span><span>Se transmite por Radio Méndez</span></div><div class="program-links"><a class="program-link live" href="#radio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 4 12 8-12 8Z" fill="currentColor"></path></svg><span>Escuchar en vivo</span></a><a class="program-link facebook" href="https://www.facebook.com/mendeztvec/videos" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-fb"></use></svg><span>Ver en Facebook</span></a><a class="program-link youtube" href="https://www.youtube.com/results?search_query=El+Vacile+de+Villa+Angel+Villa+DJ" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-yt"></use></svg><span>Ver en YouTube</span></a></div><small class="program-date-note">Horario fijo de la radio: de lunes a viernes, de 20h00 a 22h00.</small></div>
     </article>
     <article class="program-card program-chicha">
       <div class="program-logo-box"><img src="./assets/programa-guarapo-chicha-v1.5.1.png" alt="Logo del programa Guarapo y Chicha"></div>
@@ -707,8 +767,15 @@
 </section>
 
 
-<!-- Méndez TV forma parte de Radio Méndez: sección informativa sin navegación a otra página -->
-<section class="container section" id="mendez-tv" aria-labelledby="tv-news-heading">
+
+<section class="container section sports-screen" id="deportes" data-site-view="deportes" aria-labelledby="sports-title">
+  <div class="sports-hero"><span class="eyebrow">⚽ MÉNDEZ TV · ZONA DEPORTIVA</span><h2 id="sports-title">DEPORTES <em>EN MÉNDEZ TV</em></h2><p>Resultados, cobertura de campeonatos, entrevistas y novedades deportivas de Morona Santiago. Las noticias se publican desde el mismo archivo de Méndez TV.</p><a class="secondary" href="#programas">Ver Zona Deportiva ↗</a></div>
+  <div id="sports-news-list" class="tv-news-grid" aria-live="polite"></div>
+  <div class="sports-foot"><a class="secondary" id="sports-news-link" href="#mendez-tv">Todas las noticias de Méndez TV ↗</a></div>
+</section>
+
+<!-- Méndez TV publica sus noticias dentro del portal Radio Méndez -->
+<section class="container section" id="mendez-tv" data-site-view="mendez-tv" aria-labelledby="tv-news-heading">
   <div class="tv-news-shell">
     <div class="tv-news-head">
       <div class="tv-news-identity">
@@ -735,9 +802,9 @@
   <div class="tv-news-dialog-content"><div class="tv-news-meta" id="tv-dialog-meta"></div><h2 id="tv-dialog-title"></h2><div id="tv-dialog-body"></div><a id="tv-dialog-link" target="_blank" rel="noopener noreferrer" hidden></a></div>
 </dialog>
 
-<div class="container ranking-jump" aria-label="Navegar por los rankings"><a href="#top10">🇪🇨 Top 10 ecuatoriano</a><a href="#top10-internacional">🌎 Top 10 internacional</a></div>
+<div data-site-view="radio" class="container ranking-jump" aria-label="Navegar por los rankings"><a href="#top10">🇪🇨 Top 10 ecuatoriano</a><a href="#top10-internacional">🌎 Top 10 internacional</a></div>
 
-<section class="container videos-section" id="videos" aria-labelledby="videos-title">
+<section class="container videos-section" id="videos" data-site-view="mendez-tv" aria-labelledby="videos-title">
   <div class="videos-heading">
     <div>
       <span class="eyebrow"><span class="dot"></span> MÉNDEZ TV · MULTIMEDIA</span>
@@ -773,8 +840,8 @@
     </aside>
   </div>
 </section>
-<div class="container rankings-grid" aria-label="Rankings musicales de Radio Méndez">
-<section class="section" id="top10" aria-labelledby="top10-titulo">
+<div data-site-view="radio" class="container rankings-grid" aria-label="Rankings musicales de Radio Méndez">
+<section class="section" id="top10" data-site-view="radio" aria-labelledby="top10-titulo">
   <div class="ranking-head">
     <div>
       <span class="overline">EL TALENTO DE NUESTRA TIERRA</span>
@@ -799,7 +866,7 @@
     <p class="ranking-footnote">Selección editorial de Radio Méndez · Octubre 2026. El orden no representa un ranking oficial de reproducciones. Los íconos abren YouTube o Spotify en otra pestaña.</p>
   </div>
 </section>
-<section class="section ranking-international" id="top10-internacional" aria-labelledby="top10-internacional-titulo">
+<section class="section ranking-international" id="top10-internacional" data-site-view="radio" aria-labelledby="top10-internacional-titulo">
   <div class="ranking-head">
     <div>
       <span class="overline">LOS ÉXITOS QUE SUENAN EN NUESTRO PAÍS</span>
@@ -826,7 +893,7 @@
   </div>
 </section>
 </div>
-<section class="container services-section" id="servicios" aria-labelledby="servicios-titulo">
+<section class="container services-section" id="servicios" data-site-view="servicios" aria-labelledby="servicios-titulo">
   <div class="services-head">
     <div>
       <span class="overline">CATÁLOGO INTERACTIVO</span>
@@ -911,7 +978,7 @@
   </div>
 </section>
 
-<section class="container sponsors-section" id="auspiciantes" aria-labelledby="sponsors-title">
+<section class="container sponsors-section" id="auspiciantes" data-site-view="auspiciantes" aria-labelledby="sponsors-title">
   <div class="sponsors-heading">
     <div><span class="overline">ALIADOS DE NUESTRA SEÑAL</span><h2 id="sponsors-title">Nuestros <span>auspiciantes</span></h2><p>Gracias a las empresas y personas que acompañan a Radio Méndez y apoyan nuestros contenidos.</p></div>
     <span class="sponsor-legend">Radio Méndez · Una producción de Méndez TV</span>
@@ -924,7 +991,7 @@
   <div class="sponsors-note"><small>Los banners de auspiciantes se desplazan automáticamente. Pasa el cursor o mantén el dedo para verlos con calma.</small><small>Si deseas agregar nuevos banners, solo reemplaza las imágenes en <strong>assets/auspiciantes/</strong>.</small></div>
   <div class="sponsors-foot"><p>¿Quieres que tu marca forme parte de nuestros auspiciantes? Escríbenos para conocer los espacios de patrocinio y difusión.</p><a id="sponsor-contact" href="https://wa.me/593961180749?text=Hola%2C%20quiero%20auspiciar%20Radio%20M%C3%A9ndez" target="_blank" rel="noopener noreferrer">Quiero auspiciar ↗</a></div>
 </section>
-<section class="container support-section" id="apoyar" aria-labelledby="support-title">
+<section class="container support-section" id="apoyar" data-site-view="apoyar" aria-labelledby="support-title">
   <div class="support-shell">
     <header class="support-header">
       <span class="overline">TU APORTE NOS IMPULSA</span>
@@ -961,8 +1028,8 @@
   </div>
 </section>
 
-<section class="container" id="publicidad"><div class="ad-banner"><div><strong>Tu marca también puede sonar aquí.</strong><p>Promociona tu negocio, evento o emprendimiento en Radio Méndez.<br>Consulta por espacios publicitarios y auspicios.</p></div><a class="primary" id="contact-ad" href="#" target="_blank" rel="noopener noreferrer">Consultar publicidad ↗</a></div></section>
-<section class="container social-section" id="redes" aria-labelledby="redes-titulo">
+<section class="container" id="publicidad" data-site-view="servicios"><div class="ad-banner"><div><strong>Tu marca también puede sonar aquí.</strong><p>Promociona tu negocio, evento o emprendimiento en Radio Méndez.<br>Consulta por espacios publicitarios y auspicios.</p></div><a class="primary" id="contact-ad" href="#" target="_blank" rel="noopener noreferrer">Consultar publicidad ↗</a></div></section>
+<section class="container social-section" id="redes" data-site-view="apoyar" aria-labelledby="redes-titulo">
   <div class="social-section-inner">
     <div><span class="overline">SÍGUENOS Y CONECTA</span><h2 id="redes-titulo">Somos Méndez TV, <span style="color:var(--green)">síguenos</span></h2><p>Noticias, música, entrevistas y transmisiones desde Morona Santiago. Encuéntranos en nuestras redes oficiales.</p></div>
     <nav class="social-icons" aria-label="Redes sociales oficiales de Méndez TV"><a class="social-link instagram" data-social="instagram" href="https://www.instagram.com/mendeztvec/" target="_blank" rel="noopener noreferrer" aria-label="Seguir a Méndez TV en Instagram" title="Instagram de Méndez TV"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-ig"></use></svg></a>
@@ -971,23 +1038,23 @@
 <a class="social-link youtube" data-social="youtube" href="https://www.youtube.com/@mendeztvoficial" target="_blank" rel="noopener noreferrer" aria-label="Seguir a Méndez TV en YouTube" title="YouTube de Méndez TV"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-yt"></use></svg></a></nav>
   </div>
 </section>
-<section class="container contact-section" id="contacto" aria-labelledby="contact-title">
+<section class="container contact-section" id="contacto" data-site-view="servicios" aria-labelledby="contact-title">
   <div class="contact-panel"><div class="contact-intro"><span class="overline">HABLEMOS</span><h2 id="contact-title">Contacto <span>Radio Méndez</span></h2><p>¿Quieres anunciar tu negocio, auspiciar un programa o solicitar un servicio de Méndez TV? Escríbenos directamente.</p><div class="contact-phone">WhatsApp: <strong>096 118 0749</strong></div></div>
     <div class="contact-actions"><a class="contact-wa" id="contact-whatsapp" href="https://wa.me/593961180749?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20Radio%20M%C3%A9ndez." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.65 15.02L2 22l5.1-1.34A10 10 0 1 0 12 2Zm0 18.16a8.1 8.1 0 0 1-4.13-1.13l-.3-.17-3.02.8.81-2.95-.19-.3A8.15 8.15 0 1 1 12 20.16Zm4.5-6.1c-.24-.12-1.42-.7-1.64-.77-.22-.08-.38-.12-.54.12-.16.23-.62.77-.76.93-.14.15-.28.17-.51.06-.24-.12-1-.37-1.92-1.2a7.2 7.2 0 0 1-1.33-1.63c-.14-.24-.01-.36.11-.47.11-.11.24-.28.36-.42.12-.14.16-.24.24-.39.08-.16.04-.3-.02-.42-.06-.11-.54-1.3-.74-1.8-.2-.47-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3s-.84.83-.84 2.02.86 2.33.98 2.49c.12.16 1.7 2.59 4.12 3.63.58.25 1.03.39 1.38.5.58.18 1.09.16 1.5.09.46-.07 1.42-.58 1.63-1.14s.21-1.04.15-1.14c-.06-.1-.22-.16-.46-.28Z"/></svg> Escribir por WhatsApp <span aria-hidden="true">↗</span></a>
     <a class="contact-outline" href="https://www.facebook.com/mendeztvec" target="_blank" rel="noopener noreferrer">Facebook de Méndez TV <span aria-hidden="true">↗</span></a><a class="contact-outline" href="https://www.instagram.com/mendeztvec/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a></div>
   </div>
 </section>
 </main>
-<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.6.0 · 2026</span>.</span></div></footer>
+<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.6.1 · 2026</span>.</span></div></footer>
 
 <div class="radio-mini" id="radio-mini" aria-label="Reproductor permanente Radio Méndez" hidden>
-  <a class="radio-mini-label" href="#inicio" aria-label="Ir al reproductor principal de Radio Méndez"><img src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span><strong class="radio-mini-title">Radio Méndez</strong><small class="radio-mini-sub" id="radio-mini-sub">¡La radio que te mueve!</small></span></a>
+  <a class="radio-mini-label" href="#radio" aria-label="Ir al reproductor principal de Radio Méndez"><img src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span><strong class="radio-mini-title">Radio Méndez</strong><small class="radio-mini-sub" id="radio-mini-sub">¡La radio que te mueve!</small></span></a>
   <div class="radio-mini-controls"><input class="radio-mini-volume" id="radio-mini-volume" type="range" min="0" max="100" value="80" aria-label="Volumen del reproductor permanente"><button type="button" class="radio-mini-play" id="radio-mini-play" aria-label="Reproducir radio" aria-pressed="false">▶</button></div>
 </div>
 <audio id="radio-audio" preload="none" playsinline></audio>
 <script src="./auspiciantes.js"></script>
-<script src="./donaciones.js?v=1.6.0"></script>
-<script src="./noticias.js?v=1.6.0"></script>
+<script src="./donaciones.js?v=1.6.1"></script>
+<script src="./noticias.js?v=1.6.1"></script>
 <script>
 (()=>{
  'use strict';
@@ -1329,7 +1396,7 @@
   $('donate-bank-fallback').href=donationWhatsapp+'?text='+encodeURIComponent('Hola, quisiera los datos para apoyar a Radio Méndez por transferencia.');
  }
 
- if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.6.0').catch(()=>{}))}
+ if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.6.1').catch(()=>{}))}
 })();
 </script>
 
@@ -1380,5 +1447,51 @@
  render('Todas');
 })();
 </script>
+
+<script>
+/* Navegación por vistas: un solo documento y un solo audio HTML5; cada URL # abre una pantalla propia. */
+(()=>{
+ 'use strict';
+ const views=['inicio','radio','mendez-tv','programas','deportes','servicios','auspiciantes','apoyar'];
+ const routes={inicio:'inicio',radio:'radio',top10:'radio','top10-internacional':'radio',programas:'programas',
+   'mendez-tv':'mendez-tv',videos:'mendez-tv',deportes:'deportes',servicios:'servicios',contacto:'servicios',
+   publicidad:'servicios',auspiciantes:'auspiciantes',apoyar:'apoyar',redes:'apoyar'};
+ const all=Array.from(document.querySelectorAll('[data-site-view]'));
+ const nav=Array.from(document.querySelectorAll('#site-navigation a[href^="#"]'));
+ function route(){
+   const raw=decodeURIComponent(location.hash.slice(1)).trim().toLowerCase()||'inicio';
+   const view=routes[raw]||'inicio';
+   all.forEach(node=>{if(node.dataset.siteView===view){node.setAttribute('data-site-active','');node.removeAttribute('aria-hidden')}else{node.removeAttribute('data-site-active');node.setAttribute('aria-hidden','true')}});
+   nav.forEach(a=>{if(a.getAttribute('href')==='#'+view)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+   document.title=(view==='inicio'?'Radio Méndez':({'radio':'Radio en vivo','mendez-tv':'Méndez TV · Noticias','programas':'Programas','deportes':'Deportes','servicios':'Servicios','auspiciantes':'Auspiciantes','apoyar':'Apoyar'}[view]+' | Radio Méndez'))+' — ¡La radio que te mueve!';
+   const target=document.getElementById(raw);
+   if(raw!==view && target && target.getAttribute('data-site-active')!==null){target.scrollIntoView({block:'start',behavior:'instant'})}
+   else window.scrollTo({top:0,behavior:'instant'});
+   document.dispatchEvent(new CustomEvent('radiomendez:route',{detail:{view,anchor:raw}}));
+ }
+ window.addEventListener('hashchange',route);
+ // Navigating to current route should still return to the top
+ document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const hash=a.getAttribute('href');if(hash===location.hash && Object.prototype.hasOwnProperty.call(routes,hash.slice(1))){e.preventDefault();route()}});
+ // Homepage: last real news item (no invented headlines)
+ const posts=Array.isArray(window.MENDEZ_TV_NOTICIAS)?window.MENDEZ_TV_NOTICIAS:[];
+ const latest=posts.filter(p=>p && p.titulo).sort((a,b)=>String(b.fecha||'').localeCompare(String(a.fecha||'')))[0];
+ if(latest)document.getElementById('portal-latest-summary').textContent=latest.titulo;
+ // Sports: only entries under the existing Deportes category
+ const sportsList=document.getElementById('sports-news-list');
+ const sports=posts.filter(p=>p&&p.titulo&&p.categoria==='Deportes').sort((a,b)=>String(b.fecha||'').localeCompare(String(a.fecha||'')));
+ if(!sports.length){const p=document.createElement('p');p.className='tv-news-empty';p.textContent='Todavía no hay noticias deportivas publicadas. Aquí aparecerán cuando se agreguen desde Méndez TV.';sportsList.append(p)}
+ else sports.forEach(post=>{
+   const card=document.createElement('article');card.className='tv-news-card';
+   if(typeof post.imagen==='string' && /^\.\/assets\/[a-z0-9_./-]+\.(?:png|jpe?g|webp)$/i.test(post.imagen)){const img=document.createElement('img');img.className='tv-news-img';img.loading='lazy';img.src=post.imagen;img.alt='Imagen de '+post.titulo;card.append(img)}
+   const info=document.createElement('div');info.className='tv-news-card-info';
+   const title=document.createElement('h3');title.textContent=post.titulo;
+   const desc=document.createElement('p');desc.textContent=post.resumen||'';
+   const link=document.createElement('a');link.href='#mendez-tv';link.className='tv-news-open';link.textContent='Leer en Méndez TV ↗';link.addEventListener('click',()=>{const b=document.querySelector('.tv-news-filter[data-category="Deportes"]');if(b)b.click()});
+   info.append(title,desc,link);card.append(info);sportsList.append(card)
+ });
+ route();
+})();
+</script>
+
 </body>
 </html>

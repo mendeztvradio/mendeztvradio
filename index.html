@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://radiomendez.github.io/assets/vista-previa-mendez-tv-radio-online-v1.5.5.jpg">
   <link rel="icon" type="image/png" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
   <link rel="apple-touch-icon" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
-  <meta name="app-version" content="1.5.5">
+  <meta name="app-version" content="1.5.7">
   <title>Radio Méndez | ¡La radio que te mueve!</title>
   <style>
     :root { color-scheme: dark; --bg:#030C23; --surface:rgba(8,28,73,.92); --edge:rgba(41,159,255,.31); --txt:#f8fbff; --muted:#b8cbe7; --cyan:#37c5ff; --blue:#196eff; --pink:#49a5ff; --green:#39baff; }
@@ -478,7 +478,95 @@
     .video-feature-preview img{object-fit:contain;border-radius:10px}
     @media(max-width:740px){.brand img{width:47px;height:47px}.brand-name{font-size:18px}.brand-sub{font-size:9px}}
 
-</style>
+
+    /* RADIO MÉNDEZ — APORTES VOLUNTARIOS v1.5.6 */
+    .hero-support-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid rgba(116,203,255,.46);background:rgba(18,69,157,.50);padding:15px 18px;border-radius:14px;color:#dff5ff;text-decoration:none;font-weight:850;font-size:13px}
+    .hero-support-link:hover{background:rgba(25,113,205,.52)}
+    .support-section{padding:22px 0 68px;scroll-margin-top:25px}
+    .support-shell{position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(8,45,118,.94),rgba(4,20,60,.97));border:1px solid rgba(69,174,255,.34);border-radius:26px;padding:33px;box-shadow:0 20px 55px rgba(0,0,0,.2)}
+    .support-shell:before{content:"";position:absolute;width:300px;height:300px;right:-145px;top:-180px;border:1px solid rgba(74,194,255,.18);border-radius:50%;box-shadow:0 0 0 35px rgba(74,194,255,.04),0 0 0 70px rgba(74,194,255,.03);pointer-events:none}
+    .support-header{position:relative;max-width:750px;margin-bottom:23px}
+    .support-header h2{font-size:clamp(28px,4vw,42px);letter-spacing:-1.1px;line-height:1.1;margin:9px 0 11px}
+    .support-header h2 span{color:#42cdff}
+    .support-header p{font-size:14px;line-height:1.7;color:#bcd5f3;margin:0}
+    .support-grid{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+    .support-card{display:flex;flex-direction:column;align-items:flex-start;gap:13px;background:rgba(5,22,59,.82);border:1px solid rgba(76,159,255,.32);border-radius:19px;padding:23px;min-width:0}
+    .support-mark{display:grid;place-items:center;width:48px;height:48px;border-radius:15px;background:rgba(68,165,255,.17);color:#6cceff;font-size:23px;font-weight:950}
+    .support-card h3{font-size:21px;letter-spacing:-.55px;margin:0}
+    .support-card p{color:#bdd0e7;font-size:13px;line-height:1.6;margin:0;flex:1}
+    .support-action{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;padding:12px 16px;border-radius:12px;background:linear-gradient(115deg,#29c2ff,#1677ed);color:white!important;font-weight:850;text-decoration:none;font-size:13px;cursor:pointer}
+    .support-action:hover{filter:brightness(1.13)}
+    .support-note{font-size:11px;color:#a2bfd9;line-height:1.6;margin:17px 0 0}
+    .bank-fields{width:100%;display:grid;gap:9px;padding:13px 0 4px;border-top:1px solid rgba(102,180,255,.18);font-size:13px}
+    .bank-field{display:flex;justify-content:space-between;gap:15px;align-items:start;color:#aecbe5;line-height:1.45}
+    .bank-field strong{color:#fff;text-align:right;overflow-wrap:anywhere}
+    .bank-actions{display:flex;gap:8px;flex-wrap:wrap}
+    .bank-actions button{font:inherit}
+    .support-feedback{min-height:17px;font-size:12px;color:#72d8ff;font-weight:750}
+    @media(max-width:700px){.support-shell{padding:22px 16px}.support-grid{grid-template-columns:1fr}.support-card{padding:20px}.support-header h2{font-size:30px}.support-action{width:100%}}
+
+
+    /* TOP 10 - CARÁTULAS PRO · 1.5.7 */
+    .rankings-grid .ranking-item {
+      grid-template-columns:31px 56px minmax(0,1fr) auto;
+      gap:11px; padding:13px 5px; min-height:88px;
+      transition:background .18s ease;
+    }
+    .rankings-grid .ranking-item:hover {background:rgba(60,143,255,.065)}
+    .rankings-grid .ranking-position {font-size:21px;font-weight:950;line-height:1}
+    .rankings-grid .ranking-art {
+      position:relative;isolation:isolate;overflow:hidden;display:grid;place-items:center;
+      width:56px;height:56px;aspect-ratio:1;flex:none;border-radius:13px;
+      background:linear-gradient(145deg,#1750AB,#072051); border:1px solid rgba(101,180,255,.50);
+      box-shadow:0 5px 17px rgba(0,0,0,.24);
+    }
+    .rankings-grid .ranking-art svg {width:22px;height:22px;opacity:.86;position:relative;z-index:-1}
+    .rankings-grid .ranking-art img {
+      position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+      display:block;border-radius:inherit;z-index:2;
+      transition:transform .22s ease,opacity .22s ease;
+    }
+    .rankings-grid .ranking-item:hover .ranking-art img {transform:scale(1.055)}
+    .rankings-grid .ranking-details {min-width:0}
+    .rankings-grid .ranking-song{font-weight:900;font-size:14px;line-height:1.30;overflow-wrap:anywhere}
+    .rankings-grid .ranking-artist{font-size:11px;color:#bfcee9;line-height:1.38}
+    .rankings-grid .ranking-genre{font-size:9px;color:#77d5ff;margin-top:3px}
+    .rankings-grid .ranking-actions{gap:6px}
+    .rankings-grid .ranking-platform{width:35px;height:35px;border-radius:10px}
+    .rankings-grid .ranking-platform svg{width:19px;height:19px}
+    .rankings-grid .ranking-platform:hover{transform:translateY(-2px) scale(1.04)}
+    @media(max-width:1010px) {
+      .rankings-grid .ranking-item{grid-template-columns:34px 62px minmax(0,1fr) auto;min-height:92px;gap:14px;padding:14px 6px}
+      .rankings-grid .ranking-art{width:62px;height:62px}
+      .rankings-grid .ranking-song{font-size:16px}
+      .rankings-grid .ranking-artist{font-size:12px}
+      .rankings-grid .ranking-platform{width:40px;height:40px}
+      .rankings-grid .ranking-platform svg{width:20px;height:20px}
+    }
+    @media(max-width:740px){
+      .rankings-grid .ranking-item{grid-template-columns:28px 44px minmax(0,1fr) auto;min-height:73px;gap:8px;padding:11px 3px}
+      .rankings-grid .ranking-art{width:44px;height:44px;border-radius:11px}
+      .rankings-grid .ranking-art svg{width:19px;height:19px}
+      .rankings-grid .ranking-position{font-size:20px}
+      .rankings-grid .ranking-song{font-size:13px}
+      .rankings-grid .ranking-artist{font-size:11px}
+      .rankings-grid .ranking-genre{font-size:8px}
+      .rankings-grid .ranking-platform{width:33px;height:33px}
+      .rankings-grid .ranking-platform svg{width:18px;height:18px}
+    }
+    @media(max-width:365px){
+      .rankings-grid .ranking-item{grid-template-columns:23px 37px minmax(0,1fr) auto;gap:5px;padding:10px 2px}
+      .rankings-grid .ranking-art{width:37px;height:37px;border-radius:9px}
+      .rankings-grid .ranking-position{font-size:17px}
+      .rankings-grid .ranking-song{font-size:12px}
+      .rankings-grid .ranking-artist{font-size:10px}
+      .rankings-grid .ranking-actions{gap:4px}
+      .rankings-grid .ranking-platform{width:28px;height:28px}
+      .rankings-grid .ranking-platform svg{width:15px;height:15px}
+    }
+    @media(prefers-reduced-motion:reduce){.rankings-grid .ranking-art img{transition:none}}
+
+  </style>
   <script src="./config.js?v=1.3.2"></script>
   <script src="./top10.js?v=1.3.2"></script>
   <script src="./videos.js?v=1.3.2"></script>
@@ -499,7 +587,7 @@
 <header class="container nav">
   <a class="brand" href="#inicio" aria-label="Méndez TV y Radio Online, inicio"><img src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span class="brand-name">MÉNDEZ<small class="brand-sub">TV &amp; RADIO ONLINE</small></span></a>
   
-  <nav class="nav-links" id="site-navigation" aria-label="Navegación principal"><a href="#inicio">Inicio</a><a href="#programas">Programas</a><a href="#servicios">Servicios</a><a href="#auspiciantes">Auspiciantes</a><a href="#contacto">Contacto</a></nav>
+  <nav class="nav-links" id="site-navigation" aria-label="Navegación principal"><a href="#inicio">Inicio</a><a href="#programas">Programas</a><a href="#servicios">Servicios</a><a href="#auspiciantes">Auspiciantes</a><a href="#apoyar">❤️ Apoyar</a><a href="#contacto">Contacto</a></nav>
 </header>
 <main>
 <section class="container hero" id="inicio">
@@ -517,7 +605,7 @@
 <a class="social-link tiktok" data-social="tiktok" href="https://www.tiktok.com/@mendeztvec" target="_blank" rel="noopener noreferrer" aria-label="Seguir a Méndez TV en TikTok" title="TikTok de Méndez TV"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-tt"></use></svg></a>
 <a class="social-link youtube" data-social="youtube" href="https://www.youtube.com/@mendeztvoficial" target="_blank" rel="noopener noreferrer" aria-label="Seguir a Méndez TV en YouTube" title="YouTube de Méndez TV"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-yt"></use></svg></a></div>
     </div>
-   <div class="hero-actions"><button class="primary" id="hero-play" type="button"><svg class="btn-icon" viewBox="0 0 24 24"><path d="m8 5 12 7-12 7z"/></svg><span>Escuchar en vivo</span></button><a class="secondary" href="#programas">Ver programación ↗</a><a class="secondary" href="#videos">▶ Videos de Méndez TV</a></div>
+   <div class="hero-actions"><button class="primary" id="hero-play" type="button"><svg class="btn-icon" viewBox="0 0 24 24"><path d="m8 5 12 7-12 7z"/></svg><span>Escuchar en vivo</span></button><a class="secondary" href="#programas">Ver programación ↗</a><a class="hero-support-link" href="#apoyar">❤ Apoya nuestra señal</a><a class="secondary" href="#videos">▶ Videos de Méndez TV</a></div>
  </div>
  <div class="radio-wrap"><div class="radio-card">
    <div class="card-head"><small>RADIO MÉNDEZ · EN LÍNEA</small><span class="live-pill"><i class="dot"></i> EN VIVO</span></div>
@@ -742,6 +830,43 @@
   <div class="sponsors-note"><small>Los banners de auspiciantes se desplazan automáticamente. Pasa el cursor o mantén el dedo para verlos con calma.</small><small>Si deseas agregar nuevos banners, solo reemplaza las imágenes en <strong>assets/auspiciantes/</strong>.</small></div>
   <div class="sponsors-foot"><p>¿Quieres que tu marca forme parte de nuestros auspiciantes? Escríbenos para conocer los espacios de patrocinio y difusión.</p><a id="sponsor-contact" href="https://wa.me/593961180749?text=Hola%2C%20quiero%20auspiciar%20Radio%20M%C3%A9ndez" target="_blank" rel="noopener noreferrer">Quiero auspiciar ↗</a></div>
 </section>
+<section class="container support-section" id="apoyar" aria-labelledby="support-title">
+  <div class="support-shell">
+    <header class="support-header">
+      <span class="overline">TU APORTE NOS IMPULSA</span>
+      <h2 id="support-title">❤️ Apoya a <span>Radio Méndez</span></h2>
+      <p>Si disfrutas nuestra música, entrevistas y transmisiones, puedes contribuir voluntariamente para seguir fortaleciendo nuestros contenidos. Elige cómo deseas apoyarnos.</p>
+    </header>
+    <div class="support-grid">
+      <article class="support-card">
+        <div class="support-mark" aria-hidden="true">P</div>
+        <h3>Apoyar con PayPal</h3>
+        <p>Aporta de manera voluntaria desde PayPal con el enlace oficial de Radio Méndez.</p>
+        <a class="support-action" id="donate-paypal" href="#" target="_blank" rel="noopener noreferrer" hidden>Ir a PayPal ↗</a>
+        <a class="support-action" id="donate-paypal-fallback" href="https://wa.me/593961180749?text=Hola%2C%20quiero%20apoyar%20a%20Radio%20M%C3%A9ndez%20por%20PayPal" target="_blank" rel="noopener noreferrer">Solicitar enlace PayPal ↗</a>
+      </article>
+      <article class="support-card">
+        <div class="support-mark" aria-hidden="true">$</div>
+        <h3>Transferencia bancaria</h3>
+        <p>Realiza tu aporte desde una cuenta bancaria de Ecuador mediante los datos oficiales.</p>
+        <div class="bank-fields" id="donate-bank-details" hidden>
+          <div class="bank-field"><span>Banco o cooperativa</span><strong id="donate-bank-name"></strong></div>
+          <div class="bank-field"><span>Tipo de cuenta</span><strong id="donate-bank-type"></strong></div>
+          <div class="bank-field"><span>Número de cuenta</span><strong id="donate-bank-number"></strong></div>
+          <div class="bank-field"><span>Titular</span><strong id="donate-bank-owner"></strong></div>
+        </div>
+        <div class="bank-actions" id="donate-bank-actions" hidden>
+          <button class="support-action" type="button" id="donate-bank-copy">Copiar número</button>
+          <button class="support-action" type="button" id="donate-bank-copy-all">Copiar todos los datos</button>
+        </div>
+        <a class="support-action" id="donate-bank-fallback" href="https://wa.me/593961180749?text=Hola%2C%20quisiera%20los%20datos%20para%20apoyar%20a%20Radio%20M%C3%A9ndez%20por%20transferencia" target="_blank" rel="noopener noreferrer">Pedir datos por WhatsApp ↗</a>
+        <span class="support-feedback" id="donate-feedback" role="status" aria-live="polite"></span>
+      </article>
+    </div>
+    <p class="support-note">Los aportes son voluntarios y no condicionan el acceso a la señal. Los pagos y las transferencias se realizan fuera de esta página; Radio Méndez no solicita claves ni contraseñas bancarias.</p>
+  </div>
+</section>
+
 <section class="container" id="publicidad"><div class="ad-banner"><div><strong>Tu marca también puede sonar aquí.</strong><p>Promociona tu negocio, evento o emprendimiento en Radio Méndez.<br>Consulta por espacios publicitarios y auspicios.</p></div><a class="primary" id="contact-ad" href="#" target="_blank" rel="noopener noreferrer">Consultar publicidad ↗</a></div></section>
 <section class="container social-section" id="redes" aria-labelledby="redes-titulo">
   <div class="social-section-inner">
@@ -759,9 +884,10 @@
   </div>
 </section>
 </main>
-<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.5.5 · 2026</span>.</span></div></footer>
+<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.5.7 · 2026</span>.</span></div></footer>
 <audio id="radio-audio" preload="none" playsinline></audio>
 <script src="./auspiciantes.js"></script>
+<script src="./donaciones.js?v=1.5.6"></script>
 <script>
 (()=>{
  'use strict';
@@ -873,6 +999,7 @@
    ranking.slice(0,10).forEach((song,i)=>{
      const line=document.createElement('article');line.className='ranking-item';line.setAttribute('role','listitem');
      const position=document.createElement('span');position.className='ranking-position';position.textContent=String(i+1).padStart(2,'0');
+     if(typeof song.portada==='string' && song.portada.trim())line.dataset.portada=song.portada.trim();
      const cover=document.createElement('span');cover.className='ranking-art';cover.innerHTML=noteSVG;
      const details=document.createElement('div');
      const title=document.createElement('h3');title.className='ranking-song';title.textContent=song.cancion||'';
@@ -890,6 +1017,107 @@
  }
  renderRanking('top10-list','top10',Array.isArray(window.MENDEZ_TOP10)?window.MENDEZ_TOP10:[]);
  renderRanking('top10-internacional-list','top10-internacional',Array.isArray(window.MENDEZ_TOP10_INTERNACIONAL)?window.MENDEZ_TOP10_INTERNACIONAL:[]);
+
+ // CARÁTULAS: no modifica las canciones ni sus enlaces, utiliza miniaturas de videos verificados.
+ // Para portadas completas personalizadas se puede agregar "portada" en top10.js.
+ function ytVideoId(url){
+   try{
+     const u=new URL(url);
+     const host=u.hostname.toLowerCase();
+     const id=(host==='youtu.be')?u.pathname.slice(1).split('/')[0]:(
+        ['www.youtube.com','youtube.com','m.youtube.com'].includes(host) && u.pathname==='/watch' ? u.searchParams.get('v') : '');
+     return /^[a-zA-Z0-9_-]{11}$/.test(id||'')?id:'';
+   }catch{return ''}
+ }
+ const toText=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ø/g,'o').replace(/[^a-zA-Z0-9 ]/g,' ').replace(/\s+/g,' ').trim().toLowerCase();
+ const primaryArtist=v=>String(v||'').split(/,|\s+y\s+|\s+&\s+|\s+feat\.?\s+|\s+ft\.?\s+/i)[0].trim();
+ function insertCover(item,src,alt){
+   if(!item || !src || item.querySelector('img'))return;
+   const img=document.createElement('img');
+   img.src=src; img.alt=alt; img.loading='lazy'; img.decoding='async';
+   img.width=88;img.height=88;
+   img.addEventListener('error',()=>img.remove(),{once:true});
+   item.append(img);
+ }
+ // Deezer únicamente se consulta en títulos sin URL de video confirmado.
+ // Se valida coincidencia canción + primer artista: así evitamos portadas equivocadas.
+ const artworkCachePrefix='radio-mendez-art-1.5.7:';
+ let coverRequestCount=0;
+ function verifiedDeezerCover(trackName,artistName){
+   const track=toText(trackName),artist=toText(primaryArtist(artistName));
+   if(!track||!artist)return Promise.resolve('');
+   const key=artworkCachePrefix+track+'|'+artist;
+   try{
+     const cached=JSON.parse(localStorage.getItem(key)||'null');
+     if(cached&&Date.now()-cached.time<14*24*60*60*1000)return Promise.resolve(cached.url||'');
+   }catch{}
+   return new Promise(resolve=>{
+     const id='__rmArt'+(++coverRequestCount);
+     const script=document.createElement('script');
+     const query=trackName+' '+primaryArtist(artistName);
+     let finished=false;
+     let timeoutId;
+     const done=(url,shouldCache=true)=>{
+       if(finished)return;
+       finished=true;clearTimeout(timeoutId);
+       try{delete window[id]}catch{window[id]=undefined}
+       script.remove();
+       if(shouldCache)try{localStorage.setItem(key,JSON.stringify({time:Date.now(),url:url||''}))}catch{}
+       resolve(url||'');
+     };
+     window[id]=data=>{
+       const results=Array.isArray(data?.data)?data.data:[];
+       const match=results.find(r=>{
+         const a=toText(r.artist?.name);
+         const t=toText(r.title_short||r.title);
+         if(!a||!t)return false;
+         const artistMatch=a===artist||a.includes(artist)||artist.includes(a);
+         const titleMatch=t===track||((track.length>5 && t.startsWith(track+' '))||(t.length>5 && track.startsWith(t+' ')));
+         return artistMatch&&titleMatch;
+       });
+       const image=match?.album?.cover_medium||match?.album?.cover_big||'';
+       try{
+         const u=new URL(image);
+         done(u.protocol==='https:' && (u.hostname.endsWith('.dzcdn.net')||u.hostname==='dzcdn.net') ? u.href : '');
+       }catch{done('')}
+     };
+     script.onerror=()=>done('',false);
+     timeoutId=setTimeout(()=>done('',false),6500);
+     script.async=true;
+     script.src='https://api.deezer.com/search?q='+encodeURIComponent(query)+'&limit=12&output=jsonp&callback='+id;
+     document.head.append(script);
+   });
+ }
+ function fillTopArtwork(){
+   const unmatched=[];
+   document.querySelectorAll('#top10-list .ranking-item,#top10-internacional-list .ranking-item').forEach(line=>{
+     const cover=line.querySelector('.ranking-art');
+     if(!cover)return;
+     const title=line.querySelector('.ranking-song')?.textContent?.trim()||'';
+     const artist=line.querySelector('.ranking-artist')?.textContent?.trim()||'';
+     const youtube=line.querySelector('a.ranking-platform.youtube')?.getAttribute('href')||'';
+     const specific=line.dataset.portada||'';
+     // Archivos subidos a GitHub o imágenes HTTPS provistas por el editor.
+     if(specific && (/^(?:\.\/|assets\/)[a-zA-Z0-9_./-]+\.(?:png|webp|jpg|jpeg)$/i.test(specific)||/^https:\/\//i.test(specific))){
+       insertCover(cover,specific,'Carátula de '+title);return;
+     }
+     const video=ytVideoId(youtube);
+     if(video){insertCover(cover,'https://i.ytimg.com/vi/'+video+'/hqdefault.jpg','Miniatura del video de '+title);return;}
+     if(title&&artist)unmatched.push({cover,title,artist});
+   });
+   // Deezer es un complemento: si falla la red, queda visible el ícono musical, sin romper el ranking.
+   // Espaciado de peticiones para reducir llamadas simultáneas.
+   unmatched.forEach((item,i)=>{
+     setTimeout(()=>{
+       if(!item.cover.isConnected || item.cover.querySelector('img'))return;
+       verifiedDeezerCover(item.title,item.artist).then(url=>{
+         if(url&&item.cover.isConnected)insertCover(item.cover,url,'Carátula de '+item.title);
+       });
+     },i*180);
+   });
+ }
+ fillTopArtwork();
+
  $('share').addEventListener('click',async()=>{const data={title:conf.nombre||'Radio Méndez',text:'Escucha Radio Méndez — ¡La radio que te mueve!',url:location.href};try{if(navigator.share){await navigator.share(data)}else if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(location.href);setStatus('¡Enlace copiado! Compártelo con tus amigos.')}else{window.prompt('Copia este enlace:',location.href)}}catch(e){if(e?.name!=='AbortError')setStatus('No se pudo compartir. Copia el enlace de la barra del navegador.',true)}});
  // VÍDEOS DE MÉNDEZ TV: carga el reproductor solo al pulsar una vista previa.
  // Evita reproducir radio y video a la vez; la radio puede reanudarse manualmente.
@@ -961,7 +1189,37 @@
    });
  }
 
- if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.5.5').catch(()=>{}))}
+ // Aportes voluntarios: solo muestra enlaces/datos configurados expresamente en donaciones.js.
+ const donationConfig=window.MENDEZ_DONACIONES || {};
+ const paypalRaw=String(donationConfig.paypalUrl||'').trim();
+ const paypalURL=safeURL(paypalRaw);
+ const paypalAllowed=(()=>{try{const host=new URL(paypalURL).hostname.toLowerCase();return host==='paypal.com'||host.endsWith('.paypal.com')||host==='paypal.me'||host.endsWith('.paypal.me')||host==='paypalobjects.com'||host.endsWith('.paypalobjects.com')}catch{return false}})();
+ if(paypalAllowed){$('donate-paypal').href=paypalURL;$('donate-paypal').hidden=false;$('donate-paypal-fallback').hidden=true}
+ const bank=donationConfig.banco||{};
+ const bankName=String(bank.entidad||'').trim(),bankType=String(bank.tipo||'').trim(),bankNumber=String(bank.numero||'').trim(),bankOwner=String(bank.titular||'').trim();
+ const bankOK=[bankName,bankType,bankNumber,bankOwner].every(Boolean);
+ if(bankOK){
+  $('donate-bank-name').textContent=bankName;
+  $('donate-bank-type').textContent=bankType;
+  $('donate-bank-number').textContent=bankNumber;
+  $('donate-bank-owner').textContent=bankOwner;
+  $('donate-bank-details').hidden=false;
+  $('donate-bank-actions').hidden=false;
+  $('donate-bank-fallback').hidden=true;
+  const copyText=async value=>{
+   try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(value)}else{throw Error('Clipboard unavailable')} $('donate-feedback').textContent='Datos copiados.'}
+   catch{$('donate-feedback').textContent='Mantén presionado el texto y selecciona Copiar.'}
+  };
+  $('donate-bank-copy').addEventListener('click',()=>copyText(bankNumber));
+  $('donate-bank-copy-all').addEventListener('click',()=>copyText('Banco: '+bankName+'\nTipo: '+bankType+'\nCuenta: '+bankNumber+'\nTitular: '+bankOwner));
+ }
+ const donationWhatsapp=phone?'https://wa.me/'+phone:'';
+ if(donationWhatsapp){
+  $('donate-paypal-fallback').href=donationWhatsapp+'?text='+encodeURIComponent('Hola, quiero apoyar a Radio Méndez por PayPal. ¿Me comparten el enlace?');
+  $('donate-bank-fallback').href=donationWhatsapp+'?text='+encodeURIComponent('Hola, quisiera los datos para apoyar a Radio Méndez por transferencia.');
+ }
+
+ if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.5.7').catch(()=>{}))}
 })();
 </script>
 </body>

@@ -1,6 +1,6 @@
-/* Méndez TV & Radio Online / Radio Méndez · v1.5.5 */
-const CACHE='radio-mendez-v1.5.5-20261025-logo-tv-radio-online';
-const CORE=['./','./index.html','./config.js','./top10.js','./videos.js','./auspiciantes.js','./assets/logo-mendez-tv-radio-online-v1.5.5.png','./assets/icon-mendez-tv-radio-online-192-v1.5.5.png','./assets/icon-mendez-tv-radio-online-512-v1.5.5.png','./assets/vista-previa-mendez-tv-radio-online-v1.5.5.jpg'];
+/* Méndez TV & Radio Online / Radio Méndez · v1.5.7 */
+const CACHE='radio-mendez-v1.5.7-20261026-top-portadas';
+const CORE=['./','./index.html','./config.js','./top10.js','./videos.js','./auspiciantes.js','./donaciones.js','./assets/logo-mendez-tv-radio-online-v1.5.5.png','./assets/icon-mendez-tv-radio-online-192-v1.5.5.png','./assets/icon-mendez-tv-radio-online-512-v1.5.5.png','./assets/vista-previa-mendez-tv-radio-online-v1.5.5.jpg'];
 self.addEventListener('install',event=>{
  event.waitUntil(caches.open(CACHE).then(cache=>Promise.allSettled(CORE.map(path=>cache.add(path)))).then(()=>self.skipWaiting()));
 });

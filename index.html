@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://radiomendez.github.io/assets/vista-previa-mendez-tv-radio-online-v1.5.5.jpg">
   <link rel="icon" type="image/png" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
   <link rel="apple-touch-icon" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
-  <meta name="app-version" content="1.6.1">
+  <meta name="app-version" content="1.6.2">
   <title>Radio Méndez | ¡La radio que te mueve!</title>
   <style>
     :root { color-scheme: dark; --bg:#030C23; --surface:rgba(8,28,73,.92); --edge:rgba(41,159,255,.31); --txt:#f8fbff; --muted:#b8cbe7; --cyan:#37c5ff; --blue:#196eff; --pink:#49a5ff; --green:#39baff; }
@@ -666,7 +666,69 @@
     @media(max-width:740px){.portal-home{padding-top:13px}.portal-hero{grid-template-columns:1fr;gap:10px;padding:30px 23px}.portal-hero h1{letter-spacing:-1px}.portal-brand-mark img{max-width:205px}.portal-shortcuts{grid-template-columns:repeat(2,minmax(0,1fr))}.portal-tile{padding:17px;min-height:175px}.portal-latest{align-items:flex-start;flex-direction:column}}
     @media(max-width:390px){.portal-shortcuts{grid-template-columns:1fr}.portal-tile{min-height:125px}}
 
-  </style>
+  
+    /* 1.6.2 · Reproductor estable, un solo audio, identidad fija */
+    .vinyl{width:min(265px,75%);height:auto;aspect-ratio:1;animation:none!important;background:radial-gradient(circle at center,#103c85 0%,#091f51 61%,#0b1736 72%);border:1px solid rgba(83,200,255,.45);box-shadow:0 0 0 8px rgba(31,135,239,.08),0 16px 55px rgba(1,10,38,.48);isolation:isolate}
+    .vinyl:before{content:'';position:absolute;inset:-9px;border-radius:50%;border:2px dashed rgba(49,182,255,.48);box-shadow:0 0 22px rgba(22,130,255,.22);pointer-events:none}
+    .vinyl.is-playing:before{animation:radioRing 13s linear infinite}
+    .vinyl:after{content:'';position:absolute;inset:8px;border-radius:50%;border:1px solid rgba(145,220,255,.22);pointer-events:none}
+    .vinyl img{z-index:1;position:relative;width:90%;height:90%;object-fit:contain;background:none;border:0;border-radius:0;padding:0;box-shadow:none;filter:drop-shadow(0 8px 16px rgba(3,11,42,.25))}
+    @keyframes radioRing{to{transform:rotate(360deg)}}
+    .radio-card{border-color:rgba(52,191,255,.47);box-shadow:0 28px 84px rgba(0,0,0,.35),0 0 45px rgba(26,102,239,.12)}
+    .radio-card .card-head{gap:8px}
+    .radio-card .card-head small{font-size:10px}
+    .radio-card .live-pill{transition:background .2s,color .2s}
+    .radio-card .live-pill[data-state="standby"]{background:rgba(164,204,241,.13);color:#c7dcfa;border:1px solid rgba(143,192,235,.22)}
+    .radio-card .live-pill[data-state="connecting"]{background:#ffd787;color:#142547}
+    .radio-card .live-pill[data-state="playing"]{background:#37ddbf;color:#06352f}
+    .radio-card .live-pill[data-state="error"]{background:#ffb6b6;color:#38111c}
+    .radio-live-dot{width:6px;height:6px;border-radius:50%;background:currentColor;display:inline-block;flex:none}
+    .now-schedule{display:flex;align-items:center;gap:11px;margin:15px auto 7px;max-width:315px;border-radius:15px;border:1px solid rgba(73,176,255,.3);padding:12px 14px;background:rgba(4,26,77,.56);text-align:left}
+    .now-schedule-icon{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;color:#0b244c;font-size:20px;background:linear-gradient(145deg,#62d4ff,#1593ff)}
+    .now-schedule-info{flex:1;min-width:0}
+    .now-schedule-info strong{display:block;font-weight:850;font-size:13px;line-height:1.28;color:#f5fbff}
+    .now-schedule-info small{display:block;font-size:10px;font-weight:750;letter-spacing:.5px;color:#73cbff;margin-bottom:4px}
+    .now-schedule-info span{display:block;font-size:11px;color:#b6cee9;line-height:1.35;margin-top:4px}
+    .radio-mini{padding-bottom:max(10px,env(safe-area-inset-bottom));background:rgba(3,18,49,.97);box-shadow:0 -10px 34px rgba(0,0,0,.28);gap:15px}
+    .radio-mini-label img{width:48px;height:48px;background:rgba(29,78,145,.54);border:1px solid rgba(87,183,255,.27);border-radius:13px}
+    .radio-mini-program{display:block;font-size:10px;color:#71cfff;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .radio-mini-controls{flex-shrink:0}
+    .radio-mini .radio-mini-play{background:linear-gradient(135deg,#55dfff,#1889ff);box-shadow:0 7px 20px rgba(42,160,255,.24)}
+    .radio-mini-utility{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;color:#ccecff;background:rgba(34,101,182,.28);border:1px solid rgba(112,185,255,.25);font-size:18px}
+    .radio-mini .radio-mini-label{flex:1}
+    .radio-mini-signal{font-size:9px;letter-spacing:.5px;font-weight:900;padding:6px 8px;border:1px solid rgba(90,195,255,.28);border-radius:99px;color:#91d9ff}
+    .radio-mini-signal[data-state="playing"]{color:#58e7bb;border-color:rgba(70,231,186,.34)}
+    .radio-mini-signal[data-state="error"]{color:#ffbaba;border-color:rgba(255,126,126,.4)}
+    /* Carrusel de publicidad: mismo banner en todas las pantallas elegidas */
+    .sponsor-display{padding:24px 0 36px;max-width:1180px;width:min(1180px,calc(100% - 42px));margin:0 auto}
+    .sponsor-display.embedded{width:100%;padding:25px 0 12px}
+    .sponsor-display-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+    .sponsor-display-header strong{font-size:11px;font-weight:900;letter-spacing:1.5px;color:#74cfff}
+    .sponsor-display-header a{color:#bbdfff;font-size:12px;text-decoration:none;font-weight:800}
+    .sponsor-carousel{border:1px solid rgba(79,171,255,.30);border-radius:22px;background:linear-gradient(135deg,rgba(8,41,106,.94),rgba(4,18,49,.97));padding:12px;box-shadow:0 15px 34px rgba(0,0,0,.17)}
+    .sponsor-stage{position:relative;overflow:hidden;border-radius:14px;background:#041a45}
+    .sponsor-slide{display:block;text-decoration:none;color:#eaf8ff;position:relative;overflow:hidden}
+    .sponsor-slide img{display:block;width:100%;height:auto;aspect-ratio:1920/250;object-fit:contain}
+    .sponsor-slide.is-changing img{animation:sponsorFade .48s ease-out}
+    @keyframes sponsorFade{from{opacity:.24;transform:scale(1.012)}to{opacity:1;transform:scale(1)}}
+    .sponsor-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 3px 1px}
+    .sponsor-brand{font-size:13px;font-weight:850;color:#f4faff;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .sponsor-tools{display:flex;align-items:center;gap:7px;flex:none}
+    .sponsor-arrow{width:34px;height:32px;border:1px solid rgba(118,192,255,.3);background:rgba(71,153,239,.13);border-radius:10px;color:white;font-size:21px;display:grid;place-items:center}
+    .sponsor-arrow:hover{background:rgba(71,153,239,.29)}
+    .sponsor-dots{display:flex;align-items:center;gap:7px;margin:0 4px}
+    .sponsor-dot{display:block;width:9px;height:9px;padding:0;border:0;border-radius:999px;background:rgba(149,187,234,.42)}
+    .sponsor-dot[aria-current="true"]{width:20px;background:#4ecbff}
+    .sponsor-carousel small{color:#95b9dd;font-size:10px}
+    .sponsors-section .sponsor-display{width:100%;padding:0}
+    .sponsors-section .sponsor-display-header{display:none}
+    .sponsors-section .sponsors-note{margin-top:14px}
+    .sponsors-section .sponsor-carousel{padding:15px}
+    @media(max-width:680px){.sponsor-display{padding:14px 0 24px;width:calc(100% - 26px)}.sponsor-carousel{padding:8px}.sponsor-bar{gap:5px;padding:10px 3px 2px}.sponsor-brand{font-size:12px}.sponsor-arrow{width:30px;height:30px}.sponsor-display-header strong{letter-spacing:.9px;font-size:10px}.radio-mini{padding-left:12px;padding-right:12px;gap:7px}.radio-mini-utility{width:32px;height:32px;font-size:16px}.radio-mini-label img{width:40px;height:40px}.radio-mini-program{font-size:9px}.radio-mini-signal{display:none}.radio-mini .radio-mini-title{font-size:12px}.radio-mini .radio-mini-sub{font-size:10px}.radio-mini-volume{display:none}}
+    @media(max-width:400px){.radio-mini-utility.share-action{display:none}.radio-mini .radio-mini-title{font-size:11px}.sponsor-dot{width:7px;height:7px}}
+    @media(prefers-reduced-motion:reduce){.vinyl.is-playing:before,.sponsor-slide.is-changing img{animation:none!important}}
+
+</style>
   <script src="./config.js?v=1.3.2"></script>
   <script src="./top10.js?v=1.3.2"></script>
   <script src="./videos.js?v=1.3.2"></script>
@@ -708,6 +770,7 @@
     <a class="portal-tile" href="#programas"><span class="portal-tile-icon">◉</span><strong>Programas</strong><small>El Vacile de Villa y producciones</small><span class="portal-tile-arrow">Ver programación ↗</span></a>
     <a class="portal-tile" href="#deportes"><span class="portal-tile-icon">⚽</span><strong>Deportes</strong><small>Actualidad deportiva de la región</small><span class="portal-tile-arrow">Ir a deportes ↗</span></a>
   </div>
+  <div class="sponsor-display embedded" data-sponsor-carousel data-sponsor-location="inicio" aria-label="Auspiciantes en Inicio"></div>
   <div class="portal-latest"><div><span class="overline">NOVEDADES DEL MEDIO</span><h2>Lo último de <span>Méndez TV</span></h2><p id="portal-latest-summary">Noticias, información y contenido actualizado.</p></div><a class="secondary" href="#mendez-tv">Todas las noticias ↗</a></div>
 </section>
 
@@ -729,10 +792,11 @@
    <div class="hero-actions"><button class="primary" id="hero-play" type="button"><svg class="btn-icon" viewBox="0 0 24 24"><path d="m8 5 12 7-12 7z"/></svg><span>Escuchar en vivo</span></button><a class="secondary" href="#programas">Ver programación ↗</a><a class="hero-support-link" href="#apoyar">❤ Apoya nuestra señal</a><a class="secondary" href="#mendez-tv">📰 Noticias Méndez TV</a><a class="secondary" href="#videos">▶ Videos de Méndez TV</a></div>
  </div>
  <div class="radio-wrap"><div class="radio-card">
-   <div class="card-head"><small>RADIO MÉNDEZ · EN LÍNEA</small><span class="live-pill"><i class="dot"></i> EN VIVO</span></div>
+   <div class="card-head"><small>RADIO MÉNDEZ · EN LÍNEA</small><span class="live-pill" id="radio-live-indicator" data-state="standby"><i class="radio-live-dot"></i> LISTA PARA ESCUCHAR</span></div>
    <div class="vinyl" id="vinyl"><img src="./assets/logo-mendez-tv-radio-online-v1.5.5.png" alt="Méndez Tv&Radio Online, logotipo oficial"></div>
    <h2 class="track-title" id="live-title">Radio online · En directo</h2>
    <p class="track-sub">Escúchanos desde cualquier lugar del mundo</p>
+   <div class="now-schedule" aria-label="Programa según horario de Ecuador"><span class="now-schedule-icon">♫</span><div class="now-schedule-info"><small id="show-slot-label">PROGRAMACIÓN DE RADIO MÉNDEZ</small><strong id="show-slot-title">Música y programación en vivo</strong><span id="show-slot-detail">El Vacile de Villa · L–V, 20h00–22h00</span></div></div>
    <div class="equalizer" id="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
    <div class="player-control"><button class="round" id="reconnect" type="button" title="Reconectar transmisión" aria-label="Reconectar transmisión"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 6.8M20 4v7h-7"/></svg></button><button class="play-big" id="play-button" type="button" aria-label="Reproducir radio" aria-pressed="false"><svg id="play-icon" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8Z"/></svg></button><button class="round" id="mute" type="button" title="Silenciar" aria-label="Silenciar audio"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></svg></button></div>
    <div class="volume"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></svg><input id="volume" type="range" min="0" max="100" value="80" aria-label="Volumen"><span id="volume-number">80%</span></div>
@@ -740,6 +804,7 @@
     <div class="card-utility-links"><a id="whatsapp" href="#" target="_blank" rel="noopener noreferrer" hidden>WhatsApp ↗</a><button id="share" type="button">↗ Compartir radio</button></div>
   </div></div>
 </section>
+<div class="sponsor-display" data-site-view="radio" data-sponsor-carousel data-sponsor-location="radio" aria-label="Auspiciantes de la radio"></div>
 <section class="container section new-programs" id="programas" data-site-view="programas" aria-labelledby="programs-heading">
   <div class="section-title programs-header"><div><span class="overline">MÉNDEZ TV · RADIO MÉNDEZ</span><h2 id="programs-heading">Nuestros <span>programas</span></h2><p class="programs-intro">Escucha <strong>El Vacile de Villa</strong>, nuestro primer programa con horario fijo en Radio Méndez, y descubre también las producciones de <strong>Méndez TV</strong> disponibles en Facebook y YouTube.</p></div><a class="secondary" href="#videos">Ver videos de Méndez TV ↗</a></div>
   <div class="programs-grid" id="programs-grid">
@@ -795,6 +860,7 @@
     <div class="tv-news-grid" id="tv-news-list" aria-live="polite"><div class="tv-news-empty">Cargando publicaciones de Méndez TV…</div></div>
     <div class="tv-news-bottom"><a href="https://www.facebook.com/mendeztvec" target="_blank" rel="noopener noreferrer">Facebook Méndez TV ↗</a><a href="https://www.youtube.com/@mendeztvoficial" target="_blank" rel="noopener noreferrer">Nuestro canal de YouTube ↗</a><a href="#contacto">Enviar información o comunicado ↗</a></div>
   </div>
+  <div class="sponsor-display embedded" data-sponsor-carousel data-sponsor-location="mendez-tv" aria-label="Auspiciantes de Méndez TV"></div>
 </section>
 <dialog class="tv-news-dialog" id="tv-news-dialog" aria-labelledby="tv-dialog-title">
   <div class="tv-news-dialog-header"><button class="tv-news-dialog-close" id="tv-news-close" type="button">✕ Cerrar noticia</button></div>
@@ -983,12 +1049,8 @@
     <div><span class="overline">ALIADOS DE NUESTRA SEÑAL</span><h2 id="sponsors-title">Nuestros <span>auspiciantes</span></h2><p>Gracias a las empresas y personas que acompañan a Radio Méndez y apoyan nuestros contenidos.</p></div>
     <span class="sponsor-legend">Radio Méndez · Una producción de Méndez TV</span>
   </div>
-  <div class="sponsors-marquee" aria-label="Banners de auspiciantes de Radio Méndez">
-    <div class="sponsors-track" id="sponsors-track">
-      <a class="sponsor-banner" href="#" aria-label="Banner de auspiciantes"><img src="assets/auspiciantes/banner-mendez-tv-v1.5.3.png" alt="Banner de Zoenet" loading="lazy"></a>
-    </div>
-  </div>
-  <div class="sponsors-note"><small>Los banners de auspiciantes se desplazan automáticamente. Pasa el cursor o mantén el dedo para verlos con calma.</small><small>Si deseas agregar nuevos banners, solo reemplaza las imágenes en <strong>assets/auspiciantes/</strong>.</small></div>
+  <div class="sponsor-display" data-sponsor-carousel data-sponsor-location="auspiciantes" aria-label="Carrusel automático de auspiciantes"></div>
+  <div class="sponsors-note"><small>Los banners cambian automáticamente cada 7 segundos. También puedes utilizar las flechas, los puntos o deslizar con el dedo.</small><small>Los nuevos auspiciantes se agregan en <strong>auspiciantes.js</strong>.</small></div>
   <div class="sponsors-foot"><p>¿Quieres que tu marca forme parte de nuestros auspiciantes? Escríbenos para conocer los espacios de patrocinio y difusión.</p><a id="sponsor-contact" href="https://wa.me/593961180749?text=Hola%2C%20quiero%20auspiciar%20Radio%20M%C3%A9ndez" target="_blank" rel="noopener noreferrer">Quiero auspiciar ↗</a></div>
 </section>
 <section class="container support-section" id="apoyar" data-site-view="apoyar" aria-labelledby="support-title">
@@ -1045,16 +1107,16 @@
   </div>
 </section>
 </main>
-<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.6.1 · 2026</span>.</span></div></footer>
+<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.6.2 · 2026</span>.</span></div></footer>
 
 <div class="radio-mini" id="radio-mini" aria-label="Reproductor permanente Radio Méndez" hidden>
-  <a class="radio-mini-label" href="#radio" aria-label="Ir al reproductor principal de Radio Méndez"><img src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span><strong class="radio-mini-title">Radio Méndez</strong><small class="radio-mini-sub" id="radio-mini-sub">¡La radio que te mueve!</small></span></a>
-  <div class="radio-mini-controls"><input class="radio-mini-volume" id="radio-mini-volume" type="range" min="0" max="100" value="80" aria-label="Volumen del reproductor permanente"><button type="button" class="radio-mini-play" id="radio-mini-play" aria-label="Reproducir radio" aria-pressed="false">▶</button></div>
+  <a class="radio-mini-label" href="#radio" aria-label="Ir al reproductor principal de Radio Méndez"><img src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span><strong class="radio-mini-title">Radio Méndez</strong><small class="radio-mini-sub" id="radio-mini-sub">¡La radio que te mueve!</small><small class="radio-mini-program" id="radio-mini-program">L–V · 20h00 El Vacile de Villa</small></span></a>
+  <span class="radio-mini-signal" id="radio-mini-signal" data-state="standby">LISTA</span><div class="radio-mini-controls"><button type="button" class="radio-mini-utility share-action" id="radio-mini-share" aria-label="Compartir Radio Méndez" title="Compartir radio">↗</button><button type="button" class="radio-mini-utility" id="radio-mini-reconnect" aria-label="Reconectar radio" title="Reconectar radio">↻</button><input class="radio-mini-volume" id="radio-mini-volume" type="range" min="0" max="100" value="80" aria-label="Volumen del reproductor permanente"><button type="button" class="radio-mini-play" id="radio-mini-play" aria-label="Reproducir radio" aria-pressed="false">▶</button></div>
 </div>
 <audio id="radio-audio" preload="none" playsinline></audio>
 <script src="./auspiciantes.js"></script>
-<script src="./donaciones.js?v=1.6.1"></script>
-<script src="./noticias.js?v=1.6.1"></script>
+<script src="./donaciones.js?v=1.6.2"></script>
+<script src="./noticias.js?v=1.6.2"></script>
 <script>
 (()=>{
  'use strict';
@@ -1396,7 +1458,7 @@
   $('donate-bank-fallback').href=donationWhatsapp+'?text='+encodeURIComponent('Hola, quisiera los datos para apoyar a Radio Méndez por transferencia.');
  }
 
- if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.6.1').catch(()=>{}))}
+ if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.6.2').catch(()=>{}))}
 })();
 </script>
 
@@ -1493,5 +1555,6 @@
 })();
 </script>
 
+<script src="./mejoras.js?v=1.6.2"></script>
 </body>
 </html>

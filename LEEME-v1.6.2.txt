@@ -1,0 +1,25 @@
+RADIO MÉNDEZ · ACTUALIZACIÓN 1.6.2
+
+Sube a la raíz del repositorio radiomendez.github.io:
+  index.html
+  mejoras.js
+  sw.js
+  VERSION.txt (opcional)
+  LEEME-v1.6.2.txt (opcional)
+
+NO reemplaces config.js: contiene el enlace vigente del streaming contratado.
+NO reemplaces donaciones.js: contiene tu enlace real de PayPal.
+NO reemplaces noticias.js, top10.js ni auspiciantes.js: mantienen tu contenido.
+
+Cambios:
+- Mismo elemento HTMLAudioElement: reproducción sin cortes al cambiar de sección.
+- Logotipo fijo; borde luminoso con animación que respeta reducir movimiento.
+- Indicadores de conexión, reconexión y volumen sincronizado.
+- Barra flotante con controles extra (reconectar y compartir).
+- Horario del programa El Vacile de Villa, L–V 20:00–22:00 hora Ecuador. La etiqueta muestra el HORARIO previsto, no la conexión efectiva del DJ.
+- Carrusel de auspiciantes: transiciones cada 7 segundos y controles táctiles / flechas / puntos. Usa logos existentes de auspiciantes.js.
+- Lugares: Inicio, Radio en vivo, Méndez TV y Auspiciantes.
+
+Para comprobar: visita https://radiomendez.github.io/?v=1.6.2 y utiliza el menú. Si ves la versión anterior, recarga con Ctrl+F5.
+
+Notas: los avisos de patrocinio no activan audio ni interrumpen la transmisión.

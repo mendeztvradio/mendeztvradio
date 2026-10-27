@@ -1,3 +1,2 @@
-Radio Méndez · versión 1.6.1
-Fecha: 2026-10-27
-Cambio: páginas internas separadas para Radio, Méndez TV, Programas, Deportes, Servicios, Auspiciantes y Apoyar, con reproducción continua.
+Versión 1.6.2 — 27 de octubre de 2026
+Reproductor rediseñado con logo estático y audio continuo; programa por horario de Ecuador; carrusel publicitario 7 segundos en Inicio, Radio, Méndez TV y Auspiciantes.

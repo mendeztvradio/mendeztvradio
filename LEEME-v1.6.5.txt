@@ -1,0 +1,15 @@
+RADIO MÉNDEZ · ACTUALIZACIÓN v1.6.5
+
+QUÉ CAMBIA:
+- Se añade «La mañana que te mueve» a Radio en vivo, con el logotipo proporcionado.
+- Horario: 09h00–12h00 (zona horaria America/Guayaquil). Por no indicarse los días, se considera todos los días provisionalmente. Si solo se emite de lunes a viernes, pide el ajuste.
+- El reproductor muestra el programa previsto según el horario, sin afirmar que exista emisión efectiva del locutor.
+- Se conserva «El Vacile de Villa» de lunes a viernes, 20h00–22h00.
+- Se conserva el stream HTTPS CORRECTO del puerto 8474.
+
+INSTALACIÓN:
+1. Descomprime el ZIP de actualización.
+2. Sube index.html, mejoras.js, sw.js, config.js, VERSION.txt, LEEME-v1.6.5.txt y el PNG dentro de la carpeta assets/. Conserva las rutas de las carpetas.
+3. Pulsa Commit changes en GitHub y comprueba https://radiomendez.github.io/#radio.
+
+NOTA: config.js se incluye solamente para asegurar el servidor 8474, sin claves privadas. Si personalizaste otros parámetros de ese archivo después de la corrección, conserva tus valores y cambia únicamente la URL pública del stream.

@@ -1,3 +1,5 @@
-Radio Méndez Online · v1.6.3
-27 de octubre de 2026
-Secciones: Radio (El Vacile), Méndez TV (noticias), Programas (producciones) y reproductor sin marco cuadrado.
+Radio Méndez — v1.6.5
+28 de octubre de 2026
+Nuevo programa: La mañana que te mueve · 09h00–12h00.
+Se conserva El Vacile de Villa, la radio continua, los auspiciantes, noticias, Top 10 y PayPal.
+Streaming activo configurado: https://radiostreaming.pro/8474/stream

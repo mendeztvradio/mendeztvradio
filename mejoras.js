@@ -33,17 +33,31 @@
     });
   }
 
-  // Solo etiqueta el programa PREVISTO, no certifica que el DJ haya abierto el micrófono.
+  // Muestra el espacio PREVISTO según la hora de Ecuador; no confirma la conexión de los locutores.
+  // La mañana se programa de 09h00 a 12h00 diariamente, hasta que se indiquen días concretos.
   const fmt=new Intl.DateTimeFormat('en-US',{timeZone:'America/Guayaquil',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
   function updateSchedule(){
     const parts=Object.fromEntries(fmt.formatToParts(new Date()).map(x=>[x.type,x.value]));
     const mins=Number(parts.hour)*60+Number(parts.minute);
-    const onAir=['Mon','Tue','Wed','Thu','Fri'].includes(parts.weekday) && mins>=20*60 && mins<22*60;
+    const morning=mins>=9*60 && mins<12*60;
+    const villa=['Mon','Tue','Wed','Thu','Fri'].includes(parts.weekday) && mins>=20*60 && mins<22*60;
     const label=$('show-slot-label'),title=$('show-slot-title'),detail=$('show-slot-detail'),mini=$('radio-mini-program');
-    if(label)label.textContent=onAir?'EN HORARIO DE EL VACILE DE VILLA':'PROGRAMACIÓN MUSICAL';
-    if(title)title.textContent=onAir?'El Vacile de Villa':'Radio Méndez · La radio que te mueve';
-    if(detail)detail.textContent=onAir?'Ángel Villa DJ · Villa Show · hasta las 22h00':'Próximo espacio: El Vacile de Villa · L–V 20h00–22h00';
-    if(mini)mini.textContent=onAir?'Horario: El Vacile de Villa · Ángel Villa DJ':'El Vacile de Villa · L–V 20h00–22h00';
+    if(morning){
+      if(label)label.textContent='EN HORARIO DE LA MAÑANA QUE TE MUEVE';
+      if(title)title.textContent='La mañana que te mueve';
+      if(detail)detail.textContent='Música con Radio Méndez · 09h00 a 12h00';
+      if(mini)mini.textContent='La mañana que te mueve · 09h00–12h00';
+    }else if(villa){
+      if(label)label.textContent='EN HORARIO DE EL VACILE DE VILLA';
+      if(title)title.textContent='El Vacile de Villa';
+      if(detail)detail.textContent='Ángel Villa DJ · Villa Show · hasta las 22h00';
+      if(mini)mini.textContent='Horario: El Vacile de Villa · Ángel Villa DJ';
+    }else{
+      if(label)label.textContent='PROGRAMACIÓN MUSICAL';
+      if(title)title.textContent='Radio Méndez · La radio que te mueve';
+      if(detail)detail.textContent='La mañana que te mueve · 09h00–12h00 | El Vacile de Villa · L–V, 20h00–22h00';
+      if(mini)mini.textContent='Mañanas 09h–12h · Noches L–V 20h–22h';
+    }
   }
   updateSchedule();
   setInterval(updateSchedule,60000);

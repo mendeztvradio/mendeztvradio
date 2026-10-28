@@ -1,0 +1,15 @@
+RADIO MÉNDEZ — ACTUALIZACIÓN v1.6.3
+
+NOVEDADES
+- RADIO EN VIVO: mantiene el reproductor y Top 10; ahora incluye El Vacile de Villa (lunes a viernes, 20h00–22h00) con el afiche y enlaces.
+- MÉNDEZ TV: dedicada a noticias, reportajes y actualidad; los anuncios de programas quedan fuera del listado de noticias.
+- PROGRAMAS: Guarapo y Chicha, QUÉ+ MIJÍN?, Méndez TV y Zona Deportiva. Los videos de producciones están aquí.
+- REPRODUCTOR: símbolo M circular sin recuadro ni fondo cuadrado, tanto en el reproductor grande como en la barra fija.
+- Se mantiene navegación sin recarga; música continua al cambiar de pantalla.
+- Se mantiene el carrusel de auspiciantes automático cada 7 segundos.
+
+INSTALACIÓN
+Descomprime el ZIP de ACTUALIZACIÓN. En el repositorio radiomendez/radiomendez.github.io sube: index.html, sw.js, VERSION.txt y este LEEME. Confirma Commit changes. No reemplaces config.js, noticias.js, donaciones.js, top10.js, auspiciantes.js ni mejoras.js: tu sitio conservará los datos publicados.
+
+IMPORTANTE
+Una cuenta en GitHub Pages puede retener archivos en caché durante unos minutos. Recarga forzando actualización del navegador si ves la versión anterior.

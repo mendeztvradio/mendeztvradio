@@ -1,0 +1,24 @@
+RADIO MÉNDEZ v1.5.7 — TOP 10 CON CARÁTULAS
+
+CAMBIOS
+- Top 10 Ecuador e Internacional con carátulas cuadradas (1:1), títulos, artistas y YouTube/Spotify.
+- Canciones con video verificado: miniatura del video en YouTube.
+- Canciones sin video directo: consulta pública a Deezer, con validación estricta de título y artista.
+- Si una imagen no carga o no hay coincidencia verificada, aparece el icono de nota musical.
+- Diseño adaptable para PC, iPad y celular.
+- NO se cambian las URLs de streaming ni los archivos config.js, top10.js o donaciones.js.
+
+INSTALACIÓN
+1. Descarga el ZIP de actualización (NO la web completa, salvo para respaldo).
+2. Descomprime el ZIP y sube index.html, sw.js, VERSION.txt y este LEEME.
+3. GitHub Pages: https://github.com/radiomendez/radiomendez.github.io
+4. Commit changes y espera a que Pages publique el sitio.
+5. Abre https://radiomendez.github.io/?v=1.5.7#top10
+
+CARÁTULAS PROPIAS OPCIONALES
+En top10.js puedes añadir a una canción la propiedad:
+  "portada": "./assets/portadas/mi-caratula.webp",
+y subir la imagen al mismo lugar en GitHub. Se usará tu imagen en lugar de la miniatura.
+
+NOTA
+Las carátulas automáticas dependen de los servicios externos. No se inventan portadas ni se cambia el ranking si una consulta no devuelve coincidencia exacta.

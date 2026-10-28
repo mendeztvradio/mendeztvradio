@@ -1,0 +1,23 @@
+RADIO MÉNDEZ — ACTUALIZACIÓN v1.5.2
+
+Contenido del ZIP de ACTUALIZACIÓN:
+  index.html
+  sw.js
+  VERSION.txt
+  LEEME-v1.5.2.txt
+
+Cambios:
+  - Redes sociales ubicadas debajo de la identidad principal (parte izquierda).
+  - Sin redes sociales dentro del reproductor.
+  - El botón ☰ Menú fue eliminado. En celulares se muestra la navegación horizontal desplazable.
+  - Se ajustó el tamaño del icono de WhatsApp en Contacto.
+  - Se mantienen los programas y sus logos, la señal de radio, ambos Top 10, los videos y los banners de auspiciantes.
+
+INSTALACIÓN:
+  1. Haz una copia de seguridad de tu repositorio actual.
+  2. Descomprime el archivo de actualización.
+  3. En GitHub, sube los cuatro archivos al directorio principal de radiomendez.github.io.
+  4. Confirma el cambio con Commit changes.
+  5. Abre https://radiomendez.github.io/?v=1.5.2 y cierra/abre la página en celulares.
+
+No reemplaza tus configuraciones actuales de config.js, top10.js, videos.js ni auspiciantes.js.

@@ -1,0 +1,21 @@
+RADIO MÉNDEZ — ACTUALIZACIÓN v1.5.0
+
+CONTENIDO
+• Menú: Inicio, Programas, Servicios, Auspiciantes y Contacto.
+• Menú desplegable para teléfonos y tabletas.
+• Nuevas tarjetas: Guarapo y Chicha, Zona Deportiva, Méndez TV y QUÉ+ MIJÍN?.
+• Contacto por WhatsApp 096 118 0749, Facebook e Instagram.
+• Eliminados todos los controles de «Instalar app» y el manifiesto de la web.
+• Conserva el reproductor, los Top 10, videos y los banners de los auspiciantes.
+
+PARA INSTALAR EN GITHUB
+1. Haz una copia de seguridad de tu repositorio.
+2. Descarga Radio_Mendez_ACTUALIZACION_v1.5.0.zip y descomprímelo.
+3. Ve a github.com/radiomendez/radiomendez.github.io
+4. Sube index.html, sw.js, VERSION.txt y LEEME-v1.5.0.txt en la raíz.
+5. Haz Commit changes.
+6. Abre https://radiomendez.github.io/?v=1.5.0
+
+NOTA
+Los botones «Buscar episodios» de Guarapo y Chicha, Zona Deportiva y QUÉ+ MIJÍN? abren búsquedas en YouTube, no páginas de episodios específicos. Cuando tengas enlaces exactos podremos integrarlos.
+La sección se encuentra en la página principal como enlaces de navegación internos.

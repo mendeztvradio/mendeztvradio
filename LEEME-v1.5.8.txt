@@ -1,0 +1,27 @@
+RADIO MÉNDEZ — ACTUALIZACIÓN v1.5.8 (PAYPAL DIRECTO)
+
+NOVEDAD
+El botón «Apoyar con PayPal» abre directamente:
+https://www.paypal.com/ncp/payment/GTQ5LKXY2LBH8
+
+No pasa por WhatsApp. El pago y la elección del importe (si está permitida)
+se realizan en PayPal, según cómo quedó configurado el enlace por su titular.
+
+INSTALACIÓN EN GITHUB PAGES
+1) Descomprime ACTUALIZAR_RADIO_MENDEZ_v1.5.8_PAYPAL.zip.
+2) En https://github.com/radiomendez/radiomendez.github.io sube, reemplazando:
+   - index.html
+   - donaciones.js
+   - sw.js
+   - VERSION.txt
+   - LEEME-v1.5.8.txt (opcional)
+3) Haz clic en «Commit changes».
+4) Abre https://radiomendez.github.io/?v=1.5.8#apoyar y prueba el botón.
+5) Si ves la versión anterior: recarga la página y vuelve a abrir la aplicación PWA.
+
+IMPORTANTE
+- NO SE MODIFICA config.js: se conserva el streaming contratado publicado en GitHub.
+- No compartas contraseñas o claves PayPal en los archivos.
+- PayPal gestiona el pago en su plataforma; la web no cobra directamente.
+- Si el enlace llega a expirar, genera uno nuevo y reemplaza paypalUrl en donaciones.js.
+- No se han añadido datos bancarios. La opción de transferencia seguirá solicitándose por WhatsApp.

@@ -1,0 +1,13 @@
+RADIO MÉNDEZ v1.5.4
+
+Cambios:
+- Se actualizó el logo del programa QUÉ+ MIJÍN?.
+- Se actualizó el logo del programa Méndez TV.
+- Se apuntó el index a los nuevos archivos de logos para evitar caché.
+
+Archivos incluidos en la actualización:
+- index.html
+- VERSION.txt
+- LEEME-v1.5.4.txt
+- assets/programa-que-mijin-v1.5.4.png
+- assets/programa-mendez-tv-v1.5.4.png

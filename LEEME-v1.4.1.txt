@@ -1,0 +1,18 @@
+ACTUALIZACIÓN RADIO MÉNDEZ v1.4.1 — AUSPICIANTES
+
+ARCHIVOS A SUBIR AL REPOSITORIO radiomendez/radiomendez.github.io:
+- index.html
+- sw.js
+- auspiciantes.js
+- VERSION.txt
+- La carpeta assets/auspiciantes si posteriormente agregas logotipos.
+
+Deja el resto de archivos del repositorio intactos. No modifiques config.js.
+
+La página muestra cuatro auspiciantes en tarjetas; por el momento se muestran sus nombres hasta integrar los archivos de logotipos originales en assets/auspiciantes/. Los enlaces web individuales son opcionales y no están configurados hasta confirmarlos.
+
+IMPORTANTE: los logos originales remitidos en el último mensaje no pudieron incorporarse como archivos binarios aquí, por lo que los cuadros actuales mostrarán los nombres. En cuanto los archivos estén disponibles en el repositorio basta con indicarlos en auspiciantes.js.
+
+En GitHub: Add file > Upload files > Commit changes.
+Prueba: https://radiomendez.github.io/?v=1.4.1#auspiciantes
+En móvil instalado: cierra y abre la aplicación para actualizar el caché.

@@ -1,0 +1,7 @@
+RADIO MÉNDEZ — ACTUALIZACIÓN v1.4.0
+
+1. Conserva una copia de la web actual antes de reemplazar.
+2. Descomprime el ZIP y sube los archivos incluidos a tu repositorio de GitHub.
+3. Esta versión agrega un catálogo interactivo de servicios con botones directos a WhatsApp.
+4. También actualiza index.html, sw.js y VERSION.txt para forzar la nueva versión.
+5. Visita https://radiomendez.github.io/?v=1.4.0 y en la app móvil cierra y abre nuevamente.

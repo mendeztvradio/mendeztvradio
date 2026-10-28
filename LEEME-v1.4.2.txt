@@ -1,0 +1,19 @@
+RADIO MÉNDEZ v1.4.2
+
+ACTUALIZACIÓN:
+- Se reemplazó la cuadrícula de auspiciantes por banners en movimiento.
+- Se quitaron Ing. Patricio Zhicay e Ing. Freddy Cabrera.
+- Se añadieron los banners subidos por el usuario dentro de assets/auspiciantes/.
+
+ARCHIVOS PRINCIPALES:
+- index.html
+- auspiciantes.js
+- assets/auspiciantes/banner-01-v1.4.2.png
+- assets/auspiciantes/banner-02-v1.4.2.png
+- assets/auspiciantes/zoenet-banner-v1.4.2.png
+
+INSTALACIÓN RÁPIDA:
+1. Descomprime Radio_Mendez_ACTUALIZACION_v1.4.2.zip
+2. Sube los archivos al repositorio de GitHub
+3. Reemplaza los archivos existentes
+4. Haz Commit changes

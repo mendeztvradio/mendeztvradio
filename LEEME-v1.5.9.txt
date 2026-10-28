@@ -1,0 +1,14 @@
+Radio Méndez v1.5.9
+
+Novedades:
+- Se agregó el programa El Vacile de Villa como primer espacio oficial de la programación radial.
+- Se incorporó el afiche oficial del programa.
+- Se añadió el horario de lunes a viernes, de 20h00 a 22h00.
+- Se agregaron accesos a Facebook, YouTube y al reproductor en vivo desde la tarjeta del programa.
+
+Qué subir para actualizar:
+- index.html
+- sw.js
+- VERSION.txt
+- LEEME-v1.5.9.txt
+- assets/programa-el-vacile-de-villa-v1.5.9.png

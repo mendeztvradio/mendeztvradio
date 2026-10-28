@@ -1,0 +1,7 @@
+RADIO MÉNDEZ v1.5.1
+
+Cambios:
+- Se actualizó la sección Programas.
+- Se agregaron los logos oficiales de Guarapo y Chicha, QUÉ+ MIJÍN?, Zona Deportiva y Méndez TV.
+- Cada programa muestra que se transmite por Facebook y YouTube.
+- Se añadieron botones directos para ir a Facebook y YouTube de cada programa.

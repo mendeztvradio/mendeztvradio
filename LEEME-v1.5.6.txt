@@ -1,0 +1,31 @@
+RADIO MÉNDEZ | ACTUALIZACIÓN v1.5.6
+
+NOVEDAD: APORTES VOLUNTARIOS
+- Sección #apoyar en la página y botón en la portada.
+- Enlace de PayPal configurable y acceso alternativo por WhatsApp.
+- Transferencia bancaria configurable con botones para copiar los datos.
+- Funciona también en la app basada en la web y en celulares.
+
+PRIMERO: SOLO DESCARGAR ESTA ACTUALIZACIÓN Y GUARDAR RESPALDO.
+No se modifica config.js, porque tu señal de radio ya usa un nuevo servidor contratado.
+
+SUBIR A GITHUB:
+1. Descomprime Radio_Mendez_ACTUALIZACION_v1.5.6.zip
+2. Copia su contenido a la RAÍZ del repositorio (index.html, sw.js, donaciones.js y VERSION.txt).
+3. Confirma los cambios (Commit changes).
+4. Abre https://radiomendez.github.io/?v=1.5.6#apoyar
+
+PARA ACTIVAR PAYPAL Y TRANSFERENCIA:
+1. Abre donaciones.js en GitHub > Edit.
+2. En paypalUrl pega tu enlace PayPal.Me o enlace público oficial de PayPal.
+3. En banco llena entidad, tipo, numero y titular (solo si autorizas que aparezcan públicamente).
+4. Guarda los cambios (Commit changes).
+5. Al completar los campos los botones de aportes cambiarán automáticamente.
+
+SEGURIDAD:
+- Nunca publiques contraseñas, accesos SonicPanel o RadioBOSS, claves bancarias,
+  números de tarjetas, ni códigos de seguridad.
+- Los datos que pongas en donaciones.js son visibles públicamente.
+- En la página no se procesan pagos: se redirige a PayPal o el oyente transfiere desde su banco.
+- Como medio privado utiliza textos de "aporte voluntario" o "apoyar"; los botones de donación
+  benéfica de PayPal pueden exigir la verificación de organización sin fines de lucro.

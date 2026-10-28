@@ -1,0 +1,16 @@
+RADIO MÉNDEZ v1.5.3
+
+ACTUALIZACIÓN:
+- Se reemplazaron las imágenes de la sección Auspiciantes.
+- Nuevos banners cargados:
+  * Méndez TV
+  * Importadora Mejía
+  * Zoenet
+- Se mantiene el carrusel automático.
+
+ARCHIVOS PRINCIPALES:
+- index.html
+- auspiciantes.js
+- assets/auspiciantes/banner-mendez-tv-v1.5.3.png
+- assets/auspiciantes/banner-importadora-mejia-v1.5.3.png
+- assets/auspiciantes/banner-zoenet-v1.5.3.png

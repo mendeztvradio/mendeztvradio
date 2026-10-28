@@ -1,0 +1,25 @@
+RADIO MÉNDEZ — ACTUALIZACIÓN v1.5.5
+25 de octubre de 2026
+
+CÓMO SUBIR A GITHUB
+1. Descomprime este archivo ZIP en tu computadora.
+2. Abre https://github.com/radiomendez/radiomendez.github.io
+3. Crea una copia de seguridad del contenido del repositorio.
+4. Sube INDEX.HTML, SW.JS, VERSION.TXT y la carpeta assets con su estructura.
+   NO elimines los archivos existentes; solo reemplaza index.html, sw.js y VERSION.txt.
+5. Confirma con Commit changes.
+6. Abre https://radiomendez.github.io/?v=1.5.5
+7. Si el navegador sigue mostrando el logo antiguo, actualiza de nuevo la página o borra datos del sitio.
+
+NOVEDADES
+- Se integró el NUEVO LOGOTIPO ORIGINAL de Méndez Tv&Radio Online.
+- Cabecera: ícono y nombre corporativo.
+- Reproductor: logotipo completo visible y sin girar las letras.
+- Previsualización de los videos: logotipo nuevo.
+- Favicon y pantalla de inicio: nueva M azul.
+- Tarjeta al compartir en redes: nueva imagen corporativa.
+- Se renovó caché local de los dispositivos.
+
+AVISO
+El nombre Radio Méndez y el lema «¡La radio que te mueve!» se conservan para la señal de radio.
+No se cambiaron la configuración del audio ni los enlaces de Facebook/YouTube.

@@ -1,2 +1,3 @@
-Versión 1.6.2 — 27 de octubre de 2026
-Reproductor rediseñado con logo estático y audio continuo; programa por horario de Ecuador; carrusel publicitario 7 segundos en Inicio, Radio, Méndez TV y Auspiciantes.
+Radio Méndez Online · v1.6.3
+27 de octubre de 2026
+Secciones: Radio (El Vacile), Méndez TV (noticias), Programas (producciones) y reproductor sin marco cuadrado.

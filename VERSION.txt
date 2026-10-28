@@ -1,5 +1,6 @@
-Radio Méndez — v1.6.5
-28 de octubre de 2026
-Nuevo programa: La mañana que te mueve · 09h00–12h00.
-Se conserva El Vacile de Villa, la radio continua, los auspiciantes, noticias, Top 10 y PayPal.
-Streaming activo configurado: https://radiostreaming.pro/8474/stream
+Radio Méndez — v1.6.6
+Fecha: 28 de octubre de 2026
+Nuevo programa: El Vacilón del Mediodía · 12h00–14h00.
+Programación musical diurna provisional: todos los días.
+Se conserva el streaming contratado https://radiostreaming.pro/8474/stream.
+Sin cambios en noticias, Top 10, PayPal ni auspiciantes.

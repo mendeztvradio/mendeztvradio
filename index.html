@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://radiomendez.github.io/assets/vista-previa-mendez-tv-radio-online-v1.5.5.jpg">
   <link rel="icon" type="image/png" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
   <link rel="apple-touch-icon" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
-  <meta name="app-version" content="1.6.5">
+  <meta name="app-version" content="1.6.6">
   <title>Radio Méndez | ¡La radio que te mueve!</title>
   <style>
     :root { color-scheme: dark; --bg:#030C23; --surface:rgba(8,28,73,.92); --edge:rgba(41,159,255,.31); --txt:#f8fbff; --muted:#b8cbe7; --cyan:#37c5ff; --blue:#196eff; --pink:#49a5ff; --green:#39baff; }
@@ -763,6 +763,14 @@
     .program-morning .program-info h3{color:#f6fbff}
     @media(max-width:980px){.program-morning .program-logo-box{min-width:0;max-width:320px;margin:0 auto}}
     @media(max-width:640px){.program-morning .program-logo-box img{max-height:240px}}
+    /* Radio Méndez 1.6.6: El Vacilón del Mediodía — 12h00–14h00 */
+    .program-midday{background:linear-gradient(145deg,rgba(6,37,101,.96),rgba(3,22,64,.98));border-color:rgba(54,215,245,.40)}
+    .program-midday .program-logo-box{background:radial-gradient(circle at center,rgba(8,104,228,.22),rgba(0,26,72,.16) 79%);border-color:rgba(110,227,255,.24);overflow:hidden}
+    .program-midday .program-logo-box img{width:100%;height:auto;object-fit:contain;max-height:230px;filter:drop-shadow(0 7px 19px rgba(0,153,238,.22))}
+    .program-midday .program-info h3{color:#F7FCFF}
+    @media(max-width:980px){.program-midday .program-logo-box{min-width:0;max-width:320px;margin:0 auto}}
+    @media(max-width:640px){.program-midday .program-logo-box img{max-height:240px}}
+
 
 </style>
   <script src="./config.js?v=1.6.5-stream8474"></script>
@@ -796,12 +804,12 @@
       <p class="portal-slogan">¡La radio que te mueve!</p>
       <p class="portal-subtitle">Tu punto de encuentro para escuchar radio en vivo, informarte con Méndez TV y descubrir nuestros programas.</p>
       <div class="portal-actions"><a class="primary" href="#radio">▶ Escuchar la radio</a><a class="secondary" href="#mendez-tv">📰 Leer noticias</a></div>
-      <div class="portal-onair"><span class="dot"></span><strong>En nuestra programación:</strong> La mañana que te mueve · 09h00–12h00 &nbsp;|&nbsp; El Vacile de Villa · L–V, 20h00–22h00</div>
+      <div class="portal-onair"><span class="dot"></span><strong>En nuestra programación:</strong> La mañana que te mueve · 09h00–12h00 &nbsp;|&nbsp; El Vacilón del Mediodía · 12h00–14h00 &nbsp;|&nbsp; El Vacile de Villa · L–V, 20h00–22h00</div>
     </div>
     <div class="portal-brand-mark"><img src="./assets/logo-mendez-tv-radio-online-v1.5.5.png" alt="Radio Méndez TV y Radio Online" loading="eager"><span>UNA PRODUCCIÓN DE MÉNDEZ TV</span></div>
   </div>
   <div class="portal-shortcuts" aria-label="Secciones de Radio Méndez">
-    <a class="portal-tile" href="#radio"><span class="portal-tile-icon">♫</span><strong>Radio en vivo</strong><small>Música 09h00–12h00, El Vacile de Villa y Top 10</small><span class="portal-tile-arrow">Explorar ↗</span></a>
+    <a class="portal-tile" href="#radio"><span class="portal-tile-icon">♫</span><strong>Radio en vivo</strong><small>La mañana, El Vacilón del Mediodía, El Vacile de Villa y Top 10</small><span class="portal-tile-arrow">Explorar ↗</span></a>
     <a class="portal-tile" href="#mendez-tv"><span class="portal-tile-icon">▤</span><strong>Méndez TV</strong><small>Noticias, reportajes y actualidad</small><span class="portal-tile-arrow">Ver noticias ↗</span></a>
     <a class="portal-tile" href="#programas"><span class="portal-tile-icon">◉</span><strong>Programas</strong><small>Entrevistas, humor, Zona Deportiva y videos</small><span class="portal-tile-arrow">Ver programación ↗</span></a>
     <a class="portal-tile" href="#deportes"><span class="portal-tile-icon">⚽</span><strong>Deportes</strong><small>Actualidad deportiva de la región</small><span class="portal-tile-arrow">Ir a deportes ↗</span></a>
@@ -832,7 +840,7 @@
    <div class="vinyl" id="vinyl"><img src="./assets/icon-mendez-tv-radio-online-512-v1.5.5.png" alt="Símbolo circular oficial de Radio Méndez" loading="eager" width="512" height="512"></div>
    <h2 class="track-title" id="live-title">Radio online · En directo</h2>
    <p class="track-sub">Escúchanos desde cualquier lugar del mundo</p>
-   <div class="now-schedule" aria-label="Programa según horario de Ecuador"><span class="now-schedule-icon">♫</span><div class="now-schedule-info"><small id="show-slot-label">PROGRAMACIÓN DE RADIO MÉNDEZ</small><strong id="show-slot-title">Música y programación en vivo</strong><span id="show-slot-detail">La mañana que te mueve · 09h00–12h00</span></div></div>
+   <div class="now-schedule" aria-label="Programa según horario de Ecuador"><span class="now-schedule-icon">♫</span><div class="now-schedule-info"><small id="show-slot-label">PROGRAMACIÓN DE RADIO MÉNDEZ</small><strong id="show-slot-title">Música y programación en vivo</strong><span id="show-slot-detail">La mañana 09h00–12h00 · El Vacilón 12h00–14h00</span></div></div>
    <div class="equalizer" id="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
    <div class="player-control"><button class="round" id="reconnect" type="button" title="Reconectar transmisión" aria-label="Reconectar transmisión"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 6.8M20 4v7h-7"/></svg></button><button class="play-big" id="play-button" type="button" aria-label="Reproducir radio" aria-pressed="false"><svg id="play-icon" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8Z"/></svg></button><button class="round" id="mute" type="button" title="Silenciar" aria-label="Silenciar audio"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></svg></button></div>
    <div class="volume"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></svg><input id="volume" type="range" min="0" max="100" value="80" aria-label="Volumen"><span id="volume-number">80%</span></div>
@@ -841,13 +849,17 @@
   </div></div>
 </section>
 <section class="container section radio-schedule-section" id="programacion-radio" data-site-view="radio" aria-labelledby="radio-schedule-title">
-  <div class="section-title programs-header"><div><span class="overline">PROGRAMACIÓN OFICIAL · RADIO MÉNDEZ</span><h2 id="radio-schedule-title">En nuestra <span>radio</span></h2><p class="programs-intro">Descubre nuestra música de la mañana y los programas de la noche. Sintoniza la señal desde el reproductor, sin salir de esta sección.</p></div></div>
+  <div class="section-title programs-header"><div><span class="overline">PROGRAMACIÓN OFICIAL · RADIO MÉNDEZ</span><h2 id="radio-schedule-title">En nuestra <span>radio</span></h2><p class="programs-intro">Disfruta tus mañanas, el vacilón del mediodía y las noches con Ángel Villa DJ. Escucha la señal desde el reproductor, sin salir de esta sección.</p></div></div>
   <div class="programs-grid radio-programs-grid">
     <article class="program-card program-featured program-morning" aria-label="Programa La mañana que te mueve">
       <div class="program-logo-box"><img src="./assets/programa-la-manana-que-te-mueve-v1.6.5.png" alt="Logotipo oficial de La mañana que te mueve, Radio Méndez" loading="lazy" width="1254" height="1254"></div>
       <div class="program-info"><span class="program-type">PROGRAMACIÓN MUSICAL · MAÑANAS</span><h3>La mañana que te mueve</h3><p>Ponle ritmo a tu mañana con <strong>Radio Méndez</strong>. Mientras trabajas, estudias o estás en casa, ¡la música va contigo! 💙🎧</p><div class="program-highlight"><span>09h00 a 12h00</span><span>Hora de Ecuador</span></div><div class="program-platforms"><span>☀️ Música para tu mañana</span><span>🎶 Radio Méndez Online</span></div><div class="program-links"><a class="program-link live" href="#radio" data-morning-play="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 4 12 8-12 8Z" fill="currentColor"></path></svg><span>Escuchar Radio Méndez</span></a></div></div>
     </article>
-<article class="program-card program-featured program-vacile">
+    <article class="program-card program-featured program-midday" aria-label="Programa El Vacilón del Mediodía">
+      <div class="program-logo-box"><img src="./assets/programa-el-vacilon-del-mediodia-v1.6.6.png" alt="Logotipo oficial del programa El Vacilón del Mediodía de Radio Méndez" loading="lazy" width="1254" height="1254"></div>
+      <div class="program-info"><span class="program-type">PROGRAMACIÓN MUSICAL · MEDIODÍA</span><h3>El Vacilón del Mediodía</h3><p>De 12h00 a 14h00, continúa el ritmo con <strong>Radio Méndez</strong>. Música tropical, alegría y entretenimiento para acompañarte a la hora del almuerzo.</p><div class="program-highlight"><span>12h00 a 14h00</span><span>Hora de Ecuador</span></div><div class="program-platforms"><span>🎶 Música y alegría</span><span>📻 Radio Méndez Online</span></div><div class="program-links"><a class="program-link live" href="#radio" aria-label="Ir al reproductor de Radio Méndez"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 4 12 8-12 8Z" fill="currentColor"></path></svg><span>Escuchar Radio Méndez</span></a></div></div>
+    </article>
+    <article class="program-card program-featured program-vacile">
       <div class="program-logo-box"><img src="./assets/programa-el-vacile-de-villa-v1.5.9.png" alt="Afiche del programa El Vacile de Villa con Ángel Villa DJ"></div>
       <div class="program-info"><span class="program-type">PROGRAMACIÓN RADIAL · ESTRENO OFICIAL</span><h3>El Vacile de Villa</h3><p>El primer programa oficial de <strong>Radio Méndez</strong> llega con la energía de <strong>Ángel Villa DJ</strong> y el sello de <strong>Villa Show</strong>: música, mezclas, entretenimiento y la mejor vibra para acompañar tus noches.</p><div class="program-highlight"><span>Lunes a viernes</span><span>20h00 a 22h00</span><span>Estreno: 27/10/2026</span></div><div class="program-platforms"><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-fb"></use></svg>Facebook</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-yt"></use></svg>YouTube</span><span>Se transmite por Radio Méndez</span></div><div class="program-links"><a class="program-link live" href="#radio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 4 12 8-12 8Z" fill="currentColor"></path></svg><span>Escuchar en vivo</span></a><a class="program-link facebook" href="https://www.facebook.com/mendeztvec/videos" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-fb"></use></svg><span>Ver en Facebook</span></a><a class="program-link youtube" href="https://www.youtube.com/results?search_query=El+Vacile+de+Villa+Angel+Villa+DJ" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-yt"></use></svg><span>Ver en YouTube</span></a></div><small class="program-date-note">Horario fijo de la radio: de lunes a viernes, de 20h00 a 22h00.</small></div>
     </article>
@@ -855,7 +867,7 @@
 </section>
 <div class="sponsor-display" data-site-view="radio" data-sponsor-carousel data-sponsor-location="radio" aria-label="Auspiciantes de la radio"></div>
 <section class="container section new-programs" id="programas" data-site-view="programas" aria-labelledby="programs-heading">
-  <div class="section-title programs-header"><div><span class="overline">MÉNDEZ TV · ENTREVISTAS Y ENTRETENIMIENTO</span><h2 id="programs-heading">Producciones y <span>programas</span></h2><p class="programs-intro">Aquí encontrarás las producciones de <strong>Méndez TV</strong>: entrevistas, conversación, humor, deportes y videos. Para la programación musical, «La mañana que te mueve» y «El Vacile de Villa», visita <a class="inline-blue-link" href="#radio">Radio en vivo</a>.</p></div><a class="secondary" href="#videos">Ver videos de Méndez TV ↗</a></div>
+  <div class="section-title programs-header"><div><span class="overline">MÉNDEZ TV · ENTREVISTAS Y ENTRETENIMIENTO</span><h2 id="programs-heading">Producciones y <span>programas</span></h2><p class="programs-intro">Aquí encontrarás las producciones de <strong>Méndez TV</strong>: entrevistas, conversación, humor, deportes y videos. Para la programación musical, «La mañana que te mueve», «El Vacilón del Mediodía» y «El Vacile de Villa», visita <a class="inline-blue-link" href="#radio">Radio en vivo</a>.</p></div><a class="secondary" href="#videos">Ver videos de Méndez TV ↗</a></div>
   <div class="programs-grid" id="programs-grid">
     <article class="program-card program-chicha">
       <div class="program-logo-box"><img src="./assets/programa-guarapo-chicha-v1.5.1.png" alt="Logo del programa Guarapo y Chicha"></div>
@@ -1151,16 +1163,16 @@
   </div>
 </section>
 </main>
-<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.6.5 · 2026</span>.</span></div></footer>
+<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.6.6 · 2026</span>.</span></div></footer>
 
 <div class="radio-mini" id="radio-mini" aria-label="Reproductor permanente Radio Méndez" hidden>
-  <a class="radio-mini-label" href="#radio" aria-label="Ir al reproductor principal de Radio Méndez"><img src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span><strong class="radio-mini-title">Radio Méndez</strong><small class="radio-mini-sub" id="radio-mini-sub">¡La radio que te mueve!</small><small class="radio-mini-program" id="radio-mini-program">Programación: 09h00–12h00 · 20h00–22h00</small></span></a>
+  <a class="radio-mini-label" href="#radio" aria-label="Ir al reproductor principal de Radio Méndez"><img src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span><strong class="radio-mini-title">Radio Méndez</strong><small class="radio-mini-sub" id="radio-mini-sub">¡La radio que te mueve!</small><small class="radio-mini-program" id="radio-mini-program">Programación: 09h–12h · 12h–14h · 20h–22h</small></span></a>
   <span class="radio-mini-signal" id="radio-mini-signal" data-state="standby">LISTA</span><div class="radio-mini-controls"><button type="button" class="radio-mini-utility share-action" id="radio-mini-share" aria-label="Compartir Radio Méndez" title="Compartir radio">↗</button><button type="button" class="radio-mini-utility" id="radio-mini-reconnect" aria-label="Reconectar radio" title="Reconectar radio">↻</button><input class="radio-mini-volume" id="radio-mini-volume" type="range" min="0" max="100" value="80" aria-label="Volumen del reproductor permanente"><button type="button" class="radio-mini-play" id="radio-mini-play" aria-label="Reproducir radio" aria-pressed="false">▶</button></div>
 </div>
 <audio id="radio-audio" preload="none" playsinline></audio>
 <script src="./auspiciantes.js"></script>
-<script src="./donaciones.js?v=1.6.5"></script>
-<script src="./noticias.js?v=1.6.5"></script>
+<script src="./donaciones.js?v=1.6.6"></script>
+<script src="./noticias.js?v=1.6.6"></script>
 <script>
 (()=>{
  'use strict';
@@ -1502,7 +1514,7 @@
   $('donate-bank-fallback').href=donationWhatsapp+'?text='+encodeURIComponent('Hola, quisiera los datos para apoyar a Radio Méndez por transferencia.');
  }
 
- if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.6.5').catch(()=>{}))}
+ if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.6.6').catch(()=>{}))}
 })();
 </script>
 
@@ -1599,6 +1611,6 @@
 })();
 </script>
 
-<script src="./mejoras.js?v=1.6.5"></script>
+<script src="./mejoras.js?v=1.6.6"></script>
 </body>
 </html>

@@ -1,0 +1,22 @@
+RADIO MÉNDEZ · ACTUALIZACIÓN v1.6.6
+
+NUEVO:
+- Se incluye «El Vacilón del Mediodía» en Radio en vivo.
+- Horario 12h00 a 14h00 (Ecuador, zona America/Guayaquil).
+- Nuevo logotipo original para la tarjeta de programación.
+- La indicación de horario del reproductor grande y barra flotante se ajusta automáticamente según la hora de Ecuador.
+- Como no se indicaron días, el horario del mediodía se muestra provisionalmente todos los días.
+
+SE CONSERVA:
+- La mañana que te mueve, 09h00–12h00.
+- El Vacile de Villa, lunes a viernes 20h00–22h00.
+- El streaming del puerto 8474, música continua al navegar, noticias, Top 10, PayPal y auspiciantes.
+
+INSTALACIÓN:
+1. Extrae el ZIP de actualización.
+2. Sube index.html, mejoras.js, sw.js y VERSION.txt a la raíz del repositorio.
+3. Sube assets/programa-el-vacilon-del-mediodia-v1.6.6.png dentro de assets.
+4. LEEME-v1.6.6.txt es documentación opcional.
+5. Confirma Commit changes en GitHub y prueba https://radiomendez.github.io/#radio.
+
+Nota: no se incluye config.js, para conservar la configuración del streaming contratado.

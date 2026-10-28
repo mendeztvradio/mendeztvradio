@@ -1,4 +1,4 @@
-/* Radio Méndez v1.6.2 — Interfaz, horarios y publicidad. No crea reproductores nuevos. */
+/* Radio Méndez v1.6.6 — Interfaz, horarios y publicidad. No crea reproductores nuevos. */
 (()=>{
   'use strict';
   const $=id=>document.getElementById(id);
@@ -34,12 +34,13 @@
   }
 
   // Muestra el espacio PREVISTO según la hora de Ecuador; no confirma la conexión de los locutores.
-  // La mañana se programa de 09h00 a 12h00 diariamente, hasta que se indiquen días concretos.
+  // Mañana (09h–12h) y mediodía (12h–14h) se programan diariamente de forma provisional; Villa de lunes a viernes.
   const fmt=new Intl.DateTimeFormat('en-US',{timeZone:'America/Guayaquil',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
   function updateSchedule(){
     const parts=Object.fromEntries(fmt.formatToParts(new Date()).map(x=>[x.type,x.value]));
     const mins=Number(parts.hour)*60+Number(parts.minute);
     const morning=mins>=9*60 && mins<12*60;
+    const midday=mins>=12*60 && mins<14*60;
     const villa=['Mon','Tue','Wed','Thu','Fri'].includes(parts.weekday) && mins>=20*60 && mins<22*60;
     const label=$('show-slot-label'),title=$('show-slot-title'),detail=$('show-slot-detail'),mini=$('radio-mini-program');
     if(morning){
@@ -47,6 +48,11 @@
       if(title)title.textContent='La mañana que te mueve';
       if(detail)detail.textContent='Música con Radio Méndez · 09h00 a 12h00';
       if(mini)mini.textContent='La mañana que te mueve · 09h00–12h00';
+    }else if(midday){
+      if(label)label.textContent='EN HORARIO DE EL VACILÓN DEL MEDIODÍA';
+      if(title)title.textContent='El Vacilón del Mediodía';
+      if(detail)detail.textContent='Radio Méndez · música y alegría · 12h00 a 14h00';
+      if(mini)mini.textContent='El Vacilón del Mediodía · 12h00–14h00';
     }else if(villa){
       if(label)label.textContent='EN HORARIO DE EL VACILE DE VILLA';
       if(title)title.textContent='El Vacile de Villa';
@@ -55,8 +61,8 @@
     }else{
       if(label)label.textContent='PROGRAMACIÓN MUSICAL';
       if(title)title.textContent='Radio Méndez · La radio que te mueve';
-      if(detail)detail.textContent='La mañana que te mueve · 09h00–12h00 | El Vacile de Villa · L–V, 20h00–22h00';
-      if(mini)mini.textContent='Mañanas 09h–12h · Noches L–V 20h–22h';
+      if(detail)detail.textContent='La mañana · 09h–12h | El Vacilón · 12h–14h | Villa · L–V, 20h–22h';
+      if(mini)mini.textContent='Mañana 09h–12h · Mediodía 12h–14h · Noches L–V 20h–22h';
     }
   }
   updateSchedule();

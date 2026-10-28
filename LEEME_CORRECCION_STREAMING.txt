@@ -1,0 +1,24 @@
+RADIO MÉNDEZ — CORRECCIÓN DE STREAMING PARA VERSIÓN 1.6.3
+
+SEÑAL CORRECTA:
+https://radiostreaming.pro/8474/stream
+
+Este paquete corrige únicamente la URL pública de reproducción y fuerza la actualización de caché.
+No contiene contraseñas de SonicPanel ni datos privados.
+
+ARCHIVOS PARA SUBIR A LA RAÍZ DEL REPOSITORIO DE GITHUB:
+1. config.js (cambia la URL del streaming del puerto 8462 al 8474)
+2. index.html (actualiza los identificadores de caché de configuración y service worker)
+3. sw.js (renueva la caché web para evitar conservar la URL anterior)
+
+NO SOBRESCRIBIR: donaciones.js, noticias.js, top10.js, auspiciantes.js, videos.js y assets.
+
+INSTRUCCIONES:
+1. Descomprimir el ZIP.
+2. Subir los 3 archivos a https://github.com/radiomendez/radiomendez.github.io
+3. Confirmar con Commit changes.
+4. Abrir la web en ventana privada y probar PLAY. Si la tenías instalada como app web, cerrarla y volver a abrirla.
+5. Si persiste la emisora antigua, limpiar los datos de sitio/caché de esa web y volver a comprobar.
+
+SEGURIDAD IMPORTANTE:
+La captura compartida incluye credenciales de emisión y de administración. Cambiar ambas claves en SonicPanel y actualizar la clave de emisión en RadioBOSS. NO subir esas contraseñas a GitHub.

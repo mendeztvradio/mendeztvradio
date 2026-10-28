@@ -756,7 +756,7 @@
       .radio-schedule-section .program-featured .program-logo-box{width:100%;max-width:400px;min-width:0;margin:0 auto}
     }
 </style>
-  <script src="./config.js?v=1.3.2"></script>
+  <script src="./config.js?v=1.6.3-fix8474"></script>
   <script src="./top10.js?v=1.3.2"></script>
   <script src="./videos.js?v=1.3.2"></script>
   <!-- Respaldo local para iPad/iPhone cuando top10.js no esté disponible o se sirva desde un caché incompleto. -->
@@ -1489,7 +1489,7 @@
   $('donate-bank-fallback').href=donationWhatsapp+'?text='+encodeURIComponent('Hola, quisiera los datos para apoyar a Radio Méndez por transferencia.');
  }
 
- if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.6.3').catch(()=>{}))}
+ if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.6.3-fix8474').catch(()=>{}))}
 })();
 </script>
 

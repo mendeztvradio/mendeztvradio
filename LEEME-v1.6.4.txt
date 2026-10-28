@@ -1,0 +1,22 @@
+RADIO MÉNDEZ · ACTUALIZACIÓN v1.6.4
+
+CAMBIOS:
+- La sección Méndez TV conserva las noticias propias de noticias.js.
+- Debajo de las noticias se añade el muro de publicaciones públicas de Facebook Méndez TV.
+- Facebook Page Plugin se carga solamente cuando el visitante abre Méndez TV, para no ralentizar otras secciones.
+- Si el navegador bloquea Facebook, siempre hay un enlace directo a la página oficial.
+- Se conserva el reproductor, la navegación continua, PayPal, Top 10, programas y auspiciantes.
+
+SUBIR A GITHUB (desde el ZIP DE ACTUALIZACIÓN):
+1. Extraer el ZIP.
+2. Subir index.html, sw.js, VERSION.txt y LEEME-v1.6.4.txt en la raíz del repositorio.
+3. Confirmar mediante Commit changes y abrir https://radiomendez.github.io/#mendez-tv
+
+NO REEMPLAZAR config.js, noticias.js ni donaciones.js.
+
+PARA PUBLICAR NOTICIAS PROPIAS:
+Abre noticias.js en GitHub, añade una noticia según el formato existente y sube su imagen a assets/noticias.
+
+NOTAS DE FACEBOOK:
+- El plugin oficial muestra publicaciones públicas de la página; NO las convierte en artículos propios ni permite filtrar únicamente noticias.
+- El contenido, la sesión y el funcionamiento dependen de Meta/Facebook; algunos navegadores pueden bloquearlo. No necesita contraseñas ni tokens de acceso en GitHub.

@@ -1,5 +1,5 @@
-/* Méndez TV & Radio Online / Radio Méndez · v1.6.3 */
-const CACHE='radio-mendez-v1.6.3-20261027-programas-ordenados';
+/* Méndez TV & Radio Online / Radio Méndez · v1.6.4 */
+const CACHE='radio-mendez-v1.6.4-20261027-facebook-mendez-tv';
 const CORE=['./','./index.html','./config.js','./top10.js','./videos.js','./auspiciantes.js','./donaciones.js','./noticias.js','./mejoras.js','./assets/logo-mendez-tv-radio-online-v1.5.5.png','./assets/icon-mendez-tv-radio-online-192-v1.5.5.png','./assets/icon-mendez-tv-radio-online-512-v1.5.5.png','./assets/vista-previa-mendez-tv-radio-online-v1.5.5.jpg','./assets/programa-el-vacile-de-villa-v1.5.9.png'];
 self.addEventListener('install',event=>{
  event.waitUntil(caches.open(CACHE).then(cache=>Promise.allSettled(CORE.map(path=>cache.add(path)))).then(()=>self.skipWaiting()));

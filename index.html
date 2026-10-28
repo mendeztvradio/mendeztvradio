@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://radiomendez.github.io/assets/vista-previa-mendez-tv-radio-online-v1.5.5.jpg">
   <link rel="icon" type="image/png" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
   <link rel="apple-touch-icon" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
-  <meta name="app-version" content="1.6.3">
+  <meta name="app-version" content="1.6.4">
   <title>Radio Méndez | ¡La radio que te mueve!</title>
   <style>
     :root { color-scheme: dark; --bg:#030C23; --surface:rgba(8,28,73,.92); --edge:rgba(41,159,255,.31); --txt:#f8fbff; --muted:#b8cbe7; --cyan:#37c5ff; --blue:#196eff; --pink:#49a5ff; --green:#39baff; }
@@ -613,6 +613,34 @@
     .tv-news-dialog-content h2{font-size:clamp(24px,4vw,36px);line-height:1.2;margin:12px 0}
     .tv-news-dialog-content p{font-size:15px;line-height:1.85;color:#d4e5f6;margin:14px 0}
     .tv-news-dialog-content a{color:#82d9ff;font-weight:800}
+
+    /* v1.6.4 · Noticias propias + muro oficial Facebook (solo vista Méndez TV) */
+    .tv-facebook-feed{margin-top:28px;padding-top:27px;border-top:1px solid rgba(125,191,246,.23)}
+    .tv-facebook-header{display:flex;align-items:flex-start;gap:15px;margin:0 0 22px}
+    .tv-facebook-brand-icon{flex:none;width:48px;height:48px;border-radius:15px;background:linear-gradient(145deg,#2479e7,#1254a5);color:#fff;display:grid;place-items:center;font-size:35px;font-weight:850;font-family:Arial,sans-serif;box-shadow:0 10px 26px rgba(0,95,230,.24)}
+    .tv-facebook-eyebrow{color:#80cfff;font-size:10px;letter-spacing:1.8px;font-weight:900}
+    .tv-facebook-header h3{margin:5px 0 7px;font-size:clamp(21px,3.2vw,28px);line-height:1.2;letter-spacing:-.5px}
+    .tv-facebook-header h3 span{color:#69cfff}
+    .tv-facebook-header p,.tv-facebook-details p{margin:0;color:#bdd4ec;font-size:13px;line-height:1.7}
+    .tv-facebook-grid{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1fr);gap:20px;align-items:start}
+    .tv-facebook-details{min-width:0;background:linear-gradient(140deg,rgba(34,93,184,.2),rgba(7,28,79,.45));border:1px solid rgba(101,171,241,.22);border-radius:19px;padding:23px}
+    .tv-facebook-details h4{margin:0 0 10px;font-size:20px;line-height:1.28}
+    .tv-facebook-details p+p{margin-top:10px}
+    .tv-facebook-pills{display:flex;gap:8px;flex-wrap:wrap;margin:17px 0}
+    .tv-facebook-pills span{border:1px solid rgba(116,195,254,.26);background:rgba(69,141,220,.11);border-radius:30px;color:#d5eaff;padding:7px 10px;font-size:11px;font-weight:750}
+    .tv-facebook-open{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:12px;padding:12px 16px;text-decoration:none;font-size:13px;font-weight:850;color:#fff;background:linear-gradient(100deg,#1877f2,#0750b8);box-shadow:0 8px 21px rgba(5,74,177,.24)}
+    .tv-facebook-open:hover{filter:brightness(1.12)}
+    .tv-facebook-embed{display:flex;align-items:center;flex-direction:column;min-width:0;background:rgba(5,19,49,.55);padding:14px;border:1px solid rgba(113,181,248,.23);border-radius:19px}
+    .tv-facebook-iframe-wrap{width:100%;max-width:500px;min-height:580px;display:flex;justify-content:center;align-items:flex-start;border-radius:13px;background:#fff;overflow:hidden}
+    .tv-facebook-iframe-wrap iframe{border:0;display:block;flex:none;max-width:100%;background:#fff}
+    .tv-facebook-placeholder{align-self:stretch;width:100%;min-height:580px;display:grid;place-content:center;text-align:center;gap:9px;padding:24px;background:linear-gradient(135deg,#ecf4ff,#fff);color:#194b90}
+    .tv-facebook-placeholder strong{font-size:17px}
+    .tv-facebook-placeholder span{font-size:12px}
+    .tv-facebook-fallback{margin:12px 0 0;color:#b9d5ef;font-size:12px;line-height:1.5;text-align:center}
+    .tv-facebook-fallback a{color:#7acfff;font-weight:850}
+    @media(max-width:800px){.tv-facebook-grid{grid-template-columns:1fr}.tv-facebook-details{padding:20px}.tv-facebook-embed{padding:11px}}
+    @media(max-width:450px){.tv-facebook-header{gap:11px}.tv-facebook-brand-icon{width:40px;height:40px;font-size:29px;border-radius:12px}.tv-facebook-iframe-wrap,.tv-facebook-placeholder{min-height:580px}.tv-facebook-details{padding:17px}}
+
     /* Un único audio HTML5 y dos controles sincronizados: el mini reproductor nunca recarga la página. */
     body{padding-bottom:84px}
     .radio-mini{position:fixed;z-index:120;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px max(16px,calc((100vw - 1180px)/2));background:rgba(4,15,43,.97);border-top:1px solid rgba(65,171,255,.38);backdrop-filter:blur(12px);box-shadow:0 -12px 32px rgba(0,0,0,.28)}
@@ -890,6 +918,32 @@
     </div>
     <div class="tv-news-grid" id="tv-news-list" aria-live="polite"><div class="tv-news-empty">Cargando publicaciones de Méndez TV…</div></div>
     <div class="tv-news-bottom"><a href="https://www.facebook.com/mendeztvec" target="_blank" rel="noopener noreferrer">Facebook Méndez TV ↗</a><a href="https://www.youtube.com/@mendeztvoficial" target="_blank" rel="noopener noreferrer">Nuestro canal de YouTube ↗</a><a href="#contacto">Enviar información o comunicado ↗</a></div>
+    <section class="tv-facebook-feed" aria-labelledby="tv-facebook-heading">
+      <div class="tv-facebook-header">
+        <span class="tv-facebook-brand-icon" aria-hidden="true">f</span>
+        <div>
+          <span class="tv-facebook-eyebrow">MÉNDEZ TV · FACEBOOK OFICIAL</span>
+          <h3 id="tv-facebook-heading">Últimas publicaciones <span>de Facebook</span></h3>
+          <p>Después de las noticias del portal, descubre las publicaciones públicas más recientes de nuestra página.</p>
+        </div>
+      </div>
+      <div class="tv-facebook-grid">
+        <div class="tv-facebook-details">
+          <h4>También estamos en Facebook</h4>
+          <p>Las publicaciones públicas de <strong>Méndez TV</strong> se muestran aquí mediante la herramienta oficial de Facebook. El contenido se actualiza desde su plataforma sin que tengas que volver a subirlo a GitHub.</p>
+          <p>Para noticias completas y organizadas por categoría, utiliza las tarjetas de noticias que aparecen arriba.</p>
+          <div class="tv-facebook-pills"><span>Noticias</span><span>Comunidad</span><span>Publicaciones recientes</span></div>
+          <a class="tv-facebook-open" href="https://www.facebook.com/mendeztvec" target="_blank" rel="noopener noreferrer">Ver Méndez TV en Facebook ↗</a>
+        </div>
+        <div class="tv-facebook-embed">
+          <div class="tv-facebook-iframe-wrap" id="mendez-facebook-feed" aria-label="Publicaciones públicas de la página Méndez TV en Facebook">
+            <div class="tv-facebook-placeholder"><strong>Publicaciones de Méndez TV</strong><span>Se cargarán al abrir esta sección.</span></div>
+          </div>
+          <p class="tv-facebook-fallback">Si Facebook no muestra las publicaciones, <a href="https://www.facebook.com/mendeztvec" target="_blank" rel="noopener noreferrer">ábrelo directamente aquí ↗</a></p>
+        </div>
+      </div>
+    </section>
+
   </div>
   <div class="sponsor-display embedded" data-sponsor-carousel data-sponsor-location="mendez-tv" aria-label="Auspiciantes de Méndez TV"></div>
 </section>
@@ -1138,7 +1192,7 @@
   </div>
 </section>
 </main>
-<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.6.3 · 2026</span>.</span></div></footer>
+<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.6.4 · 2026</span>.</span></div></footer>
 
 <div class="radio-mini" id="radio-mini" aria-label="Reproductor permanente Radio Méndez" hidden>
   <a class="radio-mini-label" href="#radio" aria-label="Ir al reproductor principal de Radio Méndez"><img src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span><strong class="radio-mini-title">Radio Méndez</strong><small class="radio-mini-sub" id="radio-mini-sub">¡La radio que te mueve!</small><small class="radio-mini-program" id="radio-mini-program">L–V · 20h00 El Vacile de Villa</small></span></a>
@@ -1147,7 +1201,7 @@
 <audio id="radio-audio" preload="none" playsinline></audio>
 <script src="./auspiciantes.js"></script>
 <script src="./donaciones.js?v=1.6.3"></script>
-<script src="./noticias.js?v=1.6.3"></script>
+<script src="./noticias.js?v=1.6.4"></script>
 <script>
 (()=>{
  'use strict';
@@ -1489,7 +1543,7 @@
   $('donate-bank-fallback').href=donationWhatsapp+'?text='+encodeURIComponent('Hola, quisiera los datos para apoyar a Radio Méndez por transferencia.');
  }
 
- if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.6.3').catch(()=>{}))}
+ if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.6.4').catch(()=>{}))}
 })();
 </script>
 
@@ -1549,6 +1603,28 @@
  const routes={inicio:'inicio',radio:'radio','programacion-radio':'radio',top10:'radio','top10-internacional':'radio',programas:'programas',
    'mendez-tv':'mendez-tv',videos:'programas',deportes:'deportes',servicios:'servicios',contacto:'servicios',
    publicidad:'servicios',auspiciantes:'auspiciantes',apoyar:'apoyar',redes:'apoyar'};
+ const facebookFeed=document.getElementById('mendez-facebook-feed');
+ let facebookIframe=null;
+ let facebookWidth=0;
+ function loadFacebookTimeline(){
+   if(!facebookFeed)return;
+   const width=Math.min(500,Math.max(180,Math.floor(facebookFeed.clientWidth)));
+   if(facebookIframe && Math.abs(facebookWidth-width)<40)return;
+   facebookWidth=width;
+   const params=new URLSearchParams({
+     href:'https://www.facebook.com/mendeztvec',
+     tabs:'timeline',width:String(width),height:'580',
+     small_header:'false',adapt_container_width:'true',hide_cover:'false',show_facepile:'false'
+   });
+   const frame=document.createElement('iframe');
+   frame.title='Últimas publicaciones de Méndez TV en Facebook';
+   frame.src='https://www.facebook.com/plugins/page.php?'+params.toString();
+   frame.width=String(width);frame.height='580';frame.loading='lazy';
+   frame.referrerPolicy='strict-origin-when-cross-origin';
+   frame.allow='encrypted-media';
+   facebookFeed.replaceChildren(frame);
+   facebookIframe=frame;
+ }
  const all=Array.from(document.querySelectorAll('[data-site-view]'));
  const nav=Array.from(document.querySelectorAll('#site-navigation a[href^="#"]'));
  function route(){
@@ -1556,6 +1632,7 @@
    const view=routes[raw]||'inicio';
    all.forEach(node=>{if(node.dataset.siteView===view){node.setAttribute('data-site-active','');node.removeAttribute('aria-hidden')}else{node.removeAttribute('data-site-active');node.setAttribute('aria-hidden','true')}});
    nav.forEach(a=>{if(a.getAttribute('href')==='#'+view)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+   if(view==='mendez-tv')loadFacebookTimeline();
    document.title=(view==='inicio'?'Radio Méndez':({'radio':'Radio en vivo','mendez-tv':'Méndez TV · Noticias','programas':'Programas','deportes':'Deportes','servicios':'Servicios','auspiciantes':'Auspiciantes','apoyar':'Apoyar'}[view]+' | Radio Méndez'))+' — ¡La radio que te mueve!';
    const target=document.getElementById(raw);
    if(raw!==view && target && target.getAttribute('data-site-active')!==null){target.scrollIntoView({block:'start',behavior:'instant'})}
@@ -1563,6 +1640,7 @@
    document.dispatchEvent(new CustomEvent('radiomendez:route',{detail:{view,anchor:raw}}));
  }
  window.addEventListener('hashchange',route);
+ let fbResizeTimer;window.addEventListener('resize',()=>{if(!facebookIframe)return;clearTimeout(fbResizeTimer);fbResizeTimer=setTimeout(()=>{if(document.getElementById('mendez-tv')?.hasAttribute('data-site-active'))loadFacebookTimeline()},350)});
  // Navigating to current route should still return to the top
  document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const hash=a.getAttribute('href');if(hash===location.hash && Object.prototype.hasOwnProperty.call(routes,hash.slice(1))){e.preventDefault();route()}});
  // Homepage: last real news item (no invented headlines)
@@ -1586,6 +1664,6 @@
 })();
 </script>
 
-<script src="./mejoras.js?v=1.6.3"></script>
+<script src="./mejoras.js?v=1.6.4"></script>
 </body>
 </html>

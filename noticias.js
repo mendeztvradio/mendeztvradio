@@ -19,7 +19,7 @@ window.MENDEZ_TV_NOTICIAS = [
       'El programa se estrena el martes 27 de octubre de 2026 y se transmitirá de lunes a viernes, de 20h00 a 22h00, por la señal de Radio Méndez.',
       'Escúchanos en esta misma página y acompáñanos en nuestras redes sociales.'
     ],
-    enlace: 'https://www.facebook.com/mendeztvec',
+    enlace: '<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmendeztvec%2Fposts%2Fpfbid02AijEEtbKNWaU8cenyQWyKyLrHCooKowo3KbjFc1XhnNa9zte76SYjJJWXLWizrrRl&show_text=true&width=500" width="500" height="660" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>',
     textoEnlace: 'Visitar Méndez TV en Facebook ↗'
   }
   // NUEVA NOTICIA: añade una coma después del bloque anterior y luego otro objeto.

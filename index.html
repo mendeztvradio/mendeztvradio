@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>try{if('scrollRestoration' in history)history.scrollRestoration='manual'}catch(_){}</script>
   <meta name="theme-color" content="#051333">
   <meta name="description" content="Radio Méndez — ¡La radio que te mueve! Escucha música, entrevistas y programación en vivo desde Morona Santiago. Una producción de Méndez TV.">
   <meta property="og:title" content="Radio Méndez — ¡La radio que te mueve!">
@@ -13,7 +14,7 @@
   <meta property="og:image" content="https://radiomendez.github.io/assets/vista-previa-mendez-tv-radio-online-v1.5.5.jpg">
   <link rel="icon" type="image/png" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
   <link rel="apple-touch-icon" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
-  <meta name="app-version" content="1.6.6">
+  <meta name="app-version" content="1.6.7">
   <title>Radio Méndez | ¡La radio que te mueve!</title>
   <style>
     :root { color-scheme: dark; --bg:#030C23; --surface:rgba(8,28,73,.92); --edge:rgba(41,159,255,.31); --txt:#f8fbff; --muted:#b8cbe7; --cyan:#37c5ff; --blue:#196eff; --pink:#49a5ff; --green:#39baff; }
@@ -773,6 +774,7 @@
 
 
 </style>
+  <link rel="stylesheet" href="./radio-visual.css?v=1.6.7">
   <script src="./config.js?v=1.6.5-stream8474"></script>
   <script src="./top10.js?v=1.3.2"></script>
   <script src="./videos.js?v=1.3.2"></script>
@@ -841,6 +843,20 @@
    <h2 class="track-title" id="live-title">Radio online · En directo</h2>
    <p class="track-sub">Escúchanos desde cualquier lugar del mundo</p>
    <div class="now-schedule" aria-label="Programa según horario de Ecuador"><span class="now-schedule-icon">♫</span><div class="now-schedule-info"><small id="show-slot-label">PROGRAMACIÓN DE RADIO MÉNDEZ</small><strong id="show-slot-title">Música y programación en vivo</strong><span id="show-slot-detail">La mañana 09h00–12h00 · El Vacilón 12h00–14h00</span></div></div>
+   <div class="adjacent-programs" aria-label="Programa anterior y próximo programa">
+     <div class="adjacent-program previous" aria-label="Programa anterior">
+       <span class="adjacent-kicker">‹ ANTERIOR</span>
+       <div class="adjacent-row"><img id="radio-prev-img" src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt="" loading="lazy"><div class="adjacent-content"><strong id="radio-prev-title">Programa anterior</strong><small id="radio-prev-time">Horario de Ecuador</small></div></div>
+     </div>
+     <div class="adjacent-program upcoming" aria-label="Próximo programa">
+       <span class="adjacent-kicker">PRÓXIMO ›</span>
+       <div class="adjacent-row"><img id="radio-next-img" src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt="" loading="lazy"><div class="adjacent-content"><strong id="radio-next-title">Próximo programa</strong><small id="radio-next-time">Horario de Ecuador</small></div></div>
+     </div>
+   </div>
+   <div class="radio-spectrum" id="radio-spectrum" data-theme="neon" aria-label="Visualizador animado decorativo de Radio Méndez">
+       <div class="radio-spectrum-top"><span><i class="spectrum-led" aria-hidden="true"></i> ONDAS DE RADIO</span><div class="radio-theme-chooser" role="group" aria-label="Colores del visualizador"><button id="spectrum-neon" type="button" aria-pressed="true">VERDE NEÓN</button><button id="spectrum-rgb" type="button" aria-pressed="false">RGB</button></div></div>
+       <div class="spectrum-wave" id="spectrum-wave" aria-hidden="true"></div>
+     </div>
    <div class="equalizer" id="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
    <div class="player-control"><button class="round" id="reconnect" type="button" title="Reconectar transmisión" aria-label="Reconectar transmisión"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 6.8M20 4v7h-7"/></svg></button><button class="play-big" id="play-button" type="button" aria-label="Reproducir radio" aria-pressed="false"><svg id="play-icon" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8Z"/></svg></button><button class="round" id="mute" type="button" title="Silenciar" aria-label="Silenciar audio"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></svg></button></div>
    <div class="volume"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></svg><input id="volume" type="range" min="0" max="100" value="80" aria-label="Volumen"><span id="volume-number">80%</span></div>
@@ -1163,7 +1179,7 @@
   </div>
 </section>
 </main>
-<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.6.6 · 2026</span>.</span></div></footer>
+<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.6.7 · 2026</span>.</span></div></footer>
 
 <div class="radio-mini" id="radio-mini" aria-label="Reproductor permanente Radio Méndez" hidden>
   <a class="radio-mini-label" href="#radio" aria-label="Ir al reproductor principal de Radio Méndez"><img src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span><strong class="radio-mini-title">Radio Méndez</strong><small class="radio-mini-sub" id="radio-mini-sub">¡La radio que te mueve!</small><small class="radio-mini-program" id="radio-mini-program">Programación: 09h–12h · 12h–14h · 20h–22h</small></span></a>
@@ -1171,8 +1187,8 @@
 </div>
 <audio id="radio-audio" preload="none" playsinline></audio>
 <script src="./auspiciantes.js"></script>
-<script src="./donaciones.js?v=1.6.6"></script>
-<script src="./noticias.js?v=1.6.6"></script>
+<script src="./donaciones.js?v=1.6.7"></script>
+<script src="./noticias.js?v=1.6.7"></script>
 <script>
 (()=>{
  'use strict';
@@ -1514,7 +1530,7 @@
   $('donate-bank-fallback').href=donationWhatsapp+'?text='+encodeURIComponent('Hola, quisiera los datos para apoyar a Radio Méndez por transferencia.');
  }
 
- if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.6.6').catch(()=>{}))}
+ if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.6.7').catch(()=>{}))}
 })();
 </script>
 
@@ -1576,18 +1592,19 @@
    publicidad:'servicios',auspiciantes:'auspiciantes',apoyar:'apoyar',redes:'apoyar'};
  const all=Array.from(document.querySelectorAll('[data-site-view]'));
  const nav=Array.from(document.querySelectorAll('#site-navigation a[href^="#"]'));
- function route(){
+ function route(initial=false){
    const raw=decodeURIComponent(location.hash.slice(1)).trim().toLowerCase()||'inicio';
    const view=routes[raw]||'inicio';
+   document.body.dataset.currentView=view;
    all.forEach(node=>{if(node.dataset.siteView===view){node.setAttribute('data-site-active','');node.removeAttribute('aria-hidden')}else{node.removeAttribute('data-site-active');node.setAttribute('aria-hidden','true')}});
    nav.forEach(a=>{if(a.getAttribute('href')==='#'+view)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
    document.title=(view==='inicio'?'Radio Méndez':({'radio':'Radio en vivo','mendez-tv':'Méndez TV · Noticias','programas':'Programas','deportes':'Deportes','servicios':'Servicios','auspiciantes':'Auspiciantes','apoyar':'Apoyar'}[view]+' | Radio Méndez'))+' — ¡La radio que te mueve!';
    const target=document.getElementById(raw);
-   if(raw!==view && target && target.getAttribute('data-site-active')!==null){target.scrollIntoView({block:'start',behavior:'instant'})}
+   if(!initial && raw!==view && target && target.getAttribute('data-site-active')!==null){target.scrollIntoView({block:'start',behavior:'instant'})}
    else window.scrollTo({top:0,behavior:'instant'});
    document.dispatchEvent(new CustomEvent('radiomendez:route',{detail:{view,anchor:raw}}));
  }
- window.addEventListener('hashchange',route);
+ window.addEventListener('hashchange',()=>route(false));
  // Navigating to current route should still return to the top
  document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const hash=a.getAttribute('href');if(hash===location.hash && Object.prototype.hasOwnProperty.call(routes,hash.slice(1))){e.preventDefault();route()}});
  // Homepage: last real news item (no invented headlines)
@@ -1607,10 +1624,14 @@
    const link=document.createElement('a');link.href='#mendez-tv';link.className='tv-news-open';link.textContent='Leer en Méndez TV ↗';link.addEventListener('click',()=>{const b=document.querySelector('.tv-news-filter[data-category="Deportes"]');if(b)b.click()});
    info.append(title,desc,link);card.append(info);sportsList.append(card)
  });
- route();
+ route(true);
+ // Al recargar conserva la URL de sección y comienza arriba; al navegar no recarga el audio.
+ requestAnimationFrame(()=>{window.scrollTo({top:0,behavior:'instant'});requestAnimationFrame(()=>window.scrollTo({top:0,behavior:'instant'}))});
+ window.addEventListener('pageshow',e=>{const nav=performance.getEntriesByType?.('navigation')?.[0];if(e.persisted||nav?.type==='reload')window.scrollTo({top:0,behavior:'instant'})});
 })();
 </script>
 
-<script src="./mejoras.js?v=1.6.6"></script>
+<script src="./mejoras.js?v=1.6.7"></script>
+<script src="./radio-visual.js?v=1.6.7"></script>
 </body>
 </html>

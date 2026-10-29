@@ -1,0 +1,87 @@
+/* Radio Méndez 1.6.7 — identidad de Radio (verde neón/RGB), independiente de Méndez TV */
+:root { --radio-neon:#80ff50; --radio-mint:#22f9bf; --radio-lime-shadow:rgba(94,255,77,.35); }
+/* La identidad cromática de Méndez TV y de Programas no se modifica. */
+#radio[data-site-view="radio"] {
+  position:relative;isolation:isolate;
+  background:radial-gradient(ellipse at 74% 41%,rgba(32,196,133,.12),transparent 52%),
+    radial-gradient(ellipse at 10% 20%,rgba(30,94,224,.15),transparent 62%);
+  border:1px solid rgba(106,251,116,.14);border-radius:30px;
+  padding-left:clamp(15px,3vw,32px);padding-right:clamp(15px,3vw,32px);
+}
+#radio .eyebrow {color:#baff8f;border-color:rgba(110,255,108,.42);background:rgba(36,116,77,.20)}
+#radio .eyebrow .dot {background:var(--radio-neon);box-shadow:0 0 16px var(--radio-neon)}
+#radio .hero h1 em,#radio h1 em {background-image:linear-gradient(105deg,#c7ff77,#6bffaf,#4be4fd)}
+#radio .radio-card {
+  border-color:rgba(104,249,139,.43);
+  background:linear-gradient(156deg,rgba(6,40,67,.96),rgba(5,22,45,.98) 64%,rgba(6,39,43,.94));
+  box-shadow:0 22px 70px rgba(0,0,0,.4),0 0 35px rgba(45,238,148,.09);
+}
+#radio .radio-card:before {background:radial-gradient(circle,rgba(36,243,152,.16),transparent 68%)}
+#radio .vinyl {border-color:rgba(84,253,158,.48);box-shadow:0 0 0 8px rgba(62,252,167,.055),0 13px 42px rgba(5,15,37,.45)}
+#radio .track-title {text-shadow:0 0 22px rgba(75,254,164,.2)}
+#radio .now-schedule {border-color:rgba(86,241,155,.34);background:rgba(6,42,55,.65)}
+#radio .now-schedule-icon {background:linear-gradient(130deg,#9bff6e,#27e9c9)}
+#radio .now-schedule-info small {color:#a1ffa3}
+#radio .play-big {background:linear-gradient(145deg,#95ff59,#22eac6);box-shadow:0 8px 34px rgba(58,244,146,.27);color:#0a2732}
+#radio .volume input {accent-color:#68ff9f}
+#radio .status {color:#b8dfdc}
+#programacion-radio .overline,#programacion-radio .section-title h2 span {color:#a2ff80}
+#programacion-radio .program-card {border-color:rgba(93,231,153,.27)}
+#programacion-radio .program-card:hover {border-color:rgba(116,254,167,.50)}
+#programacion-radio .program-type:before {background:#80ff50;box-shadow:0 0 12px rgba(128,255,80,.7)}
+body[data-current-view="radio"] .radio-mini{border-top-color:rgba(106,255,138,.5)}
+body[data-current-view="radio"] .radio-mini-play{background:linear-gradient(145deg,#9aff5c,#30e4bb);color:#07362b}
+/* Barra de espectro decorativa. No utiliza WebAudio ni CORS de SHOUTcast. */
+.radio-spectrum {
+  --spectrum-c1:#8eff4f;--spectrum-c2:#31f4b3;
+  position:relative;max-width:420px;margin:10px auto 13px;padding:10px 11px 11px;
+  border:1px solid rgba(107,248,139,.3);border-radius:16px;
+  background:linear-gradient(145deg,rgba(2,22,33,.73),rgba(5,46,48,.54));
+  box-shadow:inset 0 0 22px rgba(47,231,127,.055);
+}
+.radio-spectrum-top {display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:9px;font-size:9px;font-weight:850;letter-spacing:.85px;color:#a9f8ba}
+.radio-spectrum-top>span {display:flex;align-items:center;gap:6px;white-space:nowrap}
+.spectrum-led {width:6px;height:6px;border-radius:50%;background:#a7ffa0;box-shadow:0 0 8px #75ff64}
+.radio-theme-chooser {display:flex;align-items:center;gap:4px;background:rgba(0,0,0,.15);border-radius:40px;padding:3px}
+.radio-theme-chooser button {font-size:9px;font-weight:800;padding:5px 8px;border:0;border-radius:30px;color:#c1dfe2;background:transparent;white-space:nowrap;letter-spacing:0}
+.radio-theme-chooser button[aria-pressed="true"] {color:#083326;background:#9bff69;box-shadow:0 0 12px rgba(109,255,100,.3)}
+.spectrum-wave {height:57px;display:flex;align-items:center;justify-content:space-between;gap:2.2px;overflow:hidden}
+.spectrum-bar {display:block;flex:1;min-width:2px;height:var(--rest-h,16%);border-radius:5px;
+  background:linear-gradient(0deg,var(--spectrum-c1),var(--spectrum-c2));
+  box-shadow:0 0 8px rgba(91,255,127,.32);opacity:.74;transform-origin:50% 50%;
+  transition:height .25s ease,opacity .25s ease;will-change:transform;
+}
+.radio-spectrum.is-playing .spectrum-bar {height:var(--max-h,70%);animation:spectrum-jump var(--bar-speed,.65s) ease-in-out var(--bar-delay,0s) infinite alternate;opacity:1}
+@keyframes spectrum-jump {from{transform:scaleY(.20)}to{transform:scaleY(1)}}
+.radio-spectrum[data-theme="rgb"]{--spectrum-c1:#209dff;--spectrum-c2:#ee33a8;border-color:rgba(171,112,255,.38);background:linear-gradient(125deg,rgba(14,26,71,.84),rgba(38,17,75,.5))}
+.radio-spectrum[data-theme="rgb"] .spectrum-bar:nth-child(4n+1){background:linear-gradient(0deg,#37b3ff,#00ffde);box-shadow:0 0 9px rgba(43,164,255,.40)}
+.radio-spectrum[data-theme="rgb"] .spectrum-bar:nth-child(4n+2){background:linear-gradient(0deg,#57ff80,#dcff35);box-shadow:0 0 9px rgba(85,255,130,.36)}
+.radio-spectrum[data-theme="rgb"] .spectrum-bar:nth-child(4n+3){background:linear-gradient(0deg,#e941f7,#fc5573);box-shadow:0 0 9px rgba(233,65,247,.38)}
+.radio-spectrum[data-theme="rgb"] .spectrum-bar:nth-child(4n+4){background:linear-gradient(0deg,#ff9a19,#ff2e74);box-shadow:0 0 9px rgba(255,139,30,.35)}
+.radio-spectrum[data-theme="rgb"] .radio-theme-chooser button[aria-pressed="true"]{background:linear-gradient(110deg,#9dfd70,#6ed0ff,#ff8dca);color:#0c2141}
+/* Programa anterior izq. y próximo der.; se muestran aunque falte carátula. */
+.adjacent-programs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px;max-width:420px;margin:10px auto 10px;text-align:left}
+.adjacent-program{min-width:0;padding:10px;border-radius:14px;border:1px solid rgba(69,207,160,.25);background:rgba(3,22,49,.58)}
+.adjacent-kicker {display:block;font-size:9px;font-weight:850;letter-spacing:1.1px;color:#9dfac1;margin-bottom:9px}
+.upcoming .adjacent-kicker{text-align:right}
+.adjacent-row{display:flex;gap:9px;align-items:center;min-width:0}
+.adjacent-row img{flex:none;width:40px;height:40px;object-fit:contain;border-radius:9px;background:rgba(10,45,79,.55)}
+.adjacent-content{min-width:0}
+.adjacent-content strong{display:block;line-height:1.22;font-size:11px;color:#fff;overflow-wrap:anywhere}
+.adjacent-content small{display:block;margin-top:5px;line-height:1.23;font-size:10px;color:#a8d2df}
+/* Vista actual: animación de entrada sin alterar HTMLAudioElement ni rutas. */
+[data-site-view][data-site-active] {animation:radioViewAppear .37s cubic-bezier(.16,1,.3,1) both}
+@keyframes radioViewAppear {from{opacity:.35;transform:translateY(13px)}to{opacity:1;transform:translateY(0)}}
+/* Indicador visual en la barra flotante. */
+.mini-wave{display:flex;align-items:center;gap:2px;width:21px;height:20px;margin-right:1px;flex:none;opacity:.48}
+.mini-wave i{width:3px;height:30%;border-radius:10px;background:#67ffb5;display:block}
+.mini-wave.is-playing {opacity:1}
+.mini-wave.is-playing i{height:90%;animation:miniWave .64s ease-in-out infinite alternate}
+.mini-wave i:nth-child(2){animation-delay:-.38s}
+.mini-wave i:nth-child(3){animation-delay:-.16s}
+.mini-wave i:nth-child(4){animation-delay:-.5s}
+.mini-wave i:nth-child(5){animation-delay:-.25s}
+@keyframes miniWave{from{transform:scaleY(.24)}to{transform:scaleY(1)}}
+@media(max-width:700px){#radio[data-site-view="radio"]{padding-left:10px;padding-right:10px;border-radius:20px}.radio-spectrum-top{font-size:8px}.spectrum-wave{height:44px}.radio-theme-chooser button{font-size:8px;padding:5px}.adjacent-program{padding:8px 7px}.adjacent-row{gap:5px}.adjacent-row img{width:32px;height:32px}.adjacent-content strong{font-size:10px}.adjacent-content small{font-size:9px}}
+@media(max-width:355px){.adjacent-row img{display:none}.radio-spectrum-top{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){[data-site-view][data-site-active]{animation:none!important}.radio-spectrum.is-playing .spectrum-bar,.mini-wave.is-playing i{animation:none!important;transform:none!important}}

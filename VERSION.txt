@@ -1,6 +1,4 @@
-Radio Méndez — v1.6.6
-Fecha: 28 de octubre de 2026
-Nuevo programa: El Vacilón del Mediodía · 12h00–14h00.
-Programación musical diurna provisional: todos los días.
-Se conserva el streaming contratado https://radiostreaming.pro/8474/stream.
-Sin cambios en noticias, Top 10, PayPal ni auspiciantes.
+Radio Méndez · versión 1.6.7
+Base v1.6.6 · 28/10/2026
+Reproductor con ondas neón/RGB, programa anterior y próximo, transiciones entre páginas y recarga en sección actual al inicio.
+Streaming público: 8474 (config.js no se incluye en la actualización).

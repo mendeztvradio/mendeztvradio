@@ -1,0 +1,20 @@
+RADIO MÉNDEZ — ACTUALIZACIÓN 1.6.7
+
+Se parte de la versión completa 1.6.6. Conserva la dirección de streaming pública del puerto 8474 y PayPal.
+
+NOVEDADES
+- Visualizador animado decorativo en Radio en vivo; selector Verde Neón / RGB.
+- Se mueve solamente cuando el navegador está reproduciendo; no analiza el audio real ni altera la salida del stream.
+- Programa anterior (izquierda), actual (centro) y próximo (derecha) con nombre, hora e imagen si existe.
+- Programación calculada con horario de Ecuador. La mañana y mediodía todos los días (provisional). Villa lunes-viernes 20:00-22:00; tropical variada sábados y domingos 20:00-22:00.
+- Transiciones animadas y respetuosas con la preferencia del sistema de reducir movimiento.
+- Al recargar se abre la misma sección, desplazada al principio. Una recarga completa del navegador sí reinicia el audio; navegar por las secciones no lo hace.
+- Méndez TV conserva los colores originales.
+
+PARA INSTALAR EN GITHUB
+Subir reemplazando: index.html, mejoras.js, sw.js y VERSION.txt.
+Agregar archivos nuevos: radio-visual.css, radio-visual.js.
+Puedes subir también LEEME-v1.6.7.txt (opcional).
+NO reemplazar config.js, donaciones.js, top10.js ni noticias.js.
+
+Si el navegador muestra la versión anterior, recargar con Ctrl + F5 o probar en pestaña privada.
